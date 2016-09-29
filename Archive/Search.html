@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Assembly 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20140330
+-->
+<META NAME="author" CONTENT="Troy Nguyen, Eya Badal Abdisho, Roya Del Parastaran, Seung Yeon Joo">
+<META NAME="date" CONTENT="April 17, 2016">
+<META NAME="copyright" CONTENT="SJSU CMPE195A Spring 2016 Project. All rights reserved.">
+<META NAME="robots" CONTENT="all">
+<META NAME="keywords" CONTENT="">
+<META NAME="description" CONTENT="">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ShoutMS - Rate an Employee of a Local Business</title>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+<link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" />
+<link href="https://s3-us-west-1.amazonaws.com/client-tier/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://s3-us-west-1.amazonaws.com/client-tier/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type = "text/javascript" src="js/JSScript.js"></script>
+
+</head>
+
+<body>
+<div id="header-wrapper-1">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="index.html">ShoutMS</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html" accesskey="1" title="">Home</a></li>
+				<li class="active"><a href="#" accesskey="2" title="">Search</a></li>
+				<li><a href="Signup.html" accesskey="3" title="">Signup</a></li>
+				<li><a href="FutureProjects.html" accesskey="4" title="">Future</a></li>
+				<li><a href="ContactUs.html" accesskey="5" title="">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="banner" class="container">
+			<h3>Search for a business to rate an employee</h3><br/>
+			
+			<form id="search-form" class="form-inline" role="form" onsubmit="return searchSubmission()">
+			
+			<div class="form-group">
+				<input
+				  id="searchbusiness"
+				  class="form-control"
+				  type="text"
+				  placeholder="Business Name" required>
+						  
+				<input
+				  id="searchlocation"
+				  class="form-control"
+				  type="text"
+				  placeholder="Location" required>
+			</div>
+					  
+				<button
+				id="searchbutton"
+				type="submit" 
+				value="Search"
+				class="btn btn-default">Search</button>
+			</form>
+	</div>
+</div>
+
+<<<<<<< HEAD
+
+<div id="MoreInfo"> 
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3">
+				<div id="map" class="mapUI"></div>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3E_8C6TB5VTgGkWIDA2t61jN9NvoQoE&libraries=places&callback=initMap" async defer>
+				</script>
+			</div>
+			<div class="col-lg-8">
+			<div class = "panel panel-info">
+		   <div class = "panel-heading">
+			  <center>
+			  <h2 class= "panel-title">Businesses</h2>
+           
+				  <table class="table" id="result-table">
+					<thead>
+					  <tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Address</th>
+						<th>Phone</th>
+						<th>Rating</th>
+						<th>Employees</th>
+						</center>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					   </tr>
+					</tbody>
+				  </table>
+				  
+				  <p align="right"><button class="btn btn-default" onclick="createTable()"> Update </button></p>
+				  <div id="results-elements"></div>
+			</div>
+
+        </div>
+=======
+
+<div id="MoreInfo"> 
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3">
+				<div id="map" class="mapUI"></div>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3E_8C6TB5VTgGkWIDA2t61jN9NvoQoE&libraries=places&callback=initMap" async defer>
+				</script>
+			</div>
+			<div class="col-lg-8">
+				<h2>Businesses</h2>           
+				  <table class="table" id="result-table">
+					<thead>
+					  <tr>
+					  <center>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Address</th>
+						<th>Phone</th>
+						<th>Rating</th>
+						</center>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					   </tr>
+					</tbody>
+				  </table>
+				  <button onclick="createTable()"> Update </button>
+				  <div id="results-elements"></div>
+>>>>>>> origin/master
+		</div>
+	</div>	
+</div>
+
+<div id="copyright" class="container">
+	<p>&copy; SJSU CMPE195A Spring 2016 Project. All rights reserved. | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+
+</body>
+</html>
