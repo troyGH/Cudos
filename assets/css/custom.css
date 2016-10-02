@@ -1,0 +1,100 @@
+.navbar-brand{
+    font-weight: bold;
+}
+html {
+  position: relative;
+    min-height: 100%;
+}
+
+body {
+   padding-top: 70px;
+  min-height:100%;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color:#222;
+  border-color:#080808;
+  color:#9d9d9d;
+  padding: 15px;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+body > .container {
+  padding: 60px 15px 0;
+}
+
+html,
+body,
+{
+  height:100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map{
+  display: block;
+  position:absolute;
+  height:auto;
+  bottom:60px;
+  top:40px;
+  left:0;
+  right:0;
+  margin-top:0px;
+}
+
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+#target {
+  width: 345px;
+}
