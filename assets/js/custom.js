@@ -14,12 +14,14 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
     };
+
     map.setCenter(pos);
     map.setZoom(13);
   });
   }
 
   autocomplete.bindTo('bounds', map);
+  autocomplete.setTypes(['establishment']);
 
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
@@ -54,7 +56,7 @@ function initMap() {
 
     var placeinfo = place.place_id  + "+"+ place.name + "+" + escape(place.formatted_phone_number) + "+" + escape(place.formatted_address);
 
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' + 
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' +
     place.formatted_address + '<br>' + "<a href='" + window.location.href.replace('home','business/search/') + placeinfo + "'> View Employees</a>"
 
     );
