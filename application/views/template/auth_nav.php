@@ -42,7 +42,6 @@ function lookForActive($arg) {
   else if($arg===$ci->uri->segment(1).'/'.$ci->uri->segment(2))
     return true;
 
-
   return false;
 }
 ?>

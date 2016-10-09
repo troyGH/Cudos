@@ -13,7 +13,7 @@
          </ul>
 
          <ul class="nav navbar-nav navbar-right">
-  			 <li <?php if(lookForActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>index.php/user/login">Log in</a></li>
+  			 <li <?php if(lookForActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>index.php/user/login?previousurl=<?php echo get_the_current_url(); ?>">Log in</a></li>
   			 <li <?php if(lookForActive("user/signup")) echo "class='active' "; ?> id="signup"><a href="<?php echo base_url(); ?>index.php/user/signup">Signup</a></li>
 
         </ul>
@@ -33,5 +33,13 @@ function lookForActive($arg) {
     return true;
 
   return false;
+}
+function get_the_current_url() {
+
+
+    $url =  str_replace("/cudos/index.php","",strtolower($_SERVER["REQUEST_URI"]));
+    $url = rtrim($url);
+    $url = ltrim($url);
+    return substr($url, 1);
 }
 ?>

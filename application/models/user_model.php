@@ -30,7 +30,7 @@ class User_model extends CI_Model {
 
 			// return true only if all inserts were successful
 			return ($user_success);
-		
+
 	}
 
 }?>

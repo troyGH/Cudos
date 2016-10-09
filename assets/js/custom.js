@@ -1,4 +1,4 @@
-//Google Map Stuff
+/*//Google Map Stuff
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.3352, lng: -121.8811},
@@ -27,7 +27,8 @@ function initMap() {
 
   var infowindow = new google.maps.InfoWindow();
   var marker = new google.maps.Marker({
-    map: map
+    map: map,
+    icon: 'https://s3-us-west-1.amazonaws.com/cudos-assets/img/map-icon.png'
   });
   marker.addListener('click', function() {
     infowindow.open(map, marker);
@@ -54,16 +55,23 @@ function initMap() {
     });
     marker.setVisible(true);
 
-    var placeinfo = place.place_id  + "+"+ place.name + "+" + escape(place.formatted_phone_number) + "+" + escape(place.formatted_address);
+    var placeinfo = place.place_id  + "|"+ place.name + "|" + escape(place.formatted_phone_number) + "|" + escape(place.formatted_address);
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' +
-    place.formatted_address + '<br>' + "<a href='" + window.location.href.replace('home','business/search/') + placeinfo + "'> View Employees</a>"
+    place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display/') + placeinfo + "'> View Employees</a>"
 
     );
 
     infowindow.open(map, marker);
 
   });
+}
+function getUserInfo(){
+  $.getJSON("http://www.geoplugin.net/json.gp?jsoncallback=?",
+      function (data) {
+            window.document.getElementById("location-input").setAttribute("value", data['geoplugin_city'] + ", " +data['geoplugin_region']);
+      }
+  );
 }
 
 //Login,Signup Form Stuff
@@ -76,3 +84,4 @@ function formValidation(){
     return false;
   }
 }
+*/

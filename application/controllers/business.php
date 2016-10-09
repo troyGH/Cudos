@@ -1,7 +1,6 @@
 <?php
 //profile_view.php controller
 //profile_edit.php controller
-
 class Business extends CI_Controller {
 	// constructor used for needed initialization
 	public function __construct() {
@@ -14,8 +13,13 @@ class Business extends CI_Controller {
 	function index() {
 		redirect("home");
 	}
-  function search($businessInfo){
-    $bData= explode('+',$businessInfo);
+  function search(){
+		$arr['business'] = $this->input->get("business");
+    $arr['location'] = $this->input->get("location");
+    $this->load->view('businesssearch_view', $arr);
+  }
+	function display($businessInfo){
+    $bData= explode('%7C',$businessInfo);
     $arr['id'] = urldecode($bData[0]);
     $arr['name'] = urldecode($bData[1]);
     $arr['phone'] = urldecode($bData[2]);

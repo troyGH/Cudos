@@ -15,7 +15,7 @@
 	// Login Form
 	//----------------------------------------------
 	// Validation
-  $("#login-form").validate({
+$("#login-form").validate({
   	rules: {
       lg_username: "required",
   	  lg_password: "required",
@@ -136,21 +136,6 @@
   {
   	$form.find('[type=submit]').addClass('error').html(options['btn-error']);
   	$form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
-  }
-
-	// Dummy Submit Form (Remove this)
-	//----------------------------------------------
-	// This is just a dummy form submission. You should use your AJAX function or remove this function if you are not using AJAX.
-  function dummy_submit_form($form)
-  {
-  	if($form.valid())
-  	{
-  		form_loading($form);
-
-  		setTimeout(function() {
-  			form_success($form);
-  		}, 2000);
-  	}
   }
 
 })(jQuery);

@@ -22,6 +22,8 @@ class User extends CI_Controller {
 			redirect("home");
 		}
     $this->load->view('login_view');
+
+		$previousurl = $this->input->get("previousurl");
 		// get form input from the view
 		$email = $this->input->post("lg_email");
 		$password = $this->input->post("lg_password");
@@ -30,14 +32,15 @@ class User extends CI_Controller {
 		$result = $this->user_model->get_user($email, $password);
 			if ($result && $email && $password) {
 				// set session data if user exists
-				$sess_data = array('login' => TRUE, 'fname' => $result[0]->first_name, 'lname' => $result[0]->last_name, 'user_id' => $result[0]->user_id);
+				$sess_data = array('login' => TRUE, 'fname' => $result[0]->first_name, 'lname' => $result[0]->last_name, 'customer_id' => $result[0]->customer_id);
 				$this->session->set_userdata($sess_data);
 
-				redirect("home");
+				redirect("home"); //cannot resolve $previousurl, don't know why
 			} else {
 				$this->session->set_flashdata('lg_err', '<div class="alert alert-danger text-center">Wrong Email-ID or Password!</div>');
 			}
 	}
+
 
   function signup(){
     if( $this->session->userdata('login') ){
@@ -77,8 +80,6 @@ class User extends CI_Controller {
 			redirect("user/forgotpassword");
 		}
   }
-
-
 }
 
 ?>
