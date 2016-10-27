@@ -38,8 +38,8 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                      <li <?php if(lookForActive("profile/index")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/index">View Profile</a></li>
-                      <li <?php if(lookForActive("profile/edit")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/edit">Edit Profile</a></li>
+                      <li <?php if(isActive("profile/index")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/index">View Profile</a></li>
+                      <li <?php if(isActive("profile/edit")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/edit">Edit Profile</a></li>
                       <li class="divider"></li>
                       <li><a href="<?php echo base_url(); ?>index.php/profile/logout">Sign Out</a></li>
                     </ul>
@@ -50,14 +50,15 @@
 </nav>
 
 <?php
-function lookForActive($arg) {
-  //because of "Using $this when not in object context" error
-  //before, $ci would be $this
+//Find which page is currently on, then make it active on navbar
+function isActive($arg) {
+  //$ci is used instead of $this because of "Using $this when not in object context" error
   $ci =& get_instance();
   if($arg === $ci->uri->segment(1))
     return true;
   else if($arg===$ci->uri->segment(1).'/'.$ci->uri->segment(2))
-    return true;
+       return true;
+
 
   return false;
 }
