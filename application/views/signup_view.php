@@ -1,6 +1,6 @@
 <?php $this->load->view('template/header.php'); ?>
 <!-- REGISTRATION FORM -->
-<div class="text-center" style="padding:50px 0">
+<div class="text-center custom-body">
 	<div class="logo">register</div>
 	<!-- Main Form -->
 	<div class="login-form-1">
@@ -37,7 +37,7 @@
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>already have an account? <a href="<?php echo base_url(); ?>index.php/user/login">login here</a></p>
+				<h6>already have an account? <a href="<?php echo base_url(); ?>index.php/user/login">login here</a></h6>
 			</div>
       <?php echo form_close();?>
 	</div>

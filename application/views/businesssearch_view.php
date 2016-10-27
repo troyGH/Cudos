@@ -1,6 +1,6 @@
 <?php $this->load->view('template/header.php'); ?>
 
-<div class="container">
+<div class="container map-body">
   <script>
   var map;
   var service;

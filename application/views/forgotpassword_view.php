@@ -1,6 +1,6 @@
 <?php $this->load->view('template/header.php'); ?>
 <!-- FORGOT PASSWORD FORM -->
-<div class="text-center" style="padding:50px 0">
+<div class="text-center custom-body">
 	<div class="logo">forgot password</div>
 	<!-- Main Form -->
 	<div class="login-form-1">
@@ -8,7 +8,7 @@
                         echo form_open("user/forgotpassword", $attributes);  ?>
 			<div class="etc-login-form">
         <?php echo $this->session->flashdata('fp_msg') ?>
-				<p id="fp_label">When you fill in your registered email address, you will be sent instructions on how to reset your password.</p>
+				<h5 id="fp_label">fill in your registered email address, you will be sent instructions on how to reset your password.</h5>
 			</div>
 			<div class="main-login-form" id="fpform">
         <?php if($this->session->flashdata('fp_success'))
@@ -22,8 +22,8 @@
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>already have an account? <a href="<?php echo base_url(); ?>index.php/user/login">login here</a></p>
-				<p>new user? <a href="<?php echo base_url(); ?>index.php/user/signup">create new account</a></p>
+				<h6>already have an account? <a href="<?php echo base_url(); ?>index.php/user/login">login here</a></h6>
+				<h6>new user? <a href="<?php echo base_url(); ?>index.php/user/signup">create new account</a></h6>
 			</div>
     <?php echo form_close();?>
 	</div>

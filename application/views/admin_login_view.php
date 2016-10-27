@@ -1,6 +1,6 @@
 <?php $this->load->view('template/header.php'); ?>
 <!-- LOGIN FORM -->
-<div class="text-center" style="padding:50px 0">
+<div class="text-center custom-body">
 	<div class="logo">login</div>
 	<!-- Main Form -->
 	<div class="login-form-1">

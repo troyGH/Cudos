@@ -1,5 +1,5 @@
 <?php $this->load->view('template/header.php'); ?>
-<div class="container">
+<div class="container custom-body">
 
 <div class="col-md-12" align=center>
 <h2>Admin Profile</h2>
@@ -10,7 +10,7 @@
 <h3>Employee List</h3>
 
 
-<br>  
+<br>
 
 
 

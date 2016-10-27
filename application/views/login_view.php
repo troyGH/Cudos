@@ -1,6 +1,6 @@
 <?php $this->load->view('template/header.php'); ?>
 <!-- LOGIN FORM -->
-<div class="text-center" style="padding:50px 0">
+<div class="text-center custom-body">
 	<div class="logo">login</div>
 	<!-- Main Form -->
 	<div class="login-form-1">
@@ -26,8 +26,8 @@
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>forgot your password? <a href="<?php echo base_url(); ?>index.php/user/forgotpassword">click here</a></p>
-				<p>new user? <a href="<?php echo base_url(); ?>index.php/user/signup">create new account</a></p>
+				<h6>forgot your password? <a href="<?php echo base_url(); ?>index.php/user/forgotpassword">click here</a></h6>
+				<h6>new user? <a href="<?php echo base_url(); ?>index.php/user/signup">create new account</a></h6>
 			</div>
 		<?php echo form_close();?>
 	</div>

@@ -1,36 +1,53 @@
 
-<!-- Fixed navbar -->
-   <nav class="navbar navbar-inverse navbar-fixed-top">
-     <div class="container">
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+   <div class="container-fluid">
        <div class="navbar-header">
-         <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/home">Cudos</a>
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+           <a id="bHome" class="navbar-brand page-scroll" href="<?php echo base_url(); ?>index.php/home"><p class="brand-name">Cudos </p></a>
        </div>
-       <div id="navbar" class="navbar-collapse collapse">
+       <div class="navbar-collapse collapse" id="bs-navbar">
          <ul class="nav navbar-nav">
-           <li <?php if(lookForActive("home")) echo "class='active'"; ?>><a href="<?php echo base_url(); ?>index.php/home">Home</a></li>
-           <li <?php if(lookForActive("about")) echo "class='active'"; ?>><a href="<?php echo base_url(); ?>index.php/about">About</a></li>
-           <li <?php if(lookForActive("contact")) echo "class='active'"; ?>><a href="<?php echo base_url(); ?>index.php/contact">Contact</a></li>
+          <li>
+            <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#intro">Intro</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#highlights">Highlights</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#gallery">Gallery</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#features">Features</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#about">About</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#contact">Contact</a>
+          </li>
          </ul>
-
-         <ul class="nav navbar-nav navbar-right">
-
-         <li class="dropdown" id="dropmenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <strong><?php echo $this->session->userdata('fname')." ".$this->session->userdata('lname'); ?> </strong><span></span><span class="glyphicon glyphicon-user"></span>
-					          <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li <?php if(lookForActive("profile/index")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/index">View Profile</a></li>
-                  <li <?php if(lookForActive("profile/edit")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/edit">Edit Profile</a></li>
-                  <li class="divider"></li>
-                  <li><a href="<?php echo base_url(); ?>index.php/profile/logout">Sign Out</a></li>
-                </ul>
-        </li>
-
-        </ul>
-       </div><!--/.nav-collapse -->
-     </div>
-   </nav>
+           <ul class="nav navbar-nav navbar-right">
+             <li class="dropdown" id="dropmenu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <strong><?php echo $this->session->userdata('fname')." ".$this->session->userdata('lname'); ?> </strong><span></span><span class="glyphicon glyphicon-user"></span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li <?php if(lookForActive("profile/index")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/index">View Profile</a></li>
+                      <li <?php if(lookForActive("profile/edit")) echo "class='active' "; ?>><a href="<?php echo base_url(); ?>index.php/profile/edit">Edit Profile</a></li>
+                      <li class="divider"></li>
+                      <li><a href="<?php echo base_url(); ?>index.php/profile/logout">Sign Out</a></li>
+                    </ul>
+            </li>
+           </ul>
+       </div>
+   </div>
+</nav>
 
 <?php
 function lookForActive($arg) {

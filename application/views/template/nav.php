@@ -1,45 +1,56 @@
 
-<!-- Fixed navbar -->
-   <nav class="navbar navbar-inverse navbar-fixed-top">
-     <div class="container">
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+   <div class="container-fluid">
        <div class="navbar-header">
-         <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/home">Cudos</a>
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+           <a id="bHome" class="navbar-brand page-scroll" href="<?php echo base_url(); ?>index.php/home"><p class="brand-name">Cudos</p></a>
        </div>
-       <div id="navbar" class="navbar-collapse collapse">
-         <ul class="nav navbar-nav">
-           <li <?php if(lookForActive("home")) echo "class='active'"; ?>><a href="<?php echo base_url(); ?>index.php/home">Home</a></li>
-           <li <?php if(lookForActive("about")) echo "class='active'"; ?>><a href="<?php echo base_url(); ?>index.php/about">About</a></li>
-           <li <?php if(lookForActive("contact")) echo "class='active'"; ?>><a href="<?php echo base_url(); ?>index.php/contact">Contact</a></li>
-         </ul>
+       <div class="navbar-collapse collapse" id="bs-navbar">
+           <ul class="nav navbar-nav">
+             <li>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#intro">Intro</a>
+             </li>
+             <li>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#highlights">Highlights</a>
+             </li>
+             <li>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#gallery">Gallery</a>
+             </li>
+             <li>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#features">Features</a>
+             </li>
+             <li>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#about">About</a>
+             </li>
+             <li>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#contact">Contact</a>
+             </li>
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
+             <li <?php if(isActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>index.php/user/login">Log in</a></li>
+             <li <?php if(isActive("user/signup")) echo "class='active' "; ?> id="signup"><a href="<?php echo base_url(); ?>index.php/user/signup">Signup</a></li>
+           </ul>
+       </div>
+   </div>
+</nav>
 
-         <ul class="nav navbar-nav navbar-right">
-  			 <li <?php if(lookForActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>index.php/user/login?previousurl=<?php echo get_the_current_url(); ?>">Log in</a></li>
-  			 <li <?php if(lookForActive("user/signup")) echo "class='active' "; ?> id="signup"><a href="<?php echo base_url(); ?>index.php/user/signup">Signup</a></li>
-
-        </ul>
-       </div><!--/.nav-collapse -->
-     </div>
-   </nav>
 
 <?php
-function lookForActive($arg) {
-  //because of "Using $this when not in object context" error
-  //before, $ci would be $this
+//Find which page is currently on, then make it active on navbar
+function isActive($arg) {
+  //$ci is used instead of $this because of "Using $this when not in object context" error
   $ci =& get_instance();
-
   if($arg === $ci->uri->segment(1))
     return true;
   else if($arg===$ci->uri->segment(1).'/'.$ci->uri->segment(2))
-    return true;
+       return true;
+
 
   return false;
-}
-function get_the_current_url() {
-
-
-    $url =  str_replace("/cudos/index.php","",strtolower($_SERVER["REQUEST_URI"]));
-    $url = rtrim($url);
-    $url = ltrim($url);
-    return substr($url, 1);
 }
 ?>
