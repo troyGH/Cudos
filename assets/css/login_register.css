@@ -19,20 +19,9 @@ Last change	: 2015/03/27
 9. Misc
 -------------------------------------------------------------------*/
 /*=== 1. General Structure ===*/
-html,
-body {
-  background: #efefef;
-  font-family: 'Varela Round';
-}
+
 /*=== 2. Anchor Link ===*/
-a {
-  color: #aaaaaa;
-  transition: all ease-in-out 200ms;
-}
-a:hover {
-  color: #333333;
-  text-decoration: none;
-}
+
 /*=== 3. Text Outside the Box ===*/
 .etc-login-form {
   color: #919191;
