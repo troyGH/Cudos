@@ -155,24 +155,6 @@
         </div>
     </div>
 </section>
-<section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3 class="margin-top-0 text-primary">About Us</h3>
-                <hr class="primary">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <p class="wow fadeInDown"> BLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus odio augue, vel placerat sem tempus quis.
-              Aliquam erat volutpat. Curabitur commodo, risus sed dictum viverra, enim tortor blandit sem, vel lacinia urna nulla vitae eros.
-              Mauris auctor, risus non pulvinar aliquet, urna ante venenatis nibh, vel vestibulum leo nibh et lectus. Sed ornare tincidunt erat, finibus mollis arcu tempor et.
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut volutpat felis sit amet porttitor euismod.</p>
-        </div>
-    </div>
-</section>
 <section class="container-fluid" id="features">
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
@@ -227,6 +209,24 @@
                     <i class="icon-lg ion-ios-flask-outline"></i>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3 class="margin-top-0 text-primary">About Us</h3>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <p class="wow fadeInDown"> BLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus odio augue, vel placerat sem tempus quis.
+              Aliquam erat volutpat. Curabitur commodo, risus sed dictum viverra, enim tortor blandit sem, vel lacinia urna nulla vitae eros.
+              Mauris auctor, risus non pulvinar aliquet, urna ante venenatis nibh, vel vestibulum leo nibh et lectus. Sed ornare tincidunt erat, finibus mollis arcu tempor et.
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut volutpat felis sit amet porttitor euismod.</p>
         </div>
     </div>
 </section>

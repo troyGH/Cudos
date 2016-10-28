@@ -25,7 +25,7 @@
     geocoder.geocode({'address': location_search}, function(results, status) {
       if (status === 'OK') {
         map.setCenter(results[0].geometry.location);
-        map.setZoom(13);
+        map.setZoom(11);
         performSearch(results[0].geometry.location, business_search);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
@@ -34,7 +34,7 @@
     createSearchBar();
   }
   function performSearch(loc, query){
-    var req_business = { location: loc, radius: 3000, type: ['establishment'], name: query, keyword: query };
+    var req_business = { location: loc, radius: 20000, type: ['establishment'], name: query, keyword: query };
     service.radarSearch(req_business, locations);
   }
 

@@ -26,12 +26,12 @@
                       <input type="text" class="form-control" title="No spam, we promise!" placeholder="Tell us your email">
                     </div>
                     <div class="form-group">
-                      <button class="btn btn-primary" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
+                      <button class="button button--ujarak button--border-thick button--text-thick" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
                     </div>
                 </form>
             </div>
             <div class="col-xs-12 col-sm-3 text-right">
-                <h4>Follow</h4>
+                <h4>Follow Us</h4>
                 <ul class="list-inline">
                   <li><a rel="nofollow" href="" title="Twitter"><i class="icon-lg ion-social-twitter-outline"></i></a>&nbsp;</li>
                   <li><a rel="nofollow" href="" title="Facebook"><i class="icon-lg ion-social-facebook-outline"></i></a>&nbsp;</li>

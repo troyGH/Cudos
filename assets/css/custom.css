@@ -115,3 +115,7 @@ h1{
 .cudos-img{
   opacity: 0.7;
 }
+
+video{
+  width: 100%;
+}
