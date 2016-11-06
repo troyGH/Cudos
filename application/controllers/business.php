@@ -8,7 +8,7 @@ class Business extends CI_Controller {
     $this->load->helper(array('form','url','html'));
 		$this->load->library(array('session'));
 		$this->load->database();
-		$this->load->model('user_model');
+		$this->load->model('employee_model');
 	}
 	function index() {
 		redirect("home");
@@ -20,6 +20,8 @@ class Business extends CI_Controller {
   }
 	function display($businessInfo){
     $bData= explode('%7C',$businessInfo);
+		$arr['employees'] = $this->employee_model->get_employees($bData[0]);
+		$arr['reviews'] = $this->employee_model->get_employees_reviews($bData[0]);
     $arr['id'] = urldecode($bData[0]);
     $arr['name'] = urldecode($bData[1]);
     $arr['phone'] = urldecode($bData[2]);

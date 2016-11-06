@@ -17,6 +17,11 @@ class User extends CI_Controller {
     redirect("home");
   }
 
+	function profile($cID){
+		echo "Profile ID is $cID";
+	}
+
+
   function login(){
     if( $this->session->userdata('login') ){
 			redirect("home");
