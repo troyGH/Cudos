@@ -33,6 +33,9 @@
            </ul>
            <ul class="nav navbar-nav navbar-right">
              <li <?php if(isActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>index.php/user/login">Log in</a></li>
+
+             <li <?php if(isActive("admin/login")) echo "class='active' "; ?> id="login_admin"><a href="<?php echo base_url(); ?>index.php/admin/login">Log in Admin</a></li>
+
              <li <?php if(isActive("user/signup")) echo "class='active' "; ?> id="signup"><a href="<?php echo base_url(); ?>index.php/user/signup">Signup</a></li>
            </ul>
        </div>

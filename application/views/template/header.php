@@ -33,7 +33,7 @@
 
   <?php
   //Due to a flickering issue on page load, authenticated navbar and normal navbar would be stored in seprate files
-  if( $this->session->userdata('login') ){
+  if( $this->session->userdata('login') ||  $this->session->userdata('adminlogin') ){
      $this->load->view('template/auth_nav.php');
   }
   else{

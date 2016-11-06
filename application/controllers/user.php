@@ -35,6 +35,7 @@ class User extends CI_Controller {
 				$sess_data = array('login' => TRUE, 'fname' => $result[0]->first_name, 'lname' => $result[0]->last_name, 'customer_id' => $result[0]->customer_id);
 				$this->session->set_userdata($sess_data);
 
+
 				redirect("home"); //cannot resolve $previousurl, don't know why
 			} else {
 				$this->session->set_flashdata('lg_err', '<div class="alert alert-danger text-center">Wrong Email-ID or Password!</div>');

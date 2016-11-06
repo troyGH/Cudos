@@ -12,8 +12,23 @@
 
 <br>
 
+<?php
+$adminID = $this->session->userdata('admin_id');?>
+<p><?php echo $adminID;?></p>
 
 
+
+     <!--<?php foreach($posts as $post){?>
+         <p><?php echo $post->first_name;?></p>
+         <p><?php echo $post->business_id;?></p>
+      </tr>     
+     <?php }?> -->
+
+     <?php
+        foreach($posts as $post){
+          echo "<h2>".$post->first_name."</h2>";
+        }
+         ?>
 
      <div class="bd-example">
   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add Employee</button>
