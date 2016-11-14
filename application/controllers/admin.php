@@ -25,6 +25,25 @@ $this->load->view('admin_view', $result);
         //$arr['name'] = urldecode($bData[1]);
 
     //$this->load->view('admin_view', $arr);
+
+
+//$data['newEmployee'] = $this->adminModel->insertData($this->session->userdata('admin_id'));
+
+//$this->db->insertData('employee', $data); 
+
+//$this->load->view('admin_view', $data);
+
+	    $empName = $this->input->post('employeeName');
+    $empTitle = $this->input->post('employeeTitle');
+
+        if($empName && $empTitle){
+        //insert by passing an array to insert_user function
+        $result = $this->adminModel->insertEmployee(array('first_name' => $fempName,'last_name' => NULL,'title' => $empTitle,'about_me' => NULL, 'img_url' => NULL));
+        $this->load->view('admin_view', $result);
+    }
+
+
+
 		}else{
 			redirect('home'); // when they manually type admin
 		}

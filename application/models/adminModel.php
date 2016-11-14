@@ -22,8 +22,27 @@ class adminModel extends CI_Model {
 	}
  
  function getPosts($adminID){
+
  	$query = $this->db->query("SELECT t5.* FROM  businessadmin t2, businessemployee t4, employee t5 WHERE $adminID = t2.admin_id AND t2.business_id = t4.business_id AND t4.employee_id = t5.employee_id");
  	return $query->result();
+ }
+
+
+  function insertEmployee($employee_data){
+  	//$employeeName = $_POST['employeeName'];
+//$employeeTitle = $_POST['employeeTitle'];
+
+
+ 	//$sql = $this->db->query("INSERT INTO employee VALUES (NULL,employeeName,NULL, employeeTitle,NULL,NULL)");
+//$this->db->query($sql);
+//return $sql->data();
+
+			// insert values into employee
+			$employee_success = $this->db->insert('employee', $employee_data);
+
+			// return true only if all inserts were successful
+			return ($employee_success);
+
  }
  	/*
   $this->db->select("admin_id"); 

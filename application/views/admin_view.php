@@ -48,14 +48,14 @@ $adminID = $this->session->userdata('admin_id');?>
           <h4 class="modal-title" id="exampleModalLabel">New Employee</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="admin.php" name="yourForm" id="theForm" method="post">
             <div class="form-group">
               <label for="recipient-name" class="form-control-label">Name</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <input type="text" class="form-control" id="recipient-name" name="employeeName">
             </div>
             <div class="form-group">
               <label for="recipient-name" class="form-control-label">Title</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <input type="text" class="form-control" id="recipient-name" name="employeeTitle">
             </div>
          	<div class="form-group">
   				<input type="file" name="pic" accept="image/*">
