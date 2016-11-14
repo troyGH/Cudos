@@ -224,7 +224,8 @@ function displayEmployeeProfile(first, last, title, url, bio, avg){
 }
 
 function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdown){
-  var currentID = <?php echo $this->session->userdata('customer_id'); ?>;
+
+  var currentID = <?php if($this->session->userdata('login')) echo $this->session->userdata('customer_id'); else echo 0; ?>;
 
   if(cID == currentID){
     $("#reviews-here").append("<div class='col-sm-5 well well-sm'>"  + 'Me' +"</div>");
