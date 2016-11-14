@@ -36,4 +36,12 @@ AND t3.employee_id = t4.employee_id AND t4.review_id = t5.review_id AND t6.revie
 		$this->db->insert('employeereview',$ar);
 	}
 
+	function is_review_exist($eID, $cID){
+		$query = $this->db->query("SELECT count(customerreview.review_id) AS reviews_found FROM customerreview JOIN employeereview
+ON employeereview.review_id = customerreview.review_id
+AND customerreview.customer_id = $cID
+AND employeereview.employee_id = $eID");
+		return $query->result()[0];
+	}
+
 }?>

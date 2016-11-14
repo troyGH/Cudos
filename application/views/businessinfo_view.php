@@ -2,8 +2,8 @@
 
 <div class="custom-body">
   <!--Business Info --->
-  <div class="col-md-12">
-      <h1 align=center><?php echo $name ?></h1>
+  <div class="col-md-12 well business-banner">
+      <h1 ><?php echo $name ?></h1>
       <p align="center">
         <?php echo $phone; ?>
         <br>
@@ -11,13 +11,19 @@
       </p>
   </div>
 
+  <?php if($this->session->flashdata('review_success'))
+          echo $this->session->flashdata('review_msg');
+        else
+          echo $this->session->flashdata('review_msg');
+
+          ?>
+
   <!--Business's Employees Info --->
-  <div class="container text-center">
-  	  <div class="row">
+  <div class="container text-center well">
 
         <!--Employee List --->
         <div class="col-sm-2 well" id="well-config">
-          <h3>Employees</h3>
+          <h1>Employees</h1>
           <hr>
           <div class="table-responsive">
             <table class="table table-hover" id="myTable">
@@ -52,35 +58,33 @@
         <!-- Employee Profile --->
   		<div class="col-sm-3 well" id="employee-profile">
   		  <div class="well">
-  			<h3 id="employee-name"></h3>
+  			<h1 id="employee-name"></h1>
         <h4 id="employee-title"><h4>
   			<hr>
   			<img id="employee-picture" src="<?php echo base_url(); ?>/assets/img/employee_default.jpg" class="img-circle" height="100" width="100" alt="Avatar">
-        <h5 id="employee-avg-stars"><h5>
+        <h5 id="employee-avg-stars">
+        </h5>
+          <div class="form-group">
+            <button id="review-button" type="submit"  data-toggle="modal"  data-target="<?php if($this->session->userdata('login')) echo "#reviewModal"; else echo "#loginModal";?>"
+              class="button button--ujarak button--border-thick button--text-thick">Review Me</button>
+          </div>
         </div>
   		  <div class="well text-left">
-  			<h3 class="text-center">Employee Bio</h3>
+  			<h1 class="text-center">Employee Bio</h1>
   			<hr>
         <p id="employee-bio"><p>
   		  </div>
   		</div> <!--End Employee Profile --->
 
-
       <!--- Reviews Display --->
   		<div class="col-sm-7 well text-left" id="reviews-display">
   			<div class="col-sm-12">
-    				  <h3 class="text-center">Reviews</h3>
-              <hr />
+    				  <h1 class="text-center">Reviews</h1>
   				<div class="col-sm-12" id="reviews-here">
   		    </div>
-        <div class="form-group">
-          <button id="review" type="submit"  data-toggle="modal"  data-target="<?php if($this->session->userdata('login')) echo "#reviewModal"; else echo "#loginModal";?>"
-            class="button button--ujarak button--border-thick button--text-thick">Review</button>
-        </div>
   		</div>
-    </div> <!--End Reviews Display --->
+      </div> <!--End Reviews Display --->
 
-    </div> <!--End row --->
   </div> <!--End container --->
 
   <!-- Modal -->
@@ -188,6 +192,7 @@ $("a#employee-list").click(function(e){
   var employeeNum = $(this).data('val');
   var total = 0;
   var count = 0;
+  $('.alert').hide();
 
   $("#eid-input").val(employee[employeeNum]['employee_id']);
 
@@ -219,7 +224,13 @@ function displayEmployeeProfile(first, last, title, url, bio, avg){
 }
 
 function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdown){
-  $("#reviews-here").append("<div class='col-sm-5 well well-sm'><a href='<?php echo base_url('index.php/user/profile/') ?>"  + cID + "'>" +first+' '+last +"</a></div>");
+  var currentID = <?php echo $this->session->userdata('customer_id'); ?>;
+
+  if(cID == currentID){
+    $("#reviews-here").append("<div class='col-sm-5 well well-sm'>"  + 'Me' +"</div>");
+  }else{
+    $("#reviews-here").append("<div class='col-sm-5 well well-sm'><a href='<?php echo base_url('index.php/user/profile/') ?>"  + cID + "'>" +first+' '+last +"</a></div>");
+  }
   $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars+ "</span><p>" + description + "</p><button class='ion-thumbsup'>" + thumbsup+ "</button><button class='ion-thumbsdown'>" + thumbsdown+ "</button></div>");
 }
 

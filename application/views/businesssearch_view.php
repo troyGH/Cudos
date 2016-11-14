@@ -120,7 +120,7 @@
         });
         marker.setVisible(true);
 
-        var placeinfo = place.place_id  + "|"+ place.name + "|" + escape(place.formatted_phone_number) + "|" + escape(place.formatted_address);
+        var placeinfo = place.place_id  + "|"+ escape(place.name) + "|" + escape(place.formatted_phone_number) + "|" + escape(place.formatted_address);
 
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' +
         place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display/') + placeinfo + "'> View Employees</a>"

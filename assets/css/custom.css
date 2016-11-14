@@ -69,7 +69,8 @@
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  padding: 100px 15px;
+  padding-top: 60px;
+  padding-bottom: 20px;
 }
 
 .map-body{
@@ -126,4 +127,22 @@ a:active{
 }
 a:focus{
   outline: 0;
+}
+
+#review-button{
+  float: none;
+  display:inline;
+  margin: 0px;
+}
+.business-banner{
+  background-image: url('../img/server.png');
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: 100%;
+  -o-background-size: cover;
+  opacity: 0.8;
+}
+.business-banner > p{
+  color: white;
 }
