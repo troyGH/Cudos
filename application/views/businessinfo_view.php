@@ -1,6 +1,13 @@
 <?php $this->load->view('template/header.php'); ?>
 
 <div class="custom-body">
+
+    <?php if($this->session->flashdata('review_success'))
+            echo $this->session->flashdata('review_msg');
+          else
+            echo $this->session->flashdata('review_msg');
+    ?>
+
   <!--Business Info --->
   <div class="col-md-12 well business-banner">
       <h1 ><?php echo $name ?></h1>
@@ -10,13 +17,6 @@
         <?php echo $address; ?>
       </p>
   </div>
-
-  <?php if($this->session->flashdata('review_success'))
-          echo $this->session->flashdata('review_msg');
-        else
-          echo $this->session->flashdata('review_msg');
-
-          ?>
 
   <!--Business's Employees Info --->
   <div class="container text-center well">
@@ -171,7 +171,7 @@ function init(){
         total += parseInt(review['stars']);
         count++;
         displayReviews(review['customer_id'], review['first_name'], review['last_name'], review['stars'],
-      review['description'], review['thumbsup'], review['thumbsdown']);
+      review['description'], review['thumbsup'], review['thumbsdown'], review['timestamp']);
       }
     });
 
@@ -202,7 +202,7 @@ $("a#employee-list").click(function(e){
       total += parseInt(review['stars']);
       count++;
       displayReviews(review['customer_id'], review['first_name'], review['last_name'], review['stars'],
-    review['description'], review['thumbsup'], review['thumbsdown']);
+    review['description'], review['thumbsup'], review['thumbsdown'], review['timestamp']);
     }
   });
   displayEmployeeProfile(employee[employeeNum]['first_name'], employee[employeeNum]['last_name'],
@@ -223,8 +223,8 @@ function displayEmployeeProfile(first, last, title, url, bio, avg){
   $("#employee-avg-stars").text("Average Stars: "+avg+"/5");
 }
 
-function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdown){
-
+function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdown, timestamp){
+  var reviewDateTime = new Date(Date.parse(timestamp));
   var currentID = <?php if($this->session->userdata('login')) echo $this->session->userdata('customer_id'); else echo 0; ?>;
 
   if(cID == currentID){
@@ -232,7 +232,11 @@ function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdo
   }else{
     $("#reviews-here").append("<div class='col-sm-5 well well-sm'><a href='<?php echo base_url('index.php/user/profile/') ?>"  + cID + "'>" +first+' '+last +"</a></div>");
   }
-  $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars+ "</span><p>" + description + "</p><button class='ion-thumbsup'>" + thumbsup+ "</button><button class='ion-thumbsdown'>" + thumbsdown+ "</button></div>");
+  $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars
+  + "</span><p>" + description
+  + "</p><button class='ion-thumbsup'>" + thumbsup
+  + "</button><button class='ion-thumbsdown'>" + thumbsdown + "</button>" +
+  "<span class='pull-right text-muted'>" + reviewDateTime.toDateString() + "</span></div>");
 }
 
 function removeEmployeeProfile(){
@@ -244,9 +248,16 @@ function removeEmployeeProfile(){
 function review_form_client(obj) {
     $.ajax({
        type: 'POST',
-       url: "http://localhost/Cudos/index.php/employee/review",
+       url: "http://localhost/Cudos/employee/review",
        data: $(obj).serialize(),
      });
      return false;
 }
+
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 3000);
+
 </script>

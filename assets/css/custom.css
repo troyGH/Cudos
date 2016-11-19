@@ -146,3 +146,6 @@ a:focus{
 .business-banner > p{
   color: white;
 }
+.alert-info {
+  margin-bottom:0;
+}
