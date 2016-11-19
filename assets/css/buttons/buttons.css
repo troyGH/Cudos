@@ -94,6 +94,8 @@
 }
 .button--border-thick {
 	border: 3px solid;
+	border-color:#f35a1e;
+
 }
 
 /* Individual button styles */
@@ -179,6 +181,7 @@
 }
 .button--ujarak.button--round-s::before {
 	border-radius: 2px;
+	border-color: #f35a1e;
 }
 .button--ujarak.button--inverted::before {
 	background: #7986CB;

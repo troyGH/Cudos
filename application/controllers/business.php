@@ -9,6 +9,8 @@ class Business extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->database();
 		$this->load->model('employee_model');
+		$this->load->model('business_model');
+
 	}
 	function index() {
 		redirect("home");
@@ -18,17 +20,16 @@ class Business extends CI_Controller {
     $arr['location'] = $this->input->get("location");
     $this->load->view('businesssearch_view', $arr);
   }
-	
-	function display($businessInfo){
-    $bData= explode('%7C',$businessInfo);
-		$arr['employees'] = $this->employee_model->get_employees($bData[0]);
-		$arr['reviews'] = $this->employee_model->get_employees_reviews($bData[0]);
-    $arr['id'] = urldecode($bData[0]);
-    $arr['name'] = urldecode($bData[1]);
-    $arr['phone'] = urldecode($bData[2]);
-    $arr['address'] = urldecode($bData[3]);
 
-    $this->load->view('businessinfo_view', $arr);
-  }
+	function display(){
+    $arr['id'] = $this->input->get("bID");
+    $arr['name'] = urldecode($this->input->get("bName"));
+    $arr['phone'] = urldecode($this->input->get("bPhone"));
+    $arr['address'] = urldecode($this->input->get("bAddress"));
+		$arr['employees'] = $this->employee_model->get_employees($arr['id']);
+		$arr['reviews'] = $this->employee_model->get_employees_reviews($arr['id']);
+
+		$this->load->view('businessinfo_view', $arr);
+	}
 }
 ?>

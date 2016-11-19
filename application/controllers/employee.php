@@ -7,6 +7,8 @@ class Employee extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->database();
 		$this->load->model('employee_model');
+		$this->load->model('business_model');
+
 	}
 	function index() {
 		redirect("home");
@@ -17,6 +19,19 @@ class Employee extends CI_Controller {
 		$description = $this->input->post("review");
 		$stars = $this->input->post("stars");
 		$cID = $this->session->userdata('customer_id');
+		$bID = $this->input->post("bID");
+		$bName = $this->input->post("bName");
+		$bAddress = $this->input->post("bAddress");
+		$bPhone = $this->input->post("bPhone");
+
+
+		$is_assoc = $this->business_model->is_associated($bID);
+		if(empty($is_assoc)== true){
+			$insert_id = $this->business_model->create_business(array('google_id' => $bID,'business_name' => $bName,'business_address' => $bAddress,'business_phone' => $bPhone));
+			$new_eID = $this->employee_model->create_anon_employee($insert_id);
+			$eID = $new_eID;
+		}
+
 
 		//Check if customer already reviewed employee
 		if($this->employee_model->is_review_exist($eID, $cID)->reviews_found == 0 ){
@@ -38,7 +53,6 @@ class Employee extends CI_Controller {
 		}
 
   }
-
 
 }
 ?>

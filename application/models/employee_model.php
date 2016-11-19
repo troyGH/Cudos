@@ -45,4 +45,11 @@ AND employeereview.employee_id = $eID");
 		return $query->result()[0];
 	}
 
+	function create_anon_employee($bID){
+		$this->db->query("INSERT INTO employee (first_name, img_url) VALUES ('Anonymous', 'http://localhost/Cudos/assets/img/employee_default.jpg');");
+		$eID = $this->db->insert_id();
+		$this->db->query("INSERT INTO businessemployee (business_id, employee_id) VALUES ($bID, $eID);");
+		return $eID;
+	}
+
 }?>

@@ -69,8 +69,8 @@
               class="button button--ujarak button--border-thick button--text-thick">Review Me</button>
           </div>
         </div>
-  		  <div class="well text-left">
-  			<h1 class="text-center">Employee Bio</h1>
+  		  <div class="well text-left" id="employee-bio-container">
+  			<h1 class="text-center" id="employee-bio-h1">Employee Bio</h1>
   			<hr>
         <p id="employee-bio"><p>
   		  </div>
@@ -88,8 +88,8 @@
   </div> <!--End container --->
 
   <!-- Modal -->
-  <div id="reviewModal" class="modal" role="dialog">
-    <div class="modal-dialog lg">
+  <div id="reviewModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog" role="document">
 
       <!-- Modal content-->
       <div class="modal-content">
@@ -100,11 +100,16 @@
 
         <form onsubmit="review_form_client(this);" id="modal-form">
 
+          <input type="hidden" name="bID" value="<?php echo $id; ?>">
+          <input type="hidden" name="bName" value="<?php echo $name; ?>">
+          <input type="hidden" name="bAddress" value="<?php echo $address; ?>">
+          <input type="hidden" name="bPhone" value="<?php echo $phone; ?>">
           <input type="hidden" id="eid-input" name="eID" value="0">
+
         <div class="modal-body">
           <div class="form-group">
             <label for="review">Review:</label>
-            <textarea class="form-control" row="5" name="review"> Be nice...</textarea>
+            <textarea class="form-control" row="5" name="review"> </textarea>
           </div>
         </div>
         <div class="modal-footer">
@@ -115,10 +120,8 @@
             <option>4</option>
             <option>5</option>
           </select>
-          <button type="submit" class="btn btn-primary">Review</button>
-          <?php $attributes = array('class' => 'button', 'name' => 'review-btn');
-          echo form_submit( $attributes, 'Review'); ?>
-
+            <?php $attributes = array('class' => 'btn btn-primary', 'name' => 'review-btn');
+            echo form_submit( $attributes, 'Review'); ?>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </form>
         </div>
@@ -240,8 +243,9 @@ function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdo
 }
 
 function removeEmployeeProfile(){
-  $("#employee-profile").hide();
-  $("#reviews-display").toggleClass('col-sm-7 col-sm-10');
+  $("#employee-name").text("Anonymous");
+   $("#employee-bio-container").remove();
+
 }
 
 
@@ -249,9 +253,9 @@ function review_form_client(obj) {
     $.ajax({
        type: 'POST',
        url: "http://localhost/Cudos/employee/review",
-       data: $(obj).serialize(),
+       data:  $(obj).serialize(),
      });
-     return false;
+     return true;
 }
 
 window.setTimeout(function() {

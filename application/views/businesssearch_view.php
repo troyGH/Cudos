@@ -75,9 +75,9 @@
     markersArray.push(marker);
 
     marker.addListener('click', function() {
-      var placeinfo = place.place_id  + "|"+ escape(place.name) + "|" + escape(place.formatted_phone_number) + "|" + escape(place.formatted_address);
       infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' +
-      place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display/') + placeinfo + "'> View Employees</a>");
+      place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
+      '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + "'> View Employees</a>");
          infoWindow.open(map, this);
     });
   }
@@ -120,12 +120,9 @@
         });
         marker.setVisible(true);
 
-        var placeinfo = place.place_id  + "|"+ escape(place.name) + "|" + escape(place.formatted_phone_number) + "|" + escape(place.formatted_address);
-
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' +
-        place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display/') + placeinfo + "'> View Employees</a>"
-
-        );
+        place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
+        '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + "'> View Employees</a>");
 
         infowindow.open(map, marker);
       });
