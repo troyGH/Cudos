@@ -28,55 +28,79 @@
         <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coffee-Shot.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
     </video>
 </header>
-<section class="bg-primary" id="intro">
+
+<head>
+<script type="text/javascript">
+<!--
+function redirect() {
+    window.location = "http://www.youtube.com/"
+
+}
+//-->
+</script>
+
+ </head>
+<section class="bg-primary" id="intro"); >
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
-                <h2 class="margin-top-0 text-primary">Built On The Bootstrap Grid</h2>
+                <h2 class="margin-top-0 text-primary" style="color:#FF4733  " >Cudos</h2>
                 <br>
-                <p class="text-faded">
-                    Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
+                <p class="text-faded"  style="font-size:180% ;color:black;" align="right";>
+                  <b>  You use Cudos to find almost all the bussiness that you are intersetd in with their reviews. You can find anything from your local bussiness to some big famouse companies.
                 </p>
-                <a href="#three" class="btn btn-default btn-xl page-scroll">Learn More</a>
+<input type="button" onclick="redirect()"  style="color:orange"; size="250" value="Watch the tour" > 
             </div>
         </div>
     </div>
 </section>
-<section id="highlights">
+
+<section id="highlights" style="  background-image: url(<?php echo base_url('assets/img');?>/c.jpg");>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="margin-top-0 text-primary">Flexible Layouts</h2>
+                <h2 class="margin-top-0 text-primary" style="color:#FF4733"  >Cudos</h2>
                 <hr class="primary">
             </div>
         </div>
     </div>
+
+
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 text-center">
                 <div class="feature">
                     <i class="icon-lg ion-android-laptop wow fadeIn" data-wow-delay=".3s"></i>
                     <h3>Responsive</h3>
-                    <p class="text-muted">Your site looks good everywhere</p>
+                    <p class="text-muted" style="font:bold;"> <b> Search, Choose and Rate an employee from San Francisco to Paris</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 text-center">
                 <div class="feature">
                     <i class="icon-lg ion-social-sass wow fadeInUp" data-wow-delay=".2s"></i>
                     <h3>Customizable</h3>
-                    <p class="text-muted">Easy to theme and customize with SASS</p>
+                    <p class="text-muted"> <b> Easy to work with</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 text-center">
                 <div class="feature">
                     <i class="icon-lg ion-ios-star-outline wow fadeIn" data-wow-delay=".3s"></i>
                     <h3>Consistent</h3>
-                    <p class="text-muted">A mature, well-tested, stable codebase</p>
+                    <p class="text-muted"> <b> A mature, well-tested, stable Web app</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
 <section id="gallery" class="no-padding">
     <div class="container-fluid">
         <div class="row no-gutter">
@@ -163,7 +187,7 @@
             <div class="media wow fadeInRight">
                 <h3>Simple</h3>
                 <div class="media-body media-middle">
-                    <p>What could be easier? Get started fast with this landing page starter theme.</p>
+                    <p>What could be easier? Get information and reviews fast with us.</p>
                 </div>
                 <div class="media-right">
                     <i class="icon-lg ion-ios-bolt-outline"></i>
@@ -176,14 +200,14 @@
                     <a href="#alertModal" data-toggle="modal" data-target="#alertModal"><i class="icon-lg ion-ios-cloud-download-outline"></i></a>
                 </div>
                 <div class="media-body media-middle">
-                    <p>Yes, please. Grab it for yourself, and make something awesome with this.</p>
+                    <p>Yes, just sign up and have your best experience ever.</p>
                 </div>
             </div>
             <hr>
             <div class="media wow fadeInRight">
                 <h3>Unique</h3>
                 <div class="media-body media-middle">
-                    <p>Because you don't want your Bootstrap site, to look like a Bootstrap site.</p>
+                    <p> To search for everything from the city's tastiest pizza to the most popular beauty salon. What will you uncover in your neighborhood?</p>
                 </div>
                 <div class="media-right">
                     <i class="icon-lg ion-ios-snowy"></i>
@@ -196,14 +220,14 @@
                     <i class="icon-lg ion-ios-heart-outline"></i>
                 </div>
                 <div class="media-body media-middle">
-                    <p>There's good reason why Bootstrap is the most used frontend framework in the world.</p>
+                    <p>There's good reason why Cudos is the most used serach and review website in the world.</p>
                 </div>
             </div>
             <hr>
             <div class="media wow fadeInRight">
                 <h3>Tested</h3>
                 <div class="media-body media-middle">
-                    <p>Bootstrap is matured and well-tested. It's a stable codebase that provides consistency.</p>
+                    <p>Cudos is matured and well-tested. It's a stable codebase that provides consistency.</p>
                 </div>
                 <div class="media-right">
                     <i class="icon-lg ion-ios-flask-outline"></i>
@@ -212,7 +236,7 @@
         </div>
     </div>
 </section>
-<section id="about">
+<section id="about" style="background-image: url(<?php echo base_url('assets/img');?>/org.jpg");>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -221,45 +245,49 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" );>
         <div class="row">
-            <p class="wow fadeInDown"> BLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus odio augue, vel placerat sem tempus quis.
-              Aliquam erat volutpat. Curabitur commodo, risus sed dictum viverra, enim tortor blandit sem, vel lacinia urna nulla vitae eros.
-              Mauris auctor, risus non pulvinar aliquet, urna ante venenatis nibh, vel vestibulum leo nibh et lectus. Sed ornare tincidunt erat, finibus mollis arcu tempor et.
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut volutpat felis sit amet porttitor euismod.</p>
-        </div>
+            <p class="wow fadeInDown" style="font-size:200%; color: #570E04" ; > <b> SJSU Software Engineers </p>
+            
+</div>
+
+<br>
+
+<div class="container">
+ <div class="col-md-3">
+  <img src="<?php echo base_url('assets/img');?>/troy.jpg" align="left" class="img-circle" alt="Troy" width="200" height="200">
+      <h3> <br/> <b>Troy</h3>
+
+  </div>
+   <div class="col-md-3">
+   <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAVuAAAAJDA3YjY3ZTQ4LTk2NjItNGQ5NS05OWFiLWVmMjg5MDA3MzAyYg.jpg" align="center" class="img-circle" alt="Roya" width="200" height="200">
+       <h3> <b></b>Roya</h3>
+
+   </div>
+    <div class="col-md-3">
+    <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAg1AAAAJGY0Y2U0OTYwLTFlNzUtNDIxYS1hMzkyLTlkZjNkYTQxMmQ5Zg.jpg" align="right" class="img-circle" alt="Eya" width="200" height="200" >
+    <h3> <br/> <b> Eya</h3>
+    </div>
+     <div class="col-md-3">
+     <img src="<?php echo base_url('assets/img');?>/sueng.jpg" align="right" class="img-circle" alt="sueng" width="200" height="200">
+     <br> </br>
+          <br> </br>
+         <h3> <br/> <b> Sueng</h3>
+
+     </div>
+</div>
+
+
+
     </div>
 </section>
-<aside>
-    <div class="container text-center">
-        <div class="call-to-action">
-            <h2 class="text-primary">Get Started</h2>
-            <a href="http://www.bootstrapzero.com/bootstrap-template/landing-zero" target="ext" class="btn btn-default btn-lg wow flipInX">Free Download</a>
-        </div>
-        <br>
-        <hr/>
-        <br>
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
-                <div class="row">
-                    <h6 class="wide-space text-center">BOOTSTRAP IS BASED ON THESE STANDARDS</h6>
-                    <div class="col-sm-3 col-xs-6 text-center">
-                        <i class="icon-lg ion-social-html5-outline" title="html 5"></i>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 text-center">
-                        <i class="icon-lg ion-social-sass" title="sass"></i>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 text-center">
-                        <i class="icon-lg ion-social-javascript-outline" title="javascript"></i>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 text-center">
-                        <i class="icon-lg ion-social-css3-outline" title="css 3"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</aside>
+
+
+
+
+
+
+
 
 <section id="contact">
     <div class="container">
