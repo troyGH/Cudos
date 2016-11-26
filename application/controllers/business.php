@@ -31,5 +31,15 @@ class Business extends CI_Controller {
 
 		$this->load->view('businessinfo_view', $arr);
 	}
+
+	function is_associated(){
+		$id = $this->input->post("gID");
+		$result = $this->business_model->is_associated($id);
+		if($result){
+			echo json_encode($result[0]);
+		}else{
+			echo json_encode(0);
+		}
+	}
 }
 ?>

@@ -18,7 +18,6 @@ class User extends CI_Controller {
   }
 
 	function profile($cID){
-		echo "Profile ID is $cID";
 	}
 
 

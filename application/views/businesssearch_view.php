@@ -75,10 +75,35 @@
     markersArray.push(marker);
 
     marker.addListener('click', function() {
-      infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' +
-      place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
-      '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + "'> View Employees</a>");
-         infoWindow.open(map, this);
+      var self = this;
+      $.ajax({
+          type: "POST",
+          url: "http://localhost/Cudos/business/is_associated",
+          data: {gID: place.place_id},
+          success: function(data){
+            var result = $.parseJSON(data);
+            var associated = "";
+            console.log(result['is_associated']);
+            if(result['is_associated'] == 1){
+              associated = '<span class="glyphicon glyphicon-ok"></span>';
+            }
+
+            windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ place.name  + associated + '</div>' +
+                            '<div class="iw-content">' +
+                            '<div class="iw-subTitle">Phone</div>' +
+                            '<p>' + place.formatted_phone_number +'</p>' +
+                            '<div class="iw-subTitle">Address</div>' +
+                            '<p>' + place.formatted_address +'</p>' +
+                            '<a href="' +   window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
+                            '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + '"' +
+                            'type="button" class="btn btn-warning">View Employees</a></div></div>';
+
+            infoWindow.setContent(windowContent);
+            infoWindow.open(map,self);
+          }
+      });
+
+      console.log(this);
     });
   }
 
@@ -120,11 +145,32 @@
         });
         marker.setVisible(true);
 
-        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + place.formatted_phone_number + '<br>' +
-        place.formatted_address + '<br>' + "<a href='" + window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
-        '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + "'> View Employees</a>");
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/Cudos/business/is_associated",
+            data: {gID: place.place_id},
+            success: function(data){
+                var result = $.parseJSON(data);
+                var associated = "";
+                if(result['is_associated'] == 1){
+                  associated = '<span class="glyphicon glyphicon-ok"></span>';
+                }
 
-        infowindow.open(map, marker);
+                windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ place.name  + associated + '</div>' +
+                                '<div class="iw-content">' +
+                                '<div class="iw-subTitle">Phone</div>' +
+                                '<p>' + place.formatted_phone_number +'</p>' +
+                                '<div class="iw-subTitle">Address</div>' +
+                                '<p>' + place.formatted_address +'</p>' +
+                                '<a href="' +   window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
+                                '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + '"' +
+                                'type="button" class="btn btn-warning">View Employees</a></div></div>';
+
+                infowindow.setContent(windowContent);
+                infowindow.open(map, marker);
+
+            }
+        });
       });
 
   }

@@ -104,7 +104,7 @@ i{
   box-shadow: 0 0 4px rgba(0, 0, 0, .2);
 }
 
-.Business-body>#topNav{
+#topNav{
   background-color: #262C3A;
   opacity: 0.9;
 }
@@ -148,4 +148,28 @@ a:focus{
 }
 .alert-info {
   margin-bottom:0;
+}
+
+#iw-container .iw-title {
+    font-size: 30px;
+    font-weight: 400;
+    padding: 10px;
+    background-color: #f35a1e;
+    color: white;
+    margin: 0;
+    border-radius: 2px 2px 0 0;
+}
+#iw-container a{
+  background-color: #f35a1e;
+}
+#iw-container .iw-content {
+    max-height: 500px;
+}
+#iw-container p {
+      font-size: 15px;
+}
+.iw-subTitle {
+    font-size: 19px;
+    font-weight: 700;
+    padding: 5px 0;
 }
