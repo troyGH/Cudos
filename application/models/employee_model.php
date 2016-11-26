@@ -52,4 +52,12 @@ AND employeereview.employee_id = $eID");
 		return $eID;
 	}
 
+	function edit_review($eID, $description, $stars, $cID){
+		$this->db->query("UPDATE review a
+		JOIN employeereview b ON a.review_id = b.review_id
+		JOIN customerreview c ON a.review_id = c.review_id
+		SET a.stars = $stars, a.description = '$description', a.IsModified = 'True' WHERE b.employee_id = $eID AND c.customer_id = $cID;");
+
+	}
+
 }?>

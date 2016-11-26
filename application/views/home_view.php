@@ -19,7 +19,7 @@
   <br />
     <br />
           <div class="form-group">
-            <button type="submit" class="button button--ujarak button--border-thick button--text-thick">Search</button>
+            <button type="submit" class="btn btn-primary">Search</button>
           </div>
           <?php echo form_close();?>
         </div>
@@ -49,7 +49,7 @@ function redirect() {
                 <p class="text-faded"  style="font-size:180% ;color:black;" align="right";>
                   <b>  You use Cudos to find almost all the bussiness that you are intersetd in with their reviews. You can find anything from your local bussiness to some big famouse companies.
                 </p>
-<input type="button" onclick="redirect()"  style="color:orange"; size="250" value="Watch the tour" > 
+<input type="button" onclick="redirect()"  style="color:orange"; size="250" value="Watch the tour" >
             </div>
         </div>
     </div>
@@ -248,7 +248,7 @@ function redirect() {
     <div class="container" );>
         <div class="row">
             <p class="wow fadeInDown" style="font-size:200%; color: #570E04" ; > <b> SJSU Software Engineers </p>
-            
+
 </div>
 
 <br>

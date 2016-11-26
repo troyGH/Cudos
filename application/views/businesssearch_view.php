@@ -95,7 +95,7 @@
                             '<div class="iw-subTitle">Address</div>' +
                             '<p>' + place.formatted_address +'</p>' +
                             '<a href="' +   window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
-                            '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + '"' +
+                            '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + '&isAssoc=' + result['is_associated'] + '"' +
                             'type="button" class="btn btn-warning">View Employees</a></div></div>';
 
             infoWindow.setContent(windowContent);
@@ -163,7 +163,7 @@
                                 '<div class="iw-subTitle">Address</div>' +
                                 '<p>' + place.formatted_address +'</p>' +
                                 '<a href="' +   window.location.href.split('?')[0].replace('search', 'display?bID=') + place.place_id+
-                                '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + '"' +
+                                '&bName='+ escape(place.name) + '&bAddress='+ escape(place.formatted_address) + '&bPhone='+ escape(place.formatted_phone_number) + '&isAssoc=' + result['is_associated']  +'"' +
                                 'type="button" class="btn btn-warning">View Employees</a></div></div>';
 
                 infowindow.setContent(windowContent);

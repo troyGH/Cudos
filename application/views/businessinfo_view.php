@@ -10,7 +10,7 @@
 
   <!--Business Info --->
   <div class="col-md-12 well business-banner">
-      <h1 ><?php echo $name ?></h1>
+      <h1 > <?php if($this->input->get("isAssoc") == 0) echo $name; else echo $name.'<span class="glyphicon glyphicon-ok"></span>'; ?></h1>
       <p align="center">
         <?php echo $phone; ?>
         <br>
@@ -60,19 +60,17 @@
   		  <div class="well">
   			<h1 id="employee-name"></h1>
         <h4 id="employee-title"><h4>
-  			<hr>
   			<img id="employee-picture" src="<?php echo base_url(); ?>/assets/img/employee_default.jpg" class="img-circle" height="100" width="100" alt="Avatar">
         <h5 id="employee-avg-stars">
         </h5>
           <div class="form-group">
             <button id="review-button" type="submit"  data-toggle="modal"  data-target="<?php if($this->session->userdata('login')) echo "#reviewModal"; else echo "#loginModal";?>"
-              class="button button--ujarak button--border-thick button--text-thick">Review Me</button>
+              class="btn btn-primary">Review Me</button>
           </div>
         </div>
   		  <div class="well text-left" id="employee-bio-container">
   			<h1 class="text-center" id="employee-bio-h1">Employee Bio</h1>
-  			<hr>
-        <p id="employee-bio"><p>
+        <p id="employee-bio" class="text-center"><p>
   		  </div>
   		</div> <!--End Employee Profile --->
 
@@ -122,13 +120,13 @@
           </select>
             <?php $attributes = array('class' => 'btn btn-primary', 'name' => 'review-btn');
             echo form_submit( $attributes, 'Review'); ?>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </form>
         </div>
       </div>
 
     </div>
   </div>
+
   <!-- Modal -->
   <div id="loginModal" class="modal" role="dialog">
     <div class="modal-dialog sm">
@@ -147,6 +145,48 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url(); ?>index.php/user/login'">Login</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="editModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog" role="document">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title" id="form-title"></h3>
+        </div>
+
+        <form onsubmit="edit_form_client(this);" id="modal-form">
+
+          <input type="hidden" name="bID" value="<?php echo $id; ?>">
+          <input type="hidden" name="bName" value="<?php echo $name; ?>">
+          <input type="hidden" name="bAddress" value="<?php echo $address; ?>">
+          <input type="hidden" name="bPhone" value="<?php echo $phone; ?>">
+          <input type="hidden" id="eid-input2" name="edit-eID" value="0">
+
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="review">Review:</label>
+            <textarea class="form-control" row="5" name="edit-review" id="edit-text"> </textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <select class="pull-left" name="edit-stars" id="edit-stars">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+            <?php $attributes = array('class' => 'btn btn-primary', 'name' => 'review-btn');
+            echo form_submit( $attributes, 'Edit'); ?>
+        </form>
         </div>
       </div>
 
@@ -183,6 +223,8 @@ function init(){
     employee[0]['about_me'], total/count);
 
     $("#eid-input").val(employee[0]['employee_id']);
+    $("#eid-input2").val(employee[0]['employee_id']);
+
   }
   else{
     removeEmployeeProfile();
@@ -198,6 +240,8 @@ $("a#employee-list").click(function(e){
   $('.alert').hide();
 
   $("#eid-input").val(employee[employeeNum]['employee_id']);
+  $("#eid-input2").val(employee[employeeNum]['employee_id']);
+
 
   $("#reviews-here").empty();
   reviews.forEach(function(review){
@@ -223,7 +267,7 @@ function displayEmployeeProfile(first, last, title, url, bio, avg){
   if(isNaN(avg))
     avg=0;
 
-  $("#employee-avg-stars").text("Average Stars: "+avg+"/5");
+  $("#employee-avg-stars").text("Average Stars: "+avg.toPrecision(2)+"/5.0");
 }
 
 function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdown, timestamp){
@@ -232,14 +276,20 @@ function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdo
 
   if(cID == currentID){
     $("#reviews-here").append("<div class='col-sm-5 well well-sm'>"  + 'Me' +"</div>");
+    $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars
+    + "</span><p>" + description
+    + "</p><button class='btn btn-default' data-toggle='modal'  data-target='#editModal'>" + 'Edit' + '</button>' +
+    "<span class='pull-right text-muted'>" + reviewDateTime.toDateString() + "</span></div>");
+    $('#edit-stars').val(stars);
+    $('#edit-text').val(description);
   }else{
     $("#reviews-here").append("<div class='col-sm-5 well well-sm'><a href='<?php echo base_url('index.php/user/profile/') ?>"  + cID + "'>" +first+' '+last +"</a></div>");
+    $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars
+    + "</span><p>" + description
+    + "</p><button class='ion-thumbsup'>" + thumbsup
+    + "</button><button class='ion-thumbsdown'>" + thumbsdown + "</button>" +
+    "<span class='pull-right text-muted'>" + reviewDateTime.toDateString() + "</span></div>");
   }
-  $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars
-  + "</span><p>" + description
-  + "</p><button class='ion-thumbsup'>" + thumbsup
-  + "</button><button class='ion-thumbsdown'>" + thumbsdown + "</button>" +
-  "<span class='pull-right text-muted'>" + reviewDateTime.toDateString() + "</span></div>");
 }
 
 function removeEmployeeProfile(){
@@ -257,6 +307,20 @@ function review_form_client(obj) {
      });
      return true;
 }
+
+function edit_form_client(obj) {
+    $.ajax({
+       type: 'POST',
+       url: "http://localhost/Cudos/employee/edit_review",
+       data:  $(obj).serialize(),
+       success: function(data){
+         var result = $.parseJSON(data);
+         alert(result);
+       }
+     });
+     return true;
+}
+
 
 window.setTimeout(function() {
     $(".alert").fadeTo(500, 0).slideUp(500, function(){

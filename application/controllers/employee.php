@@ -53,6 +53,14 @@ class Employee extends CI_Controller {
 		}
 
   }
+	function edit_review(){
+		$eID = $this->input->post("edit-eID");
+		$description = $this->input->post("edit-review");
+		$stars = $this->input->post("edit-stars");
+		$cID = $this->session->userdata('customer_id');
+
+		$this->employee_model->edit_review($eID, $description, $stars, $cID);
+  }
 
 }
 ?>
