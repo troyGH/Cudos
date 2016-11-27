@@ -64,6 +64,7 @@
 							echo "<p>Member Since: ".$user_info['signup_date'].'</p>';
 							echo "<p>City: ".$user_info['city'].'</p>';
 							echo "<p>State: ".$user_info['state'].'</p>';
+							echo "<p>Country: ".$user_info['country'].'</p>';
 							?>
             </div>
 
