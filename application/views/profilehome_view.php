@@ -58,6 +58,10 @@
             <div id="home" class="tab-pane fade in active" >
 							<h2>Personal Information</h2>
 							<?php
+							if($user_info['customer_id'] == $this->session->userdata('customer_id'))
+							$test = "true";
+							else $test = "false";
+							echo "<p>True or false: ".$test.'</p>';
 							echo "<p>ID: ".$user_info['customer_id'].'</p>';
 							echo "<p>First Name: ".$user_info['first_name'].'</p>';
 							echo "<p>Last Name: ".$user_info['last_name'].'</p>';
