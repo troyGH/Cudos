@@ -21,7 +21,8 @@
                 }
                 else{
                   echo "This business is not associated with Cudos, but you still can review anonymously.";
-                } ?>
+                }
+          ?>
         </div>
       </div>
 
@@ -295,8 +296,8 @@ function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdo
     $("#reviews-here").append("<div class='col-sm-5 well well-sm'><a href='<?php echo base_url('index.php/user/profile/') ?>"  + cID + "'>" +first+' '+last +"</a></div>");
     $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars
     + "</span><p>" + description
-    + "</p><button class='ion-thumbsup'>" + thumbsup
-    + "</button><button class='ion-thumbsdown'>" + thumbsdown + "</button>" +
+    + "</p><a role='button' class='ion-thumbsup'>" + thumbsup
+    + "</a>&nbsp;&nbsp;<a class='ion-thumbsdown'>" + thumbsdown + "</a>" +
     "<span class='pull-right text-muted'>" + reviewDateTime.toDateString() + "</span></div>");
   }
 }
