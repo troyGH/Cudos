@@ -32,9 +32,9 @@ AND t3.employee_id = t4.employee_id AND t4.review_id = t5.review_id AND t6.revie
 
 		$this->db->insert('customerreview',$arr);
 
-		$arr['review_id'] = $arr['review_id'];
-		$arr['employee_id'] = $info['employee_id'];
-		$this->db->insert('employeereview',$arr);
+		$new_arr['review_id'] = $arr['review_id'];
+		$new_arr['employee_id'] = $info['employee_id'];
+		$this->db->insert('employeereview',$new_arr);
 	}
 
 	function is_review_exist($eID, $cID){

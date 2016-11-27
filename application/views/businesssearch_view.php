@@ -83,11 +83,11 @@
           success: function(data){
             var result = $.parseJSON(data);
             var associated = "";
-            console.log(result['is_associated']);
             if(result['is_associated'] == 1){
               associated = '<span class="glyphicon glyphicon-ok"></span>';
+            }else{
+              result['is_associated'] = 0;
             }
-
             windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ place.name  + associated + '</div>' +
                             '<div class="iw-content">' +
                             '<div class="iw-subTitle">Phone</div>' +
@@ -154,6 +154,8 @@
                 var associated = "";
                 if(result['is_associated'] == 1){
                   associated = '<span class="glyphicon glyphicon-ok"></span>';
+                }else{
+                  result['is_associated'] = 0;
                 }
 
                 windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ place.name  + associated + '</div>' +
@@ -181,7 +183,7 @@
       }
   }
   </script>
-  <input id="pac-input" class="form-control" type="text" placeholder="Search for a nearby business">
+  <input id="pac-input" class="form-control" type="text" placeholder="Search for a specific business">
   <div id="map"></div>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-6CzpsxPQPdiOV_3M0QhATgjyTqO7JQE&libraries=places&callback=initMap" async defer>
   </script>

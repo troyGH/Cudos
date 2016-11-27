@@ -38,7 +38,8 @@ class Business extends CI_Controller {
 		if($result){
 			echo json_encode($result[0]);
 		}else{
-			echo json_encode(0);
+			$result['is_associated'] = 0;
+			echo json_encode($result);
 		}
 	}
 }

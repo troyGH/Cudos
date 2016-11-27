@@ -1,26 +1,32 @@
 <?php $this->load->view('template/header.php'); ?>
 
 <div class="custom-body">
-
-    <?php if($this->session->flashdata('review_success'))
-            echo $this->session->flashdata('review_msg');
-          else
-            echo $this->session->flashdata('review_msg');
-    ?>
-
   <!--Business Info --->
   <div class="col-md-12 well business-banner">
       <h1 > <?php if($this->input->get("isAssoc") == 0) echo $name; else echo $name.'<span class="glyphicon glyphicon-ok"></span>'; ?></h1>
-      <p align="center">
-        <?php echo $phone; ?>
-        <br>
+        <p><?php echo $phone; ?><br>
         <?php echo $address; ?>
       </p>
   </div>
 
+      <?php if($this->session->flashdata('review_success'))
+              echo $this->session->flashdata('review_msg');
+            else
+              echo $this->session->flashdata('review_msg');
+      ?>
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <?php if($this->input->get("isAssoc") == 1){
+                    echo "This business is associated with Cudos.";
+                }
+                else{
+                  echo "This business is not associated with Cudos, but you still can review anonymously.";
+                } ?>
+        </div>
+      </div>
+
   <!--Business's Employees Info --->
   <div class="container text-center well">
-
         <!--Employee List --->
         <div class="col-sm-2 well" id="well-config">
           <h1>Employees</h1>
@@ -102,23 +108,25 @@
           <input type="hidden" name="bName" value="<?php echo $name; ?>">
           <input type="hidden" name="bAddress" value="<?php echo $address; ?>">
           <input type="hidden" name="bPhone" value="<?php echo $phone; ?>">
+          <input type="hidden" name="isAssoc" value="<?php echo $this->input->get('isAssoc'); ?>">
           <input type="hidden" id="eid-input" name="eID" value="0">
 
         <div class="modal-body">
           <div class="form-group">
             <label for="review">Review:</label>
-            <textarea class="form-control" row="5" name="review"> </textarea>
+            <textarea class="form-control" row="5" name="review" required> </textarea>
           </div>
         </div>
         <div class="modal-footer">
-          <select class="pull-left" name="stars">
+          <select class="pull-left" name="stars" required>
+            <option value="">Select Stars</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
             <option>5</option>
           </select>
-          <button type="submit" class="btn btn-primary"> Edit </button>
+          <button type="submit" class="btn btn-primary"> Review </button>
         </form>
         </div>
       </div>
@@ -134,15 +142,15 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Review Form for [Selected Employee]</h4>
+          <h4 class="modal-title">Review Form for </h4>
         </div>
 
         <div class="modal-body">
           <h3> You are not logged in.</h3>
+          <p>Already have an account? <a href="http://localhost/Cudos/user/login/">Login  Here </a>. Otherwise, <a href="http://localhost/Cudos/user/signup/"> Signup Here </a>. </p>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url(); ?>index.php/user/login'">Login</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -167,15 +175,17 @@
           <input type="hidden" name="bName" value="<?php echo $name; ?>">
           <input type="hidden" name="bAddress" value="<?php echo $address; ?>">
           <input type="hidden" name="bPhone" value="<?php echo $phone; ?>">
+          <input type="hidden" name="isAssoc" value="<?php echo $this->input->get('isAssoc'); ?>">
           <input type="hidden" id="eid-input2" name="edit-eID" value="0">
 
         <div class="modal-body">
           <div class="form-group">
             <label for="review">Review:</label>
-            <textarea class="form-control" row="5" name="edit-review" id="edit-text"> </textarea>
+            <textarea class="form-control" row="5" name="edit-review" id="edit-text" required> </textarea>
           </div>
         </div>
         <div class="modal-footer">
+          <label for="edit-stars" class="pull-left">Stars:</label>
           <select class="pull-left" name="edit-stars" id="edit-stars">
             <option>1</option>
             <option>2</option>

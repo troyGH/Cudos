@@ -24,14 +24,12 @@ class Employee extends CI_Controller {
 		$bAddress = $this->input->post("bAddress");
 		$bPhone = $this->input->post("bPhone");
 
-
 		$is_assoc = $this->business_model->is_associated($bID);
 		if(empty($is_assoc)== true){
 			$insert_id = $this->business_model->create_business(array('google_id' => $bID,'business_name' => $bName,'business_address' => $bAddress,'business_phone' => $bPhone));
 			$new_eID = $this->employee_model->create_anon_employee($insert_id);
 			$eID = $new_eID;
 		}
-
 
 		//Check if customer already reviewed employee
 		if($this->employee_model->is_review_exist($eID, $cID)->reviews_found == 0 ){
@@ -62,6 +60,10 @@ class Employee extends CI_Controller {
 		$time = now('US/Pacific');
 		$ts = mdate($dateString, $time);
 		$this->employee_model->edit_review($eID, $description, $stars, $cID, $ts);
+		$this->session->set_flashdata('review_success', TRUE);
+		$this->session->set_flashdata('review_msg', '<div class="alert alert-success text-center alert-info">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<span class="glyphicon glyphicon-ok"></span> <strong> Success!</strong> Review edited!</div>');
   }
 
 }

@@ -7,7 +7,6 @@ class Business_model extends CI_Model {
 
 	function is_associated($gID){
 		$query = $this->db->query("SELECT is_associated FROM business WHERE google_id='$gID';");
-
 		return $query->result();
 	}
 
