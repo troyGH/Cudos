@@ -118,8 +118,7 @@
             <option>4</option>
             <option>5</option>
           </select>
-            <?php $attributes = array('class' => 'btn btn-primary', 'name' => 'review-btn');
-            echo form_submit( $attributes, 'Review'); ?>
+          <button type="submit" class="btn btn-primary"> Edit </button>
         </form>
         </div>
       </div>
@@ -313,10 +312,6 @@ function edit_form_client(obj) {
        type: 'POST',
        url: "http://localhost/Cudos/employee/edit_review",
        data:  $(obj).serialize(),
-       success: function(data){
-         var result = $.parseJSON(data);
-         alert(result);
-       }
      });
      return true;
 }

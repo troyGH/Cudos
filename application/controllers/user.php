@@ -18,6 +18,12 @@ class User extends CI_Controller {
   }
 
 	function profile($cID){
+		$user =	$this->user_model->get_public_user_by_id($cID);
+		$arr['user_info'] = $user[0];
+		$reviews =	$this->user_model->get_user_reviews_by_id($cID);
+		$arr['reviews'] =  $reviews;
+
+		$this->load->view('profilehome_view', $arr);
 	}
 
 

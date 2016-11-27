@@ -58,8 +58,10 @@ class Employee extends CI_Controller {
 		$description = $this->input->post("edit-review");
 		$stars = $this->input->post("edit-stars");
 		$cID = $this->session->userdata('customer_id');
-
-		$this->employee_model->edit_review($eID, $description, $stars, $cID);
+		$dateString = '%Y-%m-%d %H:%i:%s';
+		$time = now('US/Pacific');
+		$ts = mdate($dateString, $time);
+		$this->employee_model->edit_review($eID, $description, $stars, $cID, $ts);
   }
 
 }

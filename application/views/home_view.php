@@ -13,7 +13,7 @@
                               echo form_open("business/search", $attributes);  ?>
           <div class="form-group">
             <input id="business-input" class="form-control" name="business" type="text" placeholder="Business" require="">
-            <input id="location-input" class="form-control" name="location" type="text" placeholder="City, State, or Zip"  require="">
+            <input id="location-input" class="form-control" name="location" type="text" placeholder="City, State, or Zip"  require />
           </div>
           <br />
   <br />

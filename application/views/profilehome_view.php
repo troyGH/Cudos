@@ -13,12 +13,12 @@
 <?php $this->load->view('template/header.php'); ?>
 <div class="container custom-body">
 
-    
+
 		<div class="col-md-3">
 			<div class="profile-sidebar" align=center>
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img class="img-rounded" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAVuAAAAJDA3YjY3ZTQ4LTk2NjItNGQ5NS05OWFiLWVmMjg5MDA3MzAyYg.jpg" class="img-responsive" alt="">
+					<img class="img-rounded" src=<?php echo "'".$user_info['img_url']."'";?> class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -56,26 +56,50 @@
 		<div class="col-md-9 tab-content" align=center>
 		<div class="tabs" style="text-align: left;display: inline-block">
             <div id="home" class="tab-pane fade in active" >
-			   <h2>Personal Information</h2>
-			   Roya<br>
-			   Developer
+							<h2>Personal Information</h2>
+							<?php
+							echo "<p>First Name: ".$user_info['first_name'].'</p>';
+							echo "<p>Last Name: ".$user_info['last_name'].'</p>';
+							echo "<p>About Me: ".$user_info['about_me'].'</p>';
+							echo "<p>Member Since: ".$user_info['signup_date'].'</p>';
+							echo "<p>City: ".$user_info['city'].'</p>';
+							echo "<p>State: ".$user_info['state'].'</p>';
+							?>
             </div>
+
 
             <div id="menu1" class="tab-pane fade">
             <h2>settings</h2>
             </div>
              <div id="menu2" class="tab-pane fade">
-            reviews
+							 <h2>Reviews</h2>
+
+							 <?php
+							 foreach($reviews as $review){
+								 echo "<div class='well'><p>Employeee: ".$review['first_name'].' '.$review['last_name'].'</p>';
+								 echo "<p>Business Name: ".$review['business_name'].'</p>';
+								 echo "<p>Business Google ID: ".$review['google_id'].'</p>';
+								 echo "<p>Business Address: ".$review['business_address'].'</p>';
+								 echo "<p>Business Phone: ".$review['business_phone'].'</p>';
+								 echo "<p>Is Associated: ".$review['is_associated'].'</p>';
+								 echo "<p>TimeStamp: ".$review['timestamp'].'</p>';
+								 echo "<p>Description: ".$review['description'].'</p>';
+								 echo "<p>Stars: ".$review['stars'].'</p>';
+								 echo "<p>Thumbs Up: ".$review['ThumbsUp'].'</p>';
+								 echo "<p>Thumbs Down: ".$review['ThumbsDown'].'</p></div>';
+							 }
+							 ?>
+
             </div>
              <div id="menu3" class="tab-pane fade">
             help
             </div>
 		</div>
 		</div>
-	
+
 
 <center>
 </div> <!-- /container -->
 
-
 <?php $this->load->view('template/footer.php'); ?>
+<?php
