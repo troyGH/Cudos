@@ -26,7 +26,7 @@
                       <input type="text" class="form-control" title="No spam, we promise!" placeholder="Tell us your email">
                     </div>
                     <div class="form-group">
-                      <button class="button button--ujarak button--border-thick button--text-thick" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
                     </div>
                 </form>
             </div>
@@ -35,7 +35,6 @@
                 <ul class="list-inline">
                   <li><a rel="nofollow" href="" title="Twitter"><i class="icon-lg ion-social-twitter-outline"></i></a>&nbsp;</li>
                   <li><a rel="nofollow" href="" title="Facebook"><i class="icon-lg ion-social-facebook-outline"></i></a>&nbsp;</li>
-                  <li><a rel="nofollow" href="" title="Dribble"><i class="icon-lg ion-social-dribbble-outline"></i></a></li>
                 </ul>
             </div>
         </div>

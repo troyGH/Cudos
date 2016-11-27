@@ -5,10 +5,9 @@ class Business_model extends CI_Model {
 		parent::__construct();
 	}
 
-	function is_associated($bID){
-		$query = $this->db->query("SELECT is_associated FROM business WHERE google_id='$bID';");
-
-		return $query->result_array();
+	function is_associated($gID){
+		$query = $this->db->query("SELECT is_associated FROM business WHERE google_id='$gID';");
+		return $query->result();
 	}
 
   function create_business($bInfo){

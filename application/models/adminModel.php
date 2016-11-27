@@ -20,32 +20,25 @@ class adminModel extends CI_Model {
 		$query = $this->db->get('admin');
 		return $query->result();
 	}
- 
- function getPosts($adminID){
 
- 	$query = $this->db->query("SELECT t5.* FROM  businessadmin t2, businessemployee t4, employee t5 WHERE $adminID = t2.admin_id AND t2.business_id = t4.business_id AND t4.employee_id = t5.employee_id");
+ function get_employees($businessID){
+ 	$query = $this->db->query("SELECT t2.* FROM  businessemployee t1, employee t2 WHERE $businessID = t1.business_id AND t1.employee_id = t2.employee_id");
  	return $query->result();
  }
 
+ function get_business_info($adminID){
+	 $query = $this->db->query("SELECT t2.* FROM  businessadmin t1, business t2 WHERE $adminID = t1.admin_id AND t1.business_id = t2.business_id");
+	 return $query->result();
+ }
 
-  function insertEmployee($employee_data){
-  	//$employeeName = $_POST['employeeName'];
-//$employeeTitle = $_POST['employeeTitle'];
 
-
- 	//$sql = $this->db->query("INSERT INTO employee VALUES (NULL,employeeName,NULL, employeeTitle,NULL,NULL)");
-//$this->db->query($sql);
-//return $sql->data();
-
-			// insert values into employee
-			$employee_success = $this->db->insert('employee', $employee_data);
-
-			// return true only if all inserts were successful
-			return ($employee_success);
-
+  function insertEmployee($data, $bID){
+		  $this->db->insert('employee',$data);
+			$employeeID = $this->db->insert_id();
+			$this->db->query("INSERT INTO businessemployee (business_id, employee_id) VALUES ($bID, $employeeID);");
  }
  	/*
-  $this->db->select("admin_id"); 
+  $this->db->select("admin_id");
   $this->db->from('admin');
   $query = $this->db->get();
 
@@ -75,7 +68,7 @@ $this->db->where('business_id', $query->business_id);
 			return $name_result;
 		}
 		return '';
- 
+
 }*/
 }
 ?>

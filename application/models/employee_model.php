@@ -32,9 +32,9 @@ AND t3.employee_id = t4.employee_id AND t4.review_id = t5.review_id AND t6.revie
 
 		$this->db->insert('customerreview',$arr);
 
-		$ar['review_id'] = $arr['review_id'];
-		$ar['employee_id'] = $info['employee_id'];
-		$this->db->insert('employeereview',$ar);
+		$new_arr['review_id'] = $arr['review_id'];
+		$new_arr['employee_id'] = $info['employee_id'];
+		$this->db->insert('employeereview',$new_arr);
 	}
 
 	function is_review_exist($eID, $cID){
@@ -50,6 +50,15 @@ AND employeereview.employee_id = $eID");
 		$eID = $this->db->insert_id();
 		$this->db->query("INSERT INTO businessemployee (business_id, employee_id) VALUES ($bID, $eID);");
 		return $eID;
+	}
+
+	function edit_review($eID, $description, $stars, $cID, $ts){
+
+		$this->db->query("UPDATE review a
+		JOIN employeereview b ON a.review_id = b.review_id
+		JOIN customerreview c ON a.review_id = c.review_id
+		SET a.stars = $stars, a.description = '$description', a.IsModified = 'True', a.timestamp = '$ts'  WHERE b.employee_id = $eID AND c.customer_id = $cID;");
+
 	}
 
 }?>
