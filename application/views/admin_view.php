@@ -6,7 +6,7 @@
 }
 
 .employee-list{
-  height:300px; 
+  height:300px;
   border: 1px solid #F5F5F5;
   border-radius: 10px;
 }
@@ -38,7 +38,17 @@
 
 <?php $this->load->view('template/header.php'); ?>
 <div class="container custom-body">
-
+<div class="col-md-12" align=center>
+<h2> <?php echo $this->session->userdata('business_name');?></h2>
+<?php
+echo "<p>Business ID: ".$this->session->userdata('business_id').'</p>';
+echo "<p>Google ID: ".$this->session->userdata('google_id').'</p>';
+echo "<p>Business Name: ".$this->session->userdata('business_name').'</p>';
+echo "<p>Business Address: ".$this->session->userdata('business_address').'</p>';
+echo "<p>Business Phone: ".$this->session->userdata('business_phone').'</p>';
+echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->userdata('google_id')."&bName=".$this->session->userdata('business_name')."&bAddress=".$this->session->userdata('business_address')."&bPhone=".$this->session->userdata('business_phone')."&isAssoc=1"."'>Link</a></p>";
+?>
+</div>
 <div class="col-md-12" align=center>
 <h2>Admin Profile</h2>
 </div>
@@ -47,24 +57,11 @@
 <div class="col-md-6">
 <h3>Employees</h3>
 
-
 <br>
-
-<?php
-$adminID = $this->session->userdata('admin_id');?>
-<p><?php echo $adminID;?></p>
-
-
-
-     <!--<?php foreach($posts as $post){?>
-         <p><?php echo $post->first_name;?></p>
-         <p><?php echo $post->business_id;?></p>
-      </tr>     
-     <?php }?> -->
 <ul class="employee-list" id="scroller">
      <?php
-        foreach($posts as $post){?>
-          <li><?php echo "<h2>".$post->first_name."</h2>";?></li><?php
+        foreach($employees as $employee){?>
+          <li><?php echo "<h2>".$employee->first_name."</h2>";?></li><?php
         }
          ?>
 </ul>
@@ -79,6 +76,9 @@ $adminID = $this->session->userdata('admin_id');?>
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+
+            <?php $attributes = array("id" => "theForm", "method" => "post");
+                                echo form_open("admin/addemployees", $attributes);  ?>
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -86,38 +86,38 @@ $adminID = $this->session->userdata('admin_id');?>
           <h4 class="modal-title" id="exampleModalLabel">New Employee</h4>
         </div>
         <div class="modal-body">
-          <form action="admin.php" name="EmployeeForm" id="theForm" method="post">
             <div class="form-group">
               <label for="first-name" class="form-control-label"></label>
-              <input type="text" class="form-control" id="recipient-name" name="employeeFName" placeholder="First name">
+              <input type="text" class="form-control" id="recipient-name" name="employeeFName" placeholder="First name" required/>
             </div>
             <div class="form-group">
               <label for="last-name" class="form-control-label"></label>
-              <input type="text" class="form-control" id="recipient-name" name="employeeLName" placeholder="Last name">
+              <input type="text" class="form-control" id="recipient-name" name="employeeLName" placeholder="Last name" required/>
             </div>
             <div class="form-group">
               <label for="about" class="form-control-label"></label>
-              <input type="text" class="form-control" id="recipient-name" name="employeeAbout" placeholder="About Employee">
+              <input type="text" class="form-control" id="recipient-name" name="employeeAbout" placeholder="About Employee" required/>
             </div>
             <div class="form-group">
               <label for="title" class="form-control-label"></label>
-              <input type="text" class="form-control" id="recipient-name" name="employeeTitle" placeholder="Title">
+              <input type="text" class="form-control" id="recipient-name" name="employeeTitle" placeholder="Title" required/>
             </div>
             <div class="form-group">
               <label for="title" class="form-control-label"></label>
               <input type="text" class="form-control" id="recipient-name" name="imgURL" placeholder="Image URL">
             </div>
+            <input type="hidden" name="bID">
             <!--
          	<div class="form-group">
   				<input type="file" name="pic" accept="image/*">
 
             </div>-->
-          </form>
         </div>
         <div class="modal-footer">
           <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-          <button type="button" class="btn btn-warning">Save</button>
+          <button type="submit" class="btn btn-warning">Create</button>
         </div>
+        <?php echo form_close();?>
       </div>
     </div>
   </div>

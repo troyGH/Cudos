@@ -28,8 +28,10 @@ class User extends CI_Controller {
 
 
   function login(){
-    if( $this->session->userdata('login') ){
+		if( $this->session->userdata('login')){
 			redirect("home");
+		}else if($this->session->userdata('adminlogin')){
+			redirect("admin");
 		}
     $this->load->view('login_view');
 
@@ -54,8 +56,10 @@ class User extends CI_Controller {
 
 
   function signup(){
-    if( $this->session->userdata('login') ){
+		if( $this->session->userdata('login')){
 			redirect("home");
+		}else if($this->session->userdata('adminlogin')){
+			redirect("admin");
 		}
 
 	  $this->load->view('signup_view');
