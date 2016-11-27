@@ -25,7 +25,7 @@ class User_model extends CI_Model {
 
 	// get non-sensitive information from user by ID
 	function get_public_user_by_id($id) {
-		$query = $this->db->query("SELECT first_name, last_name, about_me, city, state, country, signup_date, img_url FROM customer WHERE customer_id = $id;");
+		$query = $this->db->query("SELECT * FROM customer WHERE customer_id = $id;");
 		return $query->result_array();
 	}
 

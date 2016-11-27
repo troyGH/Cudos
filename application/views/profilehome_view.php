@@ -58,6 +58,7 @@
             <div id="home" class="tab-pane fade in active" >
 							<h2>Personal Information</h2>
 							<?php
+							echo "<p>ID: ".$user_info['customer_id'].'</p>';
 							echo "<p>First Name: ".$user_info['first_name'].'</p>';
 							echo "<p>Last Name: ".$user_info['last_name'].'</p>';
 							echo "<p>About Me: ".$user_info['about_me'].'</p>';
