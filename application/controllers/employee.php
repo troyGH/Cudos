@@ -66,5 +66,23 @@ class Employee extends CI_Controller {
 							<span class="glyphicon glyphicon-ok"></span> <strong> Success!</strong> Review edited!</div>');
   }
 
+	function vote_review(){
+		$vote = $this->input->post("vote");
+		$review_id = $this->input->post("review_id");
+
+		$result = $this->employee_model->validate_vote($review_id, $this->session->userdata('customer_id'));
+
+		if(empty($result)){
+			$this->employee_model->insert_vote($this->session->userdata('customer_id'), $review_id, $vote);
+		}else{
+			if($result[0]->is_helpful != $vote){
+				$this->employee_model->update_vote($review_id, $result[0]->vote_id, $vote);
+			}else{
+				$this->employee_model->remove_vote($this->session->userdata('customer_id'), $review_id, $result[0]->vote_id, $vote);
+			}
+		}
+
+	}
+
 }
 ?>
