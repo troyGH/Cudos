@@ -35,12 +35,3 @@
 </head>
 <body class="<?php $ci =& get_instance(); echo ucfirst($ci->uri->segment(1)); ?>-body" data-spy="scroll" data-target=".navbar" data-offset="70">
 
-  <?php
-  //Due to a flickering issue on page load, authenticated navbar and normal navbar would be stored in seprate files
-  if( $this->session->userdata('login') ){
-     $this->load->view('template/auth_nav.php');
-  }
-  else{
-    $this->load->view('template/nav.php');
-  }
-   ?>

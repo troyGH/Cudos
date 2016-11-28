@@ -18,7 +18,7 @@
 			<div class="profile-sidebar" align=center>
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img class="img-rounded" src=<?php echo "'".$user_info['img_url']."'";?> class="img-responsive" alt="">
+					<img class="img-rounded img-responsive" src=<?php echo "'".$user_info['img_url']."'";?> alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
