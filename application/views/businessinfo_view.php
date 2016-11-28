@@ -207,8 +207,10 @@
 <?php $this->load->view('template/footer.php'); ?>
 
 <script>
+var loggedIn = false;
 $( document ).ready(function() {
   init();
+  loggedIn = <?php echo json_encode($this->session->userdata('login')); ?>;
 });
 
 function init(){
@@ -224,7 +226,7 @@ function init(){
         total += parseInt(review['stars']);
         count++;
         displayReviews(review['customer_id'], review['first_name'], review['last_name'], review['stars'],
-      review['description'], review['thumbsup'], review['thumbsdown'], review['timestamp']);
+      review['description'], review['ThumbsUp'], review['ThumbsDown'], review['timestamp'], review['review_id']);
       }
     });
 
@@ -252,20 +254,35 @@ $("a#employee-list").click(function(e){
   $("#eid-input").val(employee[employeeNum]['employee_id']);
   $("#eid-input2").val(employee[employeeNum]['employee_id']);
 
-
   $("#reviews-here").empty();
   reviews.forEach(function(review){
     if(employee[employeeNum]['employee_id']===review['employee_id']){
       total += parseInt(review['stars']);
       count++;
       displayReviews(review['customer_id'], review['first_name'], review['last_name'], review['stars'],
-    review['description'], review['thumbsup'], review['thumbsdown'], review['timestamp']);
+    review['description'], review['ThumbsUp'], review['ThumbsDown'], review['timestamp'], review['review_id']);
     }
   });
   displayEmployeeProfile(employee[employeeNum]['first_name'], employee[employeeNum]['last_name'],
   employee[employeeNum]['title'], employee[employeeNum]['img_url'],
   employee[employeeNum]['about_me'], total/count);
 
+  $('.thumbsup').click(function(e){
+    if(loggedIn){
+      vote_review(1, $(this).data('review-id'));
+    }
+    else{
+      $('#loginModal').modal();
+    }
+  });
+  $('.thumbsdown').click(function(e){
+    if(loggedIn){
+      vote_review(0, $(this).data('review-id'));
+    }
+    else{
+      $('#loginModal').modal();
+    }
+  });
 });
 
 function displayEmployeeProfile(first, last, title, url, bio, avg){
@@ -280,10 +297,9 @@ function displayEmployeeProfile(first, last, title, url, bio, avg){
   $("#employee-avg-stars").text("Average Stars: "+avg.toPrecision(2)+"/5.0");
 }
 
-function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdown, timestamp){
+function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdown, timestamp, reviewId){
   var reviewDateTime = new Date(Date.parse(timestamp));
   var currentID = <?php if($this->session->userdata('login')) echo $this->session->userdata('customer_id'); else echo 0; ?>;
-
   if(cID == currentID){
     $("#reviews-here").append("<div class='col-sm-5 well well-sm'>"  + 'Me' +"</div>");
     $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars
@@ -296,8 +312,8 @@ function displayReviews(cID, first, last, stars, description, thumbsup, thumbsdo
     $("#reviews-here").append("<div class='col-sm-5 well well-sm'><a href='<?php echo base_url('index.php/user/profile/') ?>"  + cID + "'>" +first+' '+last +"</a></div>");
     $("#reviews-here").append("<div class='col-sm-7 well well-lg'><span class='ion-star'>" + stars
     + "</span><p>" + description
-    + "</p><a role='button' class='ion-thumbsup'>" + thumbsup
-    + "</a>&nbsp;&nbsp;<a class='ion-thumbsdown'>" + thumbsdown + "</a>" +
+    + "</p><a role='button' class='ion-thumbsup thumbsup' data-review-id='" + reviewId + "'>" + thumbsup
+    + "</a>&nbsp;&nbsp;<a class='ion-thumbsdown thumbsdown' data-review-id='" + reviewId + "'>" + thumbsdown + "</a>" +
     "<span class='pull-right text-muted'>" + reviewDateTime.toDateString() + "</span></div>");
   }
 }
@@ -307,7 +323,6 @@ function removeEmployeeProfile(){
    $("#employee-bio-container").remove();
 
 }
-
 
 function review_form_client(obj) {
     $.ajax({
@@ -326,7 +341,19 @@ function edit_form_client(obj) {
      });
      return true;
 }
-
+// 0 is thumbsdown
+// 1 is thumbsup
+function vote_review(thumbs, reviewId){
+  $.ajax({
+     type: 'POST',
+     url: "http://localhost/Cudos/employee/vote_review",
+     data:  {vote:thumbs, review_id: reviewId},
+     success: function(data){
+         window.location.reload();
+       
+     }
+   });
+}
 
 window.setTimeout(function() {
     $(".alert").fadeTo(500, 0).slideUp(500, function(){
