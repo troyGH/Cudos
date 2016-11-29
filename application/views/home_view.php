@@ -6,7 +6,97 @@
 width: 50px;
     
 }
+.content-section-a {
+    background-color: #f8f8f8;
+    padding: 90px 0; 
+    text-align: left;
+}
+
+.lead3 {
+margin-bottom: 0px;
+margin-top: 0px;
+font-size: 16px;
+color: #8D8D8D;
+line-height: 1.46428571;
+font-weight: 300;
+}
+
+
+.features {
+  margin: 50px 0;
+}
+
+.feature {
+  width: 100%;
+  height: 320px;
+  margin: 80px 0;
+  text-align: center;
+  border: 2px solid #ddd;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.feature .icon-holder {
+  color: #f35a1e;
+  position: relative;
+  top: 70px;
+  display: inline-block;
+  margin-bottom: 40px;
+  padding: 10px;
+  background: white;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.4s ease;
+}
+
+.feature .heading {
+  position: relative;
+  top: 90px;
+  -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.feature:hover {
+  border-color: #039be5;
+}
+
+.feature:hover .icon-holder {
+  top: -30px;
+}
+
+.feature:hover .heading {
+  top: -30px;
+}
+
+.feature .description {
+  font-size: 1.1em;
+  width: 80%;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.feature:hover .description {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.style-one{
+  max-width: 90%;
+  padding: 0;
+border-top: medium double #f35a1e;
+color: #f35a1e;
+opacity:1;
+}
+
+
 </style>
+
 
 <?php $this->load->view('template/header.php'); ?>
 
@@ -35,7 +125,7 @@ width: 50px;
         <br><br><br>
                 <div class="col-xs-12 text-center down-arrow">
             <div class="button_down"> 
-                <a class="imgcircle page-scroll" data-wow-duration="1.5s"  href="#intro"> <img class="img_scroll" src="<?php echo base_url('assets/img');?>/circle.png" alt=""> </a>
+                <a class="imgcircle page-scroll" data-wow-duration="1.5s"  href="#useit"> <img class="img_scroll" src="<?php echo base_url('assets/img');?>/circle.png" alt=""> </a>
             </div>
         </div>
     </div>
@@ -57,6 +147,98 @@ function redirect() {
 </script>
 
  </head>
+    <!-- Use it -->
+    <div id ="useit" class="content-section-a" align=left>
+
+        <div class="container">
+            
+            <div class="row">
+            
+                <div class="col-sm-6 pull-right wow fadeInRightBig">
+                    <iframe width="520px" height="400px" src="https://youtube.com/embed/ryEsuevuZGs">
+</iframe>
+                </div>
+                
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">Cudos</h3>
+                    <div class="sub-title lead3">Learn to Love your Business</div><br>
+                    <p class="lead">
+                        Our team at Cudos is dedicated to help your business reach its maximum potential. Your customers and employees are what makes your business great. The experience of your customers with yor employees is valuable and we believe customers should be able to share that experience to help your business the best it can be.
+                    </p>
+                    <!--
+                     <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a> 
+                     <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
+                     -->
+                </div>   
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+   <div class="container" align="center" style="padding-top: 100px">
+
+   <div class="main-header wow fadeIn">
+   <h5 style="color: #262C3A">The 3 Steps of Helping your Community</h5></div>
+<div class="row features">
+        <div class="col-md-4 wow fadeInUp">
+          <div class="feature">
+            <div class="icon-holder">
+              <span class="icon-lg  glyphicon glyphicon-search"></span>
+            </div>
+            <h4 class="heading">Search</h4>
+            <p class="description">Search for businesses in your area or any parts of the world. Whether you wanna know about 
+            your local bakery or a fancy restaurant for your honey moon in Paris, Cudos has got you covered.</p>
+          </div>
+        </div>
+                <div class="col-md-4 wow fadeInUp">
+          <div class="feature">
+            <div class="icon-holder">
+              <span class="icon-lg glyphicon glyphicon-envelope"></span>
+            </div>
+            <h4 class="heading">Contact</h4>
+            <p class="description">Got a question or concern that needs to be directed to a manager? You can message any business on Cudos.</p>
+          </div>
+        </div>
+        <div class="col-md-4 wow fadeInUp">
+          <div class="feature">
+            <div class="icon-holder">
+              <span class="icon-lg glyphicon glyphicon-pencil"></span>
+            </div>
+            <h4 class="heading">Review</h4>
+            <p class="description">Share your experience of your encounter with employees of a busisness with your community.</p>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+
+
+
+        <div class="container" style="padding-bottom: 200px" align=center>
+        <hr class="style-one"><br>
+         <div class="main-header wow fadeIn">
+         <h5 style="color: #262C3A">Associated Businesses Get More! Sign up Today and Manage your Employees!</h5><br>
+         </div>
+         <p><a class="btn btn-embossed btn-primary" href="<?php echo base_url(); ?>index.php/associatedbusiness" role="button">Learn More</a> 
+         <a class="btn btn-embossed btn-info" href="<?php echo base_url(); ?>index.php/admin/login" role="button">Login to Dashboard</a></p>
+            <div class="row features">
+            <div class="col-md-4"></div>
+        <div class="col-md-4 wow fadeInUp">
+          <div class="feature">
+            <div class="icon-holder">
+              <span class="icon-lg glyphicon glyphicon-user"></span>
+            </div>
+            <h4 class="heading">Manage</h4>
+            <p class="description">Got a new employee? Or some employees are no longer are employees of your business? Make sure to update the list of your employees in your dashboard.</p>
+          </div>
+        </div>
+       <div class="col-md-4"></div>
+      </div>
+
+</div> <!-- /container -->
+
+
 <section class="bg-primary" id="intro"); >
     <div class="container">
         <div class="row">
