@@ -130,13 +130,14 @@ function openEvent(evt, adminTask) {
              <!-- <li class="tablinks active"><a href="javascript:void(0)" onclick="openEvent(event, 'business_info')"><span class="glyphicon glyphicon-home"> <?php echo $this->session->userdata('business_name');
  ?></span></a></li>-->
  <li><a class="tablinks active" href="javascript:void(0)" onclick="openEvent(event, 'business_info')"><span class="glyphicon glyphicon-home"></span><span class="admin-item"> Dashboard</span></a></li>
+ <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'messages')"><span class="glyphicon glyphicon-envelope"></span><span class="admin-item"> Messages</span></a></li>
               <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'employees')"><span class="glyphicon glyphicon-user"></span><span class="admin-item"> Employees</span></a></li>
               <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'business_review')"><span class="glyphicon glyphicon-briefcase"></span><span class="admin-item"> Reviews</span></a></li>
-              <li><a href="<?php echo base_url(); ?>index.php/admin/logout""><span class="glyphicon glyphicon-lock"></span><span class="admin-item"> Sign Out</span></a></li>            
+              <li><a href="<?php echo base_url(); ?>index.php/admin/logout""><span class="glyphicon glyphicon-lock"></span><span class="admin-item"> Sign Out</span></a></li>
             </ul>
         </div>
 
-       
+
    </div>
 </nav>
 
@@ -169,12 +170,10 @@ function isActive($arg) {
 <div class="col-md-12 businessinfo">
 <?php
 
-echo "<p>Business ID: ".$this->session->userdata('business_id').'</p>';
-echo "<p>Google ID: ".$this->session->userdata('google_id').'</p>';
-echo "<p>Business Name: ".$this->session->userdata('business_name').'</p>';
-echo "<p>Business Address: ".$this->session->userdata('business_address').'</p>';
-echo "<p>Business Phone: ".$this->session->userdata('business_phone').'</p>';
+echo "<p>".$this->session->userdata('business_address')."</p>";
+echo "<p>".$this->session->userdata('business_phone')."</p>";
 echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->userdata('google_id')."&bName=".$this->session->userdata('business_name')."&bAddress=".$this->session->userdata('business_address')."&bPhone=".$this->session->userdata('business_phone')."&isAssoc=1"."'></a></p>";
+
 ?>
 </div>
 </div>
@@ -193,7 +192,7 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
         <th>Lastname</th>
         <th>About Employee</th>
         <th>Title</th>
-        
+
       </tr>
     </thead>
     <tbody>
@@ -201,10 +200,10 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
       <?php
  echo '<tr>';
       foreach($employees as $employee) {
-        echo '<td>',$employee->first_name,'</td>';?>
-        <td>last name</td>
-        <td>about</td>
-        <td>title</td>
+        echo '<td>',$employee->first_name,'</td>';
+        echo '<td>',$employee->last_name,'</td>';
+        echo '<td>',$employee->about_me,'</td>';
+        echo '<td>',$employee->title,'</td>'; ?>
         <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-top:0px; background-color:#262C3A">Edit Employee</button></td>
         <td><a id="close">&#10006;</a></td>
         <?php
@@ -221,18 +220,18 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
 </div>
 </div>
  <div class="col-md-2"></div>
- 
+
   <!--
 <?php
 echo '<table cellpadding="0" cellspacing="0" class="db-table">';
     echo '<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default<th>Extra</th></tr>';
-    
+
       echo '<tr>';
       foreach($employees as $employee) {
         echo '<td>',$employee->first_name,'</td>';
       }
       echo '</tr>';
-    
+
     echo '</table><br />';
     ?>
 <ul class="employee-list" id="scroller">
@@ -246,8 +245,23 @@ echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 -->
 </div>
 
+<div class="tabcontent wow zoomIn" id="messages">
+Messages here
+</div>
+
 <div class="tabcontent wow zoomIn" id="business_review">
-Reviews here
+  <h2> Reviews </h2>
+<?php
+foreach($reviews as $review){
+  echo '<div class="panel panel-primary">';
+  echo  '<div class="panel-heading">'.$review->employee_name.'</div>';
+  echo  '<div class="panel-body">'.$review->stars.'</div>';
+  echo  '<div class="panel-body">'.$review->description.'</div>';
+  echo  '<div class="panel-body">'.$review->review_date.'</div>';
+  echo  '<div class="panel-footer">'."<a href='http://localhost/Cudos/user/profile/'".$review->customer_id."'>".$review->customer_name."</a></div></div>";
+}
+?>
+
 </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -304,4 +318,3 @@ Reviews here
 </div>
 
  <!-- /container -->
-

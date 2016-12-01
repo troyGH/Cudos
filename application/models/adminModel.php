@@ -70,5 +70,12 @@ $this->db->where('business_id', $query->business_id);
 		return '';
 
 }*/
+	function get_reviews($aID){
+		$query = $this->db->query("SELECT CONCAT_WS(' ', t3.first_name, t3.last_name) AS employee_name, date(t5.timestamp) as review_date, t5.*, CONCAT_WS(' ', t7.first_name, CONCAT(LEFT(t7.last_name,1),'.')) AS customer_name, t7.customer_id
+		FROM  businessadmin t1, businessemployee t2, employee t3, employeereview t4, review t5, customerreview t6, customer t7
+		WHERE $aID = t1.admin_id AND  t2.business_id = t1.business_id AND  t2.employee_id = t3.employee_id AND t3.employee_id = t4.employee_id AND t4.review_id = t5.review_id
+		AND t5.review_id = t6.review_id AND t6.customer_id = t7.customer_id;");
+		return $query->result();
+	}
 }
 ?>

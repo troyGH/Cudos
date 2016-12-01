@@ -16,4 +16,5 @@ class Business_model extends CI_Model {
   }
 
 
+
 }?>

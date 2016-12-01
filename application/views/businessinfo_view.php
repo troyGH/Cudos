@@ -39,21 +39,21 @@
 
               if(!isset($employees)){
                   echo '<tr>';
-                  echo "<th><a href='#'>Anonymous</a></th><tr>";
+                  echo "<th><a>Anonymous</a></th><tr>";
               }else{
                 if(sizeof($employees)==0){
                       echo '<tr>';
-                      echo "<th><a href='#'>Anonymous</a></th><tr>";
+                      echo "<th><a >Anonymous</a></th><tr>";
                 }
                }
                for ($i = 0; $i < sizeof($employees); $i++) {
                  if($i == 0){
                    echo "<tr class='bg-primary'>";
-                   echo "<th><a href='#' id='employee-list' data-val='$i'>".$employees[$i]->first_name.' '.$employees[$i]->last_name."</a></th><tr>";
+                   echo "<th><a id='employee-list' data-val='$i'>".$employees[$i]->first_name.' '.$employees[$i]->last_name."</a></th><tr>";
                  }
                  else{
                    echo "<tr class='bg-primary'>";
-                   echo "<th><a href='#' id='employee-list' data-val='$i'>".$employees[$i]->first_name.' '.$employees[$i]->last_name."</a></th><tr>";
+                   echo "<th><a id='employee-list' data-val='$i'>".$employees[$i]->first_name.' '.$employees[$i]->last_name."</a></th><tr>";
                  }
                }
                ?>
@@ -195,7 +195,7 @@
             <option>5</option>
           </select>
             <?php $attributes = array('class' => 'btn btn-primary', 'name' => 'review-btn');
-            echo form_submit( $attributes, 'Edit'); ?>
+            echo form_submit( $attributes, 'Submit'); ?>
         </form>
         </div>
       </div>
@@ -350,7 +350,7 @@ function vote_review(thumbs, reviewId){
      data:  {vote:thumbs, review_id: reviewId},
      success: function(data){
          window.location.reload();
-       
+
      }
    });
 }

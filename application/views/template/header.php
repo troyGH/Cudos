@@ -18,10 +18,8 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/login_register.css"); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/mdb.css"); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/mdb.min.css"); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/buttons/normalize.css"); ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/buttons/vicons-font.css"); ?>"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/buttons/base.css"); ?>"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/buttons/buttons.css"); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/font-awesome.css"); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/font-awesome.min.css"); ?>">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

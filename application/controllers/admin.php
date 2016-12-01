@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 	// constructor used for needed initialization
 	public function __construct() {
 		parent::__construct();
-    $this->load->helper(array('form','url','html'));
+    $this->load->helper(array('form','url','html', 'date'));
 		$this->load->library(array('session'));
 		$this->load->database();
 		$this->load->model('adminModel');
@@ -14,6 +14,7 @@ class Admin extends CI_Controller {
 		    if( $this->session->userdata('adminlogin')){
 
 					$result['employees'] = $this->adminModel->get_employees($this->session->userdata('business_id'));
+					$result['reviews'] = $this->adminModel->get_reviews($this->session->userdata('admin_id'));
 					$this->load->view('admin_view', $result);
     }else{
 			redirect('home'); // when they manually type admin
@@ -68,7 +69,7 @@ class Admin extends CI_Controller {
 		redirect("admin");
 	}
 
-	
+
 
 }
 ?>
