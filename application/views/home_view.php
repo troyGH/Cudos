@@ -7,8 +7,9 @@ width: 50px;
     
 }
 .content-section-a {
-    background-color: #f8f8f8;
-    padding: 90px 0; 
+    
+    padding-top: 150px; 
+    padding-bottom: 150px;
     text-align: left;
 }
 
@@ -94,6 +95,18 @@ color: #f35a1e;
 opacity:1;
 }
 
+.carousel-indicators {
+  bottom:-50px;
+}
+
+.carousel-indicators li {
+  border-color:#999;
+  background-color:#ccc;
+}
+
+.carousel-inner {
+   margin-bottom:50px;
+}
 
 </style>
 
@@ -175,9 +188,200 @@ function redirect() {
         <!-- /.container -->
     </div>
 
+    <div class="content-section-b" style="padding-top: 150px; padding-bottom: 150px; background-color: #f8f8f8;"> 
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeftBig">
+                     <div id="carousel-example" class="carousel slide" data-ride="carousel" style="margin-top:50px">
+  <ol class="carousel-indicators homepage">
+    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example" data-slide-to="1"></li>
+    <li data-target="#carousel-example" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div class="item active">
+      <img class="slide" src="<?php echo base_url(); ?>/assets/img/kitchen.png"/>
+
+    </div>
+    <div class="item">
+      <img class="slide" src="<?php echo base_url(); ?>/assets/img/server.png" />
+
+    </div>
+    <div class="item">
+      <img class="slide" src="<?php echo base_url(); ?>/assets/img/open.png" />
+ 
+    </div>
+  </div>       
+                </div>
+                </div>
+                
+                <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">Sign Up Today</h3>
+                    <div class="sub-title lead3">YOU have the power to make your community great again!</div>
+                    <br>
+                    <p class="lead">
+                        Customers can now review their favorite and not so favorite employees of a local business. Reviews can help other customers choose a sales agent, barber, nail technician, ... (You name it) more wisely.
+                        <br><br>
+                        If you are a business representative, make sure to sign up to be associated with us and manage your employees. 
+                    </p>
+                    <!--
+                     <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a> 
+                     <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
+                     -->
+                </div>              
+            </div>
+        </div>
+    </div>
+
+
+
+<!--
+<section class="bg-primary" id="intro"); >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                <h2 class="margin-top-0 text-primary" style="color:#FF4733  " >Cudos</h2>
+                <br>
+                <p class="text-faded"  style="font-size:180% ;color:black;" align="right";>
+                  <b>  You use Cudos to find almost all the bussiness that you are intersetd in with their reviews. You can find anything from your local bussiness to some big famouse companies.
+                </p>
+<input type="button" onclick="redirect()"  style="color:orange"; size="250" value="Watch the tour" >
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="highlights" style="  background-image: url(<?php echo base_url('assets/img');?>/c.jpg");>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="margin-top-0 text-primary" style="color:#FF4733"  >Cudos</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 text-center">
+                <div class="feature">
+                    <i class="icon-lg ion-android-laptop wow fadeIn" data-wow-delay=".3s"></i>
+                    <h3>Responsive</h3>
+                    <p class="text-muted" style="font:bold;"> <b> Search, Choose and Rate an employee from San Francisco to Paris</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <div class="feature">
+                    <i class="icon-lg ion-social-sass wow fadeInUp" data-wow-delay=".2s"></i>
+                    <h3>Customizable</h3>
+                    <p class="text-muted"> <b> Easy to work with</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 text-center">
+                <div class="feature">
+                    <i class="icon-lg ion-ios-star-outline wow fadeIn" data-wow-delay=".3s"></i>
+                    <h3>Consistent</h3>
+                    <p class="text-muted"> <b> A mature, well-tested, stable Web app</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+-->
+
+
+
+
+
+
+
+<section id="gallery" class="no-padding">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-lg-4 col-sm-6">
+                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d">
+                    <img src="<?php echo base_url('assets/img');?>/las-vegas.jpg" class="img-responsive" alt="Image 1">
+                    <div class="gallery-box-caption">
+                        <div class="gallery-box-content">
+                            <div>
+                                <i class="icon-lg ion-ios-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg">
+                    <img src="<?php echo base_url('assets/img');?>/maxresdefault.jpg" class="img-responsive" alt="Image 2">
+                    <div class="gallery-box-caption">
+                        <div class="gallery-box-content">
+                            <div>
+                                <i class="icon-lg ion-ios-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4">
+                    <img src="<?php echo base_url('assets/img');?>/seattle.jpg" class="img-responsive" alt="Image 3">
+                    <div class="gallery-box-caption">
+                        <div class="gallery-box-content">
+                            <div>
+                                <i class="icon-lg ion-ios-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg">
+                    <img src="<?php echo base_url('assets/img');?>/newyork.jpg" class="img-responsive" alt="Image 4">
+                    <div class="gallery-box-caption">
+                        <div class="gallery-box-content">
+                            <div>
+                                <i class="icon-lg ion-ios-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg">
+                    <img src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg" class="img-responsive" alt="Image 5">
+                    <div class="gallery-box-caption">
+                        <div class="gallery-box-content">
+                            <div>
+                                <i class="icon-lg ion-ios-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg">
+                    <img src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg" class="img-responsive" alt="Image 6">
+                    <div class="gallery-box-caption">
+                        <div class="gallery-box-content">
+                            <div>
+                                <i class="icon-lg ion-ios-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
    <div class="container" align="center" style="padding-top: 100px">
 
    <div class="main-header wow fadeIn">
+   <h2 class="text-center text-primary">Features</h2><br>
    <h5 style="color: #262C3A">The 3 Steps of Helping your Community</h5></div>
 <div class="row features">
         <div class="col-md-4 wow fadeInUp">
@@ -238,146 +442,58 @@ function redirect() {
 
 </div> <!-- /container -->
 
+<style type="text/css">
+    .morph-button{
+            width:600px;
+    box-sizing:border-box;
+    
+    
+    
+    }
 
-<section class="bg-primary" id="intro"); >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
-                <h2 class="margin-top-0 text-primary" style="color:#FF4733  " >Cudos</h2>
-                <br>
-                <p class="text-faded"  style="font-size:180% ;color:black;" align="right";>
-                  <b>  You use Cudos to find almost all the bussiness that you are intersetd in with their reviews. You can find anything from your local bussiness to some big famouse companies.
-                </p>
-<input type="button" onclick="redirect()"  style="color:orange"; size="250" value="Watch the tour" >
-            </div>
-        </div>
-    </div>
-</section>
+.btn-big{
+    padding-top:10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    margin: 0px;
+}
 
-<section id="highlights" style="  background-image: url(<?php echo base_url('assets/img');?>/c.jpg");>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="margin-top-0 text-primary" style="color:#FF4733"  >Cudos</h2>
-                <hr class="primary">
-            </div>
-        </div>
-    </div>
+</style>
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 text-center">
-                <div class="feature">
-                    <i class="icon-lg ion-android-laptop wow fadeIn" data-wow-delay=".3s"></i>
-                    <h3>Responsive</h3>
-                    <p class="text-muted" style="font:bold;"> <b> Search, Choose and Rate an employee from San Francisco to Paris</p>
+<script type="text/javascript">
+    function showDiv() {
+   document.getElementById('subscribe-form').style.display = "block";
+}
+</script>
+    <div  class="content-section-c " style="background-color: #f8f8f8; padding:100px">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h2 style="color:#262C3A"><b>Get Live Updates</b></h2>
+                <p class="lead" style="margin-top:0"></p>
+             </div>
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <div class="mockup-content">
+                        <div class="morph-button org-btn wow pulse morph-button-inflow morph-button-inflow-1">
+                            <button class="btn btn-embossed btn-info btn-big" type="button " value="Show Div" onclick="showDiv()" style="width:100%"><span>Subscribe to our Newsletter</span></button>
+                            <div class="morph-content">
+                                <div>
+                                    <div class="content-style-form content-style-form-4 " id="subscribe-form" style="display:none; background-color: #262C3A;padding: 10px">
+                                        <br><br><h4 class="morph-clone" style="color:white">Be Notified of Special Events</h4>
+                                        <form align=center>
+                                            <div align="center"><p style="color: white; width: 80%;align-content: center;"><input type="text" placeholder="Your Email" /></p></div>
+                                            <p><button class="btn btn-embossed btn-primary btn-big" style="width:80%">Subscribe me</button></p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 text-center">
-                <div class="feature">
-                    <i class="icon-lg ion-social-sass wow fadeInUp" data-wow-delay=".2s"></i>
-                    <h3>Customizable</h3>
-                    <p class="text-muted"> <b> Easy to work with</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 text-center">
-                <div class="feature">
-                    <i class="icon-lg ion-ios-star-outline wow fadeIn" data-wow-delay=".3s"></i>
-                    <h3>Consistent</h3>
-                    <p class="text-muted"> <b> A mature, well-tested, stable Web app</p>
-                </div>
-            </div>
+            </div>  
+            </div>>
         </div>
-    </div>
-</section>
+    </div>  
 
-
-
-
-
-
-
-
-
-<section id="gallery" class="no-padding">
-    <div class="container-fluid">
-        <div class="row no-gutter">
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d">
-                    <img src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d" class="img-responsive" alt="Image 1">
-                    <div class="gallery-box-caption">
-                        <div class="gallery-box-content">
-                            <div>
-                                <i class="icon-lg ion-ios-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg">
-                    <img src="http://splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg" class="img-responsive" alt="Image 2">
-                    <div class="gallery-box-caption">
-                        <div class="gallery-box-content">
-                            <div>
-                                <i class="icon-lg ion-ios-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4">
-                    <img src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4" class="img-responsive" alt="Image 3">
-                    <div class="gallery-box-caption">
-                        <div class="gallery-box-content">
-                            <div>
-                                <i class="icon-lg ion-ios-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg">
-                    <img src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg" class="img-responsive" alt="Image 4">
-                    <div class="gallery-box-caption">
-                        <div class="gallery-box-content">
-                            <div>
-                                <i class="icon-lg ion-ios-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg">
-                    <img src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg" class="img-responsive" alt="Image 5">
-                    <div class="gallery-box-caption">
-                        <div class="gallery-box-content">
-                            <div>
-                                <i class="icon-lg ion-ios-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg">
-                    <img src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg" class="img-responsive" alt="Image 6">
-                    <div class="gallery-box-caption">
-                        <div class="gallery-box-content">
-                            <div>
-                                <i class="icon-lg ion-ios-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="container-fluid" id="features">
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
