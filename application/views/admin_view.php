@@ -254,7 +254,7 @@ Messages here
 <?php
 foreach($reviews as $review){
   echo '<div class="panel panel-primary">';
-  echo  '<div class="panel-heading">'.$review->employee_name.'</div>';
+  echo  '<div class="panel-heading">'.$review->employee_name.', '.$review->title.'</div>';
   echo  '<div class="panel-body">'.$review->stars.'</div>';
   echo  '<div class="panel-body">'.$review->description.'</div>';
   echo  '<div class="panel-body">'.$review->review_date.'</div>';
