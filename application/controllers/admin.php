@@ -19,11 +19,9 @@ class Admin extends CI_Controller {
     }else{
 			redirect('home'); // when they manually type admin
 		}
-
-
 	}
 
-		function logout(){
+	function logout(){
 		$this->session->sess_destroy();
 		redirect("home");
 	}
@@ -32,12 +30,11 @@ class Admin extends CI_Controller {
     if( $this->session->userdata('adminlogin') ){
 			$this->load->view('admin_view');
 		}
+
     $this->load->view('adminLogin_view');
 
-		$previousurl = $this->input->get("previousurl");
-
-		$email = $this->input->post("lg_email");
-		$password = $this->input->post("lg_password");
+		$email = $this->input->post("admin_email");
+		$password = $this->input->post("admin_password");
 
 		$result = $this->adminModel->get_user($email, $password);
 		if ($result && $email && $password) {
@@ -49,10 +46,22 @@ class Admin extends CI_Controller {
 				$this->session->set_userdata($sess_data);
 
 				redirect("admin");
-			} else {
-				$this->session->set_flashdata('lg_err', '<div class="alert alert-danger text-center">Wrong Email-ID or Password!</div>');
+			}else if(empty($result) && $email && $password){
+				$this->session->set_flashdata('admin_err', '<div class="alert alert-danger text-center alert-info">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<span class="glyphicon glyphicon-warning-sign"></span> <strong> Error! </strong> Wrong Email or Password!</div>');
+				redirect("admin/login");
 			}
 	}
+
+	function signup(){
+		if( $this->session->userdata('adminlogin') ){
+			$this->load->view("admin");
+		}else{
+			$this->load->view("adminSignup_view");
+		}
+	}
+
 
 	function addemployees(){
 		$first = $this->input->post("employeeFName");

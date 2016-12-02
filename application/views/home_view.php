@@ -4,11 +4,11 @@
 .down-arrow{position: absolute;top: 20%;}
 .button_down img {
 width: 50px;
-    
+
 }
 .content-section-a {
-    
-    padding-top: 150px; 
+
+    padding-top: 150px;
     padding-bottom: 150px;
     text-align: left;
 }
@@ -137,7 +137,7 @@ opacity:1;
         </div>
         <br><br><br>
                 <div class="col-xs-12 text-center down-arrow">
-            <div class="button_down"> 
+            <div class="button_down">
                 <a class="imgcircle page-scroll" data-wow-duration="1.5s"  href="#useit"> <img class="img_scroll" src="<?php echo base_url('assets/img');?>/circle.png" alt=""> </a>
             </div>
         </div>
@@ -164,32 +164,32 @@ function redirect() {
     <div id ="useit" class="content-section-a" align=left>
 
         <div class="container">
-            
+
             <div class="row">
-            
+
                 <div class="col-sm-6 pull-right wow fadeInRightBig">
                     <iframe width="520px" height="400px" src="https://youtube.com/embed/ryEsuevuZGs">
 </iframe>
                 </div>
-                
-                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">
                     <h3 class="section-heading">Cudos</h3>
                     <div class="sub-title lead3">Learn to Love your Business</div><br>
                     <p class="lead">
                         Our team at Cudos is dedicated to help your business reach its maximum potential. Your customers and employees are what makes your business great. The experience of your customers with yor employees is valuable and we believe customers should be able to share that experience to help your business the best it can be.
                     </p>
                     <!--
-                     <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a> 
+                     <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>
                      <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
                      -->
-                </div>   
+                </div>
             </div>
         </div>
         <!-- /.container -->
     </div>
 
-    <div class="content-section-b" style="padding-top: 150px; padding-bottom: 150px; background-color: #f8f8f8;"> 
-        
+    <div class="content-section-b" style="padding-top: 150px; padding-bottom: 150px; background-color: #f8f8f8;">
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeftBig">
@@ -211,26 +211,26 @@ function redirect() {
     </div>
     <div class="item">
       <img class="slide" src="<?php echo base_url(); ?>/assets/img/open.png" />
- 
+
     </div>
-  </div>       
+  </div>
                 </div>
                 </div>
-                
-                <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">   
+
+                <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">
                     <h3 class="section-heading">Sign Up Today</h3>
                     <div class="sub-title lead3">YOU have the power to make your community great again!</div>
                     <br>
                     <p class="lead">
                         Customers can now review their favorite and not so favorite employees of a local business. Reviews can help other customers choose a sales agent, barber, nail technician, ... (You name it) more wisely.
                         <br><br>
-                        If you are a business representative, make sure to sign up to be associated with us and manage your employees. 
+                        If you are a business representative, make sure to sign up to be associated with us and manage your employees.
                     </p>
                     <!--
-                     <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a> 
+                     <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a>
                      <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
                      -->
-                </div>              
+                </div>
             </div>
         </div>
     </div>
@@ -390,7 +390,7 @@ function redirect() {
               <span class="icon-lg  glyphicon glyphicon-search"></span>
             </div>
             <h4 class="heading">Search</h4>
-            <p class="description">Search for businesses in your area or any parts of the world. Whether you wanna know about 
+            <p class="description">Search for businesses in your area or any parts of the world. Whether you wanna know about
             your local bakery or a fancy restaurant for your honey moon in Paris, Cudos has got you covered.</p>
           </div>
         </div>
@@ -424,7 +424,7 @@ function redirect() {
          <div class="main-header wow fadeIn">
          <h5 style="color: #262C3A">Associated Businesses Get More! Sign up Today and Manage your Employees!</h5><br>
          </div>
-         <p><a class="btn btn-embossed btn-primary" href="<?php echo base_url(); ?>index.php/associatedbusiness" role="button">Learn More</a> 
+         <p><a class="btn btn-embossed btn-primary" href="<?php echo base_url(); ?>index.php/associatedbusiness" role="button">Learn More</a>
          <a class="btn btn-embossed btn-info" href="<?php echo base_url(); ?>index.php/admin/login" role="button">Login to Dashboard</a></p>
             <div class="row features">
             <div class="col-md-4"></div>
@@ -446,9 +446,9 @@ function redirect() {
     .morph-button{
             width:600px;
     box-sizing:border-box;
-    
-    
-    
+
+
+
     }
 
 .btn-big{
@@ -489,10 +489,10 @@ function redirect() {
                             </div>
                         </div>
                 </div>
-            </div>  
+            </div>
             </div>>
         </div>
-    </div>  
+    </div>
 
 <section class="container-fluid" id="features">
     <div class="row">

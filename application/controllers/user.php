@@ -35,7 +35,7 @@ class User extends CI_Controller {
 		}
     $this->load->view('login_view');
 
-		$previousurl = $this->input->get("previousurl");
+	//	$previousurl = $this->input->get("previousurl");
 		// get form input from the view
 		$email = $this->input->post("lg_email");
 		$password = $this->input->post("lg_password");
@@ -47,10 +47,12 @@ class User extends CI_Controller {
 				$sess_data = array('login' => TRUE, 'fname' => $result[0]->first_name, 'lname' => $result[0]->last_name, 'customer_id' => $result[0]->customer_id);
 				$this->session->set_userdata($sess_data);
 
-
 				redirect("home"); //cannot resolve $previousurl, don't know why
-			} else {
-				$this->session->set_flashdata('lg_err', '<div class="alert alert-danger text-center">Wrong Email-ID or Password!</div>');
+			} else if(empty($result) && $email && $password){
+				$this->session->set_flashdata('lg_err', '<div class="alert alert-danger text-center alert-info">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<span class="glyphicon glyphicon-warning-sign"></span> <strong> Error! </strong> Wrong Email or Password!</div>');
+				redirect("user/login");
 			}
 	}
 
@@ -62,7 +64,7 @@ class User extends CI_Controller {
 			redirect("admin");
 		}
 
-	  $this->load->view('signup_view');
+	  $this->load->view('login_view');
 
     $fname = $this->input->post('reg_fname');
     $lname = $this->input->post('reg_lname');
@@ -75,8 +77,10 @@ class User extends CI_Controller {
 			$match = json_decode($json);//decode json object into a php variable
 
 			if(empty($match->results)){
-				$this->session->set_flashdata('reg_msg', '<div class="alert alert-danger text-center">Wrong Zip Code. Try Again.</div>');
-				redirect("user/signup");
+				$this->session->set_flashdata('reg_msg', '<div class="alert alert-danger text-center alert-info">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<span class="glyphicon glyphicon-warning-sign"></span> <strong> Error! </strong> Wrong Zip Code, Try again!</div>');
+				redirect("user/login");
 			}else{
 				foreach($match->results[0]->address_components as $component){
 					foreach($component->types as $type){
@@ -95,29 +99,20 @@ class User extends CI_Controller {
         //insert by passing an array to insert_user function
         $result = $this->user_model->insert_user(array('first_name' => $fname,'last_name' => $lname,'email' => $email,'password' => $password, 'city' => $city, 'state' => $state, 'country' => $country, 'img_url' => 'https://www.kirkleescollege.ac.uk/wp-content/uploads/2015/09/default-avatar.png'));
         if ($result) {
-          $this->session->set_flashdata('reg_msg', '<div class="alert alert-success text-center">Registration Successful. <a href="http://localhost/Cudos/user/login">Login</a> to access your profile!</div>');
+          $this->session->set_flashdata('reg_msg', '<div class="alert alert-success text-center alert-info">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<span class="glyphicon glyphicon-ok"></span> <strong> Success! </strong>Now you can login!</div>');
           $this->session->set_flashdata('reg_success', true);
 
-          redirect("user/signup");
+          redirect("user/login");
         } else {
-          $this->session->set_flashdata('reg_msg', '<div class="alert alert-danger text-center">Error Registering. Try Again.</div>');
+          $this->session->set_flashdata('reg_msg', '<div class="alert alert-danger text-center alert-info">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<span class="glyphicon glyphicon-warning-sign"></span> <strong> Error! </strong> Try registering again!</div>');
         }
     }
   }
 
-  function forgotpassword(){
-    if( $this->session->userdata('login') ){
-			redirect("home");
-		}
-    $this->load->view('forgotpassword_view');
-		$email = $this->input->post('fp_email');
-
-		if($email){
-			$this->session->set_flashdata('fp_msg', '<div class="alert alert-success text-center">Successful. Check your email.</div>');
-			$this->session->set_flashdata('fp_success', true);
-			redirect("user/forgotpassword");
-		}
-  }
 }
 
 ?>

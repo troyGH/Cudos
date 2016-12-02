@@ -17,7 +17,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/styles.css"); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/login_register.css"); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/mdb.css"); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/mdb.min.css"); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/font-awesome.css"); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/font-awesome.min.css"); ?>">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -29,7 +28,6 @@
   <script type="text/javascript" src="<?php echo base_url("assets/js/scripts.js"); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url("assets/js/login_register.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/mdb.js"); ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url("assets/js/mdb.min.js"); ?>"></script>
 </head>
 <body class="<?php $ci =& get_instance(); echo ucfirst($ci->uri->segment(1)); ?>-body" data-spy="scroll" data-target=".navbar" data-offset="70">
 

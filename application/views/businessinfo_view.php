@@ -350,15 +350,7 @@ function vote_review(thumbs, reviewId){
      data:  {vote:thumbs, review_id: reviewId},
      success: function(data){
          window.location.reload();
-
      }
    });
 }
-
-window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove();
-    });
-}, 3000);
-
 </script>
