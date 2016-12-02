@@ -140,6 +140,17 @@ opacity:1;
    margin-bottom:50px;
 }
 
+@media (min-width: 768px){
+.form-inline .form-control {
+    display: inline-block;
+   
+    vertical-align: middle;
+    background-color: white;
+    padding-left: 5px;
+    
+}
+}
+
 </style>
 
 
@@ -162,7 +173,7 @@ opacity:1;
           </div>
 
 
-          <div class="form-group">
+          <div class="form-group" style="display: block">
             <button type="submit" class="btn btn-primary">Search</button>
           </div>
           <?php echo form_close();?>
