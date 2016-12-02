@@ -10,7 +10,7 @@
 
 <div id="slideBox">
   <div class="topLayer">
-    <div class="left">
+    <div class="leftpart">
       <div class="content">
         <h2>Sign Up</h2>
 				<?php $attributes = array("id" => "register-form", "class" => "text-left");
@@ -45,7 +45,7 @@
 
       </div>
     </div>
-    <div class="right">
+    <div class="rightpart">
       <div class="content">
         <h2>Login</h2>
 				<?php $attributes = array("id" => "login-form", "class" => "text-left");

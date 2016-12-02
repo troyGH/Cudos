@@ -52,18 +52,18 @@
   left: -100%;
 }
 
-.left {
+.leftpart {
   width: 50%;
   height: 100%;
   background: #2C3034;
   left: 0;
   position: absolute;
 }
-.left input{
+.leftpart input{
   color: #ffa154;
 }
 
-.right {
+.rightpart {
   width: 50%;
   height: 100%;
   background: #f9f9f9;
@@ -115,12 +115,12 @@ button:hover {
   box-shadow: none;
 }
 
-.right .off:hover {
+.rightpart .off:hover {
   background: #eee;
   color:  #ffa154;
   box-shadow: none;
 }
-.left .off:hover {
+.leftpart .off:hover {
   box-shadow: none;
   color:  #ffa154;
   background:  #ffa154;

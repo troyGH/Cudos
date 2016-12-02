@@ -37,6 +37,17 @@ font-weight: 300;
   transition: all 0.5s ease;
 }
 
+.feature-static {
+  width: 100%;
+  height: 320px;
+  margin: 20px 0;
+  text-align: center;
+  border: 2px solid #ddd;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+
 .feature .icon-holder {
   color: #f35a1e;
   position: relative;
@@ -56,8 +67,19 @@ font-weight: 300;
   transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+.feature-static .heading {
+  position: relative;
+  top: 90px;
+  color: #f35a1e;
+}
+
 .feature:hover {
   border-color: #039be5;
+}
+
+.feature-static:hover {
+  border-color: #039be5;
+  top: -30px;
 }
 
 .feature:hover .icon-holder {
@@ -78,6 +100,16 @@ font-weight: 300;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
+}
+
+
+.feature-static .description {
+  font-size: 1.1em;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 100px;
+  color: #262C3A;
+ 
 }
 
 .feature:hover .description {
@@ -427,7 +459,14 @@ function redirect() {
          <p><a class="btn btn-embossed btn-primary" href="<?php echo base_url(); ?>index.php/associatedbusiness" role="button">Learn More</a>
          <a class="btn btn-embossed btn-info" href="<?php echo base_url(); ?>index.php/admin/login" role="button">Login to Dashboard</a></p>
             <div class="row features">
-            <div class="col-md-4"></div>
+            <div class="col-md-2"></div>
+            <a href="<?php echo base_url(); ?>admin/signup" ><div class="col-md-4 wow fadeInUp">
+          <div class="feature-static">
+            
+            <h4 class="heading">Associate With Us</h4>
+            <p class="description">Customers are more likely to review your employees when you are associated with us.</p>
+          </div>
+        </div></a>
         <div class="col-md-4 wow fadeInUp">
           <div class="feature">
             <div class="icon-holder">
@@ -437,7 +476,7 @@ function redirect() {
             <p class="description">Got a new employee? Or some employees are no longer are employees of your business? Make sure to update the list of your employees in your dashboard.</p>
           </div>
         </div>
-       <div class="col-md-4"></div>
+       <div class="col-md-2"></div>
       </div>
 
 </div> <!-- /container -->
