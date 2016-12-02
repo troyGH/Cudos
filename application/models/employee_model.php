@@ -14,7 +14,7 @@ WHERE t1.google_id = '$gID' AND t1.business_id = t2.business_id AND t2.employee_
 
 	function get_employees_reviews($gID){
 		$query = $this->db->query(
-		"SELECT t3.employee_id, t7.customer_id, t7.first_name, t7.last_name, t5.*
+		"SELECT t3.employee_id, t7.customer_id, CONCAT_WS(' ', t7.first_name, CONCAT(LEFT(t7.last_name,1),'.')) AS customer_name, t7.city, t7.state, t5.*
 			FROM business t1, businessemployee t2, employee t3, employeereview t4, review t5, customerreview t6, customer t7
 WHERE t1.google_id = '$gID' AND t1.business_id = t2.business_id AND t2.employee_id = t3.employee_id
 AND t3.employee_id = t4.employee_id AND t4.review_id = t5.review_id AND t6.review_id = t5.review_id AND t6.customer_id = t7.customer_id;");

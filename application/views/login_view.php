@@ -39,7 +39,7 @@
 						<label for="reg_password_confirm" class="form-label"><span class="glyphicon glyphicon-lock"></span> Confirm Password</label>
 						<input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" required />
 					</div>
-        <button id="goLeft" class="off">Login</button>
+        <button id="goLeft" class="off" ng-disabled="form.$invalid">Login</button>
         <button id="signup" type="submit">Sign up</button>
 				<?php echo form_close();?>
 
@@ -59,7 +59,7 @@
 						<label for="lg_password" class="form-label"><span class="glyphicon glyphicon-lock"></span> Password</label>
 						<input type="password" class="form-control" id="lg_password" name="lg_password" required />
 					</div>
-          <button id="goRight" class="off">Sign Up</button>
+          <button id="goRight" class="off" ng-disabled="form.$invalid">Sign Up</button>
           <button id="login" type="submit">Login</button>
 					<?php echo form_close();?>
       </div>

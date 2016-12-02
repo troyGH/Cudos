@@ -8,30 +8,19 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
          </button>
-           <a id="bHome" class="navbar-brand page-scroll" href="<?php echo base_url(); ?>index.php/home"><p class="brand-name">Cudos</p></a>
+           <a id="bHome" class="navbar-brand page-scroll" href="<?php echo base_url(); ?>index.php/home"><p class="brand-name">Cudos <i class="fa fa-address-card-o" aria-hidden="true"></i></p></a>
        </div>
        <div class="navbar-collapse collapse" id="bs-navbar">
            <ul class="nav navbar-nav">
-             <li>
-               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#intro">Intro</a>
-             </li>
-             <li>
-               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#highlights">Highlights</a>
-             </li>
-             <li>
-               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#gallery">Gallery</a>
-             </li>
-             <li>
-               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#features">Features</a>
-             </li>
+
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
              <li>
                <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#about">About</a>
              </li>
              <li>
                <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#contact">Contact</a>
              </li>
-           </ul>
-           <ul class="nav navbar-nav navbar-right">
              <li <?php if(isActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>index.php/user/login">Log in</a></li>
 
              <li <?php if(isActive("admin/login")) echo "class='active' "; ?> id="login_admin"><a href="<?php echo base_url(); ?>index.php/admin/login">Business Login</a></li>

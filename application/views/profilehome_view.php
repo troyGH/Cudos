@@ -26,7 +26,7 @@
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-warning btn-sm">Edit Profile</button>
+					<button onclick="window.location.href='http://localhost/Cudos/profile/edit'" class="btn btn-warning btn-sm">Edit Profile</button>
 				</div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->

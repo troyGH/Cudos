@@ -62,8 +62,7 @@
   text-align: center;
   color: #000;
   width: 100%;
-  background-color: #c9c9c9;
-  background-image: url('https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-10-full.jpg');
+  background-color: #e2e2e2;
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -91,26 +90,25 @@
 p.brand-name{
   font-size: 21px;
   font-weight: bold;
-  color: #f35a1e;
+  color: #ffa154;
 }
 #bHome{
   margin:0;
   padding: 13px 0 0 0;
 }
 i{
-  color: #f35a1e;
+  color: #ffa154;
 }
 #contact, #features, #intro, #contact, #gallery{
   box-shadow: 0 0 4px rgba(0, 0, 0, .2);
 }
 
 #topNav{
-  background-color: #262C3A;
-  opacity: 0.9;
+  background-color: white;
 }
 
 h1{
-  color:#f35a1e;
+  color:#ffa154;
 }
 
 .cudos-img{
@@ -135,13 +133,14 @@ a:focus{
   margin: 0px;
 }
 .business-banner{
-  background-image: url('../img/server.png');
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: 100%;
   -o-background-size: cover;
-  opacity: 0.8;
+  margin-bottom: 80px;
+  background-color: gray;
+
 }
 .business-banner > p{
   color: white;
@@ -154,13 +153,13 @@ a:focus{
     font-size: 30px;
     font-weight: 400;
     padding: 10px;
-    background-color: #f35a1e;
+    background-color:  #ffa154;
     color: white;
     margin: 0;
     border-radius: 2px 2px 0 0;
 }
 #iw-container a{
-  background-color: #f35a1e;
+  background-color:  #ffa154;
 }
 #iw-container .iw-content {
     max-height: 500px;
@@ -188,6 +187,18 @@ a:focus{
 .custom-body a{
     color:  #ffa154;
 }
-#footer a{
-  color:  #ffa154;
+.btn-warning{
+  background-color: #ffa154 !important;
+}
+.modal-open {
+  overflow: hidden;
+  position: relative;
+  left: -8px;
+}
+.stars{
+    font-size: 24px;
+    color: #ffa154;
+}
+#rating-label{
+  margin-bottom: 0;
 }

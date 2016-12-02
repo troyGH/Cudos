@@ -109,7 +109,7 @@ font-weight: 300;
   margin: 0 auto;
   padding-top: 100px;
   color: #262C3A;
- 
+
 }
 
 .feature:hover .description {
@@ -143,11 +143,11 @@ opacity:1;
 @media (min-width: 768px){
 .form-inline .form-control {
     display: inline-block;
-   
+
     vertical-align: middle;
     background-color: white;
     padding-left: 5px;
-    
+
 }
 }
 
@@ -160,36 +160,34 @@ opacity:1;
 <header id="first">
     <div class="header-content">
         <div class="inner">
-
-          <img class="cudos-img" src="<?php echo base_url('assets/img/Cudos Final.png'); ?>">
-          <h3>Search for a business to rate an employee</h3>
+          <h3>Welcome to Cudos <i class="fa fa-address-card-o" aria-hidden="true"></i></h3>
+          <h5>Search for a business to rate an employee</h5>
 
           <hr />
           <?php $attributes = array("id" => "search-form", "class" => "form-inline", "method" => "get");
                               echo form_open("business/search", $attributes);  ?>
           <div class="form-group">
-            <input id="business-input" class="form-control" name="business" type="text" placeholder="Business" require="">
-            <input id="location-input" class="form-control" name="location" type="text" placeholder="City, State, or Zip"  require />
+            <input id="business-input" class="form-control" name="business" type="text" placeholder="Business">
+            <input id="location-input" class="form-control" name="location" type="text" placeholder="City, State, or Zip"  required />
           </div>
 
 
           <div class="form-group" style="display: block">
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-warning">Search</button>
           </div>
           <?php echo form_close();?>
         </div>
         <br><br><br>
+
                 <div class="col-xs-12 text-center down-arrow">
             <div class="button_down">
                 <a class="imgcircle page-scroll" data-wow-duration="1.5s"  href="#useit"> <img class="img_scroll" src="<?php echo base_url('assets/img');?>/circle.png" alt=""> </a>
             </div>
         </div>
     </div>
-
     <video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="https://s3-us-west-2.amazonaws.com/coverr/poster/Traffic-blurred2.jpg" id="video-background">
-        <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coffee-Shot.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
-    </video>
-
+    <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coffee-Shot.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
+</video>
 </header>
 
 <head>
@@ -473,7 +471,7 @@ function redirect() {
             <div class="col-md-2"></div>
             <a href="<?php echo base_url(); ?>admin/signup" ><div class="col-md-4 wow fadeInUp">
           <div class="feature-static">
-            
+
             <h4 class="heading">Associate With Us</h4>
             <p class="description">Customers are more likely to review your employees when you are associated with us.</p>
           </div>
@@ -544,64 +542,7 @@ function redirect() {
         </div>
     </div>
 
-<section class="container-fluid" id="features">
-    <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-            <h2 class="text-center text-primary">Features</h2>
-            <hr>
-            <div class="media wow fadeInRight">
-                <h3>Simple</h3>
-                <div class="media-body media-middle">
-                    <p>What could be easier? Get information and reviews fast with us.</p>
-                </div>
-                <div class="media-right">
-                    <i class="icon-lg ion-ios-bolt-outline"></i>
-                </div>
-            </div>
-            <hr>
-            <div class="media wow fadeIn">
-                <h3>Free</h3>
-                <div class="media-left">
-                    <a href="#alertModal" data-toggle="modal" data-target="#alertModal"><i class="icon-lg ion-ios-cloud-download-outline"></i></a>
-                </div>
-                <div class="media-body media-middle">
-                    <p>Yes, just sign up and have your best experience ever.</p>
-                </div>
-            </div>
-            <hr>
-            <div class="media wow fadeInRight">
-                <h3>Unique</h3>
-                <div class="media-body media-middle">
-                    <p> To search for everything from the city's tastiest pizza to the most popular beauty salon. What will you uncover in your neighborhood?</p>
-                </div>
-                <div class="media-right">
-                    <i class="icon-lg ion-ios-snowy"></i>
-                </div>
-            </div>
-            <hr>
-            <div class="media wow fadeIn">
-                <h3>Popular</h3>
-                <div class="media-left">
-                    <i class="icon-lg ion-ios-heart-outline"></i>
-                </div>
-                <div class="media-body media-middle">
-                    <p>There's good reason why Cudos is the most used serach and review website in the world.</p>
-                </div>
-            </div>
-            <hr>
-            <div class="media wow fadeInRight">
-                <h3>Tested</h3>
-                <div class="media-body media-middle">
-                    <p>Cudos is matured and well-tested. It's a stable codebase that provides consistency.</p>
-                </div>
-                <div class="media-right">
-                    <i class="icon-lg ion-ios-flask-outline"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="about" style="background-image: url(<?php echo base_url('assets/img');?>/org.jpg");>
+<section id="about">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -615,7 +556,6 @@ function redirect() {
             <p class="wow fadeInDown" style="font-size:200%; color: #570E04" ; > <b> SJSU Software Engineers </p>
 
 </div>
-
 <br>
 
 <div class="container">
@@ -654,7 +594,7 @@ function redirect() {
 
 
 
-<section id="contact">
+<section id="contact" class="bg-dark">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">

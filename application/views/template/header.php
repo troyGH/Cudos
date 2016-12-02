@@ -19,6 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/mdb.css"); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/font-awesome.css"); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/font-awesome.min.css"); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/footer.css"); ?>">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crimson+Text" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -28,6 +30,8 @@
   <script type="text/javascript" src="<?php echo base_url("assets/js/scripts.js"); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url("assets/js/login_register.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/mdb.js"); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/mdb.min.js"); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery.raty-fa.js"); ?>"></script>
 </head>
 <body class="<?php $ci =& get_instance(); echo ucfirst($ci->uri->segment(1)); ?>-body" data-spy="scroll" data-target=".navbar" data-offset="70">
 
