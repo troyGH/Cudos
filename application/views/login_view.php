@@ -35,10 +35,6 @@
 						<label for="reg_password" class="form-label"><span class="glyphicon glyphicon-lock"></span> Password</label>
 						<input type="password" class="form-control" id="reg_password" name="reg_password"  required />
 					</div>
-					<div class="form-group">
-						<label for="reg_password_confirm" class="form-label"><span class="glyphicon glyphicon-lock"></span> Confirm Password</label>
-						<input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" required />
-					</div>
         <button id="goLeft" class="off" ng-disabled="form.$invalid">Login</button>
         <button id="signup" type="submit">Sign up</button>
 				<?php echo form_close();?>

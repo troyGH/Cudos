@@ -38,13 +38,11 @@ class Employee extends CI_Controller {
 			$time = now('US/Pacific');
 
 			$this->employee_model->insert_review(array('employee_id' => $eID,'customer_id' => $cID,'description' => $description,'stars' => $stars, 'timestamp' =>	mdate($dateString, $time)));
-			$this->session->set_flashdata('review_success', TRUE);
 			$this->session->set_flashdata('review_msg', '<div class="alert alert-success text-center alert-info">
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 								<span class="glyphicon glyphicon-ok"></span> <strong> Success!</strong> Review sent!</div>');
 		}
 		else{
-			$this->session->set_flashdata('review_success', FALSE);
 			$this->session->set_flashdata('review_msg', '<div class="alert alert-danger text-center alert-info">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<span class="glyphicon glyphicon-warning-sign"></span> <strong> Error!</strong> You already reviewed this person, please click on edit!</div>');

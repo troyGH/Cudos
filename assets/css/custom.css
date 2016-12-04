@@ -12,7 +12,6 @@
 
 #pac-input {
   background-color: #fff;
-  font-family: Roboto;
   font-size: 15px;
   font-weight: 300;
   margin-left: 12px;
@@ -27,10 +26,6 @@
   border-color: #4d90fe;
 }
 
-.pac-container {
-  font-family: Roboto;
-}
-
 #type-selector {
   color: #fff;
   background-color: #4d90fe;
@@ -38,7 +33,6 @@
 }
 
 #type-selector label {
-  font-family: Roboto;
   font-size: 13px;
   font-weight: 300;
 }
@@ -138,7 +132,6 @@ a:focus{
   -moz-background-size: cover;
   background-size: 100%;
   -o-background-size: cover;
-  margin-bottom: 80px;
   background-color: gray;
 
 }
@@ -200,5 +193,105 @@ a:focus{
     color: #ffa154;
 }
 #rating-label{
+  margin-bottom: 0;
+}
+#employee-list{
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.list-group-item{
+  margin:0;
+  padding: 5px;
+}
+.list-group-item p{
+  margin:0;
+}
+
+#employee-profile{
+  min-height: 360px;
+  width: 100%;
+}
+
+#employee-profile h4{
+  color: #ffa154;
+}
+#business-input, #location-input{
+  font-weight: 600;
+  color: black;
+}
+
+.card-block{
+  margin-top: 100px;
+}
+
+a.btn{
+  color: white;
+}
+
+#reviews-here label{
+  margin-top: -20px;
+}
+
+#reviews-here p{
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 5px;
+}
+#reviews-here .card{
+  padding: 10px;
+}
+.card .card-title{
+  color: #ffa154 !important;
+}
+#business-banner .card-block{
+  margin-top: 30px;
+}
+#business-banner p{
+  font-size: 1em;
+}
+#business-banner h2{
+  font-size: 40px;
+}
+#business-banner{
+  margin: 10px;
+}
+
+#employee-card .card-block{
+  margin-top: 30px;
+}
+#employee-card{
+  margin: 10px;
+  padding: 10px;
+}
+#reviews-card .card-block{
+  margin-top: 30px;
+}
+#reviews-card{
+  min-height: 500px;
+  margin: 10px;
+  padding: 10px;
+}
+#reviews-display{
+  min-height: 313px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: -10px;
+}
+#employee-about{
+  text-align: left;
+}
+#employee-about h4{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#employee-about .text-muted{
+  color: #9099ae;
+}
+
+#employee-about p{
+  font-size: 1em;
+  line-height: 1.4;
+  margin-top: 0;
   margin-bottom: 0;
 }

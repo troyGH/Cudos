@@ -23,7 +23,7 @@
              </li>
              <li class="dropdown" id="dropmenu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <strong><?php echo $this->session->userdata('fname')." ".$this->session->userdata('lname'); ?> </strong><span></span><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                    <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>  <?php echo $this->session->userdata('fname')." ".$this->session->userdata('lname'); ?> <span></span>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">

@@ -6,7 +6,7 @@ class Employee_model extends CI_Model {
 	}
 
 	function get_employees($gID){
-		$query = $this->db->query("SELECT t3.employee_id, t3.first_name, t3.last_name, t3.title, t3.about_me, t3.img_url FROM business t1, businessemployee t2, employee t3
+		$query = $this->db->query("SELECT t3.employee_id, CONCAT_WS(' ', t3.first_name, CONCAT(LEFT(t3.last_name,1),'.')) AS employee_name, t3.title, t3.about_me, t3.img_url FROM business t1, businessemployee t2, employee t3
 WHERE t1.google_id = '$gID' AND t1.business_id = t2.business_id AND t2.employee_id = t3.employee_id;");
 
 		return $query->result();

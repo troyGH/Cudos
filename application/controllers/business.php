@@ -28,8 +28,13 @@ class Business extends CI_Controller {
     $arr['address'] = urldecode($this->input->get("bAddress"));
 		$arr['employees'] = $this->employee_model->get_employees($arr['id']);
 		$arr['reviews'] = $this->employee_model->get_employees_reviews($arr['id']);
-
-		$this->load->view('businessinfo_view', $arr);
+		$arr['selected_employee'] = $this->input->get("selectedEmp");
+		
+		if($arr['id'] && $arr['name'] && $arr['phone'] && $arr['address']){
+			$this->load->view('employeeReview_view', $arr);
+		}else{
+			$this->load->view('error');
+		}
 	}
 
 	function is_associated(){

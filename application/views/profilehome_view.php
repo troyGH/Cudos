@@ -33,7 +33,7 @@
 				<div class="profile-usermenu" style="text-align: left;display: inline-block">
 					<ul class="nav">
 					<li class="active"><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-home"></i>Overview</a></li>
-
+					<li><a data-toggle="tab" href="#inbox"><i class="glyphicon glyphicon-home"></i>Inbox</a></li>
 							<li>
 							<a data-toggle="tab" href="#menu1"><i class="glyphicon glyphicon-user"></i>
 							Account Settings </a>

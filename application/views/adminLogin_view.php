@@ -29,15 +29,11 @@
 			</div>
 		<?php echo form_close(); ?>
 		<p class="text-center text-muted">
-		Interested in signing up with Cudos? <a href="<?php echo base_url(); ?>/admin/signup"><br>Contact Us</a>
+		Interested in signing up with Cudos? <br><a href="<?php echo base_url(); ?>/admin/signup">Contact Us</a> or
+		<a href="<?php echo base_url(); ?>/associatedbusiness">Learn More</a>
 	</p>
 </div>
 	</div>
 </div>
 <!-- End Body -->
 <?php $this->load->view('template/footer.php'); ?>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-});
-</script>
