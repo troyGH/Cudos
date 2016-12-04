@@ -250,6 +250,8 @@ Messages here
 </div>
 
 <div class="tabcontent wow zoomIn" id="business_review">
+
+<div class="col-md-11 pull-right">
   <h2> Reviews </h2>
 <?php
 foreach($reviews as $review){
@@ -261,7 +263,7 @@ foreach($reviews as $review){
   echo  '<div class="panel-footer">'."<a href='http://localhost/Cudos/user/profile/'".$review->customer_id."'>".$review->customer_name."</a></div></div>";
 }
 ?>
-
+</div>
 </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
