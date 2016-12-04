@@ -6,6 +6,7 @@
 @media screen and (min-width: 980px) {
   .container.custom-body {
     padding:200px;
+    
   }
 }
 </style>
@@ -25,29 +26,40 @@
 
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
+
 				<div class="profile-userbuttons">
-					<button onclick="window.location.href='http://localhost/Cudos/profile/edit'" class="btn btn-warning btn-sm">Edit Profile</button>
+				<?php
+							if($user_info['customer_id'] == $this->session->userdata('customer_id')):
+
+						?>
+					<button onclick="window.location.href='<?php echo base_url(); ?>profile/edit'" class="btn btn-warning btn-lg"><b>Edit Profile</b></button>
+					<?php 
+					else:
+					 ?>
+					<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">Message</button>
+					<?php
+endif;
+?>
 				</div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu" style="text-align: left;display: inline-block">
 					<ul class="nav">
-					<li class="active"><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-home"></i>Overview</a></li>
-					<li><a data-toggle="tab" href="#inbox"><i class="glyphicon glyphicon-home"></i>Inbox</a></li>
+					<br><br>
+					<li class="active">
+					<h5><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-home"></i>Overview</a>
+					</h5></li>
+
 							<li>
-							<a data-toggle="tab" href="#menu1"><i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
+							<h5><a data-toggle="tab" href="#menu1"><i class="glyphicon glyphicon-user"></i>
+							Account Settings </a></h5>
 						</li>
 						<li>
-							<a data-toggle="tab" href="#menu2">
+							<h5><a data-toggle="tab" href="#menu2">
 							<i class="glyphicon glyphicon-ok"></i>
-							Reviews </a>
+							Reviews </a></h5>
 						</li>
-						<li>
-							<a data-toggle="tab" href="#menu3">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
-						</li>
+
 					</ul>
 				</div>
 				<!-- END MENU -->
@@ -74,10 +86,10 @@
             </div>
 
 
-            <div id="menu1" class="tab-pane fade">
+            <div id="menu1" class="tab-pane fade" style="margin-top: -570px">
             <h2>settings</h2>
             </div>
-             <div id="menu2" class="tab-pane fade">
+             <div id="menu2" class="tab-pane fade" style="margin-top: -70px">
 							 <h2>Reviews</h2>
 
 							 <?php
@@ -97,15 +109,48 @@
 							 ?>
 
             </div>
-             <div id="menu3" class="tab-pane fade">
-            help
-            </div>
+
 		</div>
 		</div>
 
 
 <center>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+            <?php $attributes = array("id" => "theForm", "method" => "post");
+                                echo form_open("admin/addemployees", $attributes);  ?>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="exampleModalLabel">Send a Message to <?php echo $user_info['first_name']; ?></h4>
+        </div>
+        <div class="modal-body">
+
+                   <div class="form-group">
+                        
+                        <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
+                    </div>
+
+
+        </div>
+        <div class="modal-footer">
+                              <div class="col-md-4 col-md-offset-4">
+                        <label></label>
+                        <button type="button" class="btn btn-default btn-block btn-lg wow flipInX">Send <i class="ion-android-arrow-forward"></i></button>
+                    </div>
+        </div>
+        <?php echo form_close();?>
+      </div>
+    </div>
+  </div>
 </div> <!-- /container -->
+
+
 
 <?php $this->load->view('template/footer.php'); ?>
 <?php
