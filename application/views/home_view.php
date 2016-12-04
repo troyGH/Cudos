@@ -119,13 +119,7 @@ font-weight: 300;
   transform: scale(1);
 }
 
-.style-one{
-  max-width: 90%;
-  padding: 0;
-border-top: medium double #f35a1e;
-color: #f35a1e;
-opacity:1;
-}
+
 
 .carousel-indicators {
   bottom:-50px;
@@ -234,7 +228,7 @@ function redirect() {
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeftBig">
-                     <div id="carousel-example" class="carousel slide" data-ride="carousel" style="margin-top:50px">
+                     <div id="carousel-example" class="carousel slide" data-ride="carousel" style="margin-top:50px" data-interval="false">
   <ol class="carousel-indicators homepage">
     <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example" data-slide-to="1"></li>
@@ -343,73 +337,81 @@ function redirect() {
 <section id="gallery" class="no-padding">
     <div class="container-fluid">
         <div class="row no-gutter">
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d">
+        
+            <div class="col-lg-4 col-sm-6 gallery-photo">
+                <a class="gallery-box" href="<?php echo base_url();?>business/search?business=&location=las+vegas%2C+nevada">
                     <img src="<?php echo base_url('assets/img');?>/las-vegas.jpg" class="img-responsive" alt="Image 1">
                     <div class="gallery-box-caption">
                         <div class="gallery-box-content">
                             <div>
                                 <i class="icon-lg ion-ios-search"></i>
+                                <p>Las Vegas</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg">
+            
+            <div class="col-lg-4 col-sm-6 gallery-photo">
+                <a class="gallery-box" href="<?php echo base_url();?>business/search?business=&location=san+francisco%2C+california">
                     <img src="<?php echo base_url('assets/img');?>/maxresdefault.jpg" class="img-responsive" alt="Image 2">
                     <div class="gallery-box-caption">
                         <div class="gallery-box-content">
                             <div>
                                 <i class="icon-lg ion-ios-search"></i>
+                                <p>San Francisco</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4">
+            <div class="col-lg-4 col-sm-6 gallery-photo">
+             <a class="gallery-box" href="<?php echo base_url();?>business/search?business=&location=seattle%2C+washington">
                     <img src="<?php echo base_url('assets/img');?>/seattle.jpg" class="img-responsive" alt="Image 3">
                     <div class="gallery-box-caption">
                         <div class="gallery-box-content">
                             <div>
                                 <i class="icon-lg ion-ios-search"></i>
+                                <p>Seattle</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg">
+               <a class="gallery-box" href="business/search?business=&location=new+york">
                     <img src="<?php echo base_url('assets/img');?>/newyork.jpg" class="img-responsive" alt="Image 4">
                     <div class="gallery-box-caption">
                         <div class="gallery-box-content">
                             <div>
                                 <i class="icon-lg ion-ios-search"></i>
+                                <p>New York</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg">
-                    <img src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg" class="img-responsive" alt="Image 5">
+                <a class="gallery-box" href="business/search?business=&location=chicago">
+                    <img src="<?php echo base_url('assets/img');?>/chicago.jpg" class="img-responsive" alt="Image 5">
                     <div class="gallery-box-caption">
                         <div class="gallery-box-content">
                             <div>
                                 <i class="icon-lg ion-ios-search"></i>
+                                <p>Chicago</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg">
-                    <img src="http://splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg" class="img-responsive" alt="Image 6">
+                <a class="gallery-box" href="business/search?business=&location=miami">
+                    <img src="<?php echo base_url('assets/img');?>/miami.jpg" class="img-responsive" alt="Image 6">
                     <div class="gallery-box-caption">
                         <div class="gallery-box-content">
                             <div>
                                 <i class="icon-lg ion-ios-search"></i>
+                                <p>Miami</p>
                             </div>
                         </div>
                     </div>
@@ -461,7 +463,7 @@ function redirect() {
 
 
         <div class="container" style="padding-bottom: 200px" align=center>
-        <hr class="style-one"><br>
+        <hr class="style-two"><br>
          <div class="main-header wow fadeIn">
          <h5 style="color: #262C3A">Associated Businesses Get More! Sign up Today and Manage your Employees!</h5><br>
          </div>
@@ -542,42 +544,39 @@ function redirect() {
         </div>
     </div>
 
-<section id="about">
+<section id="about" align=center>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h3 class="margin-top-0 text-primary">About Us</h3>
-                <hr class="primary">
+                <hr class="style-two">
             </div>
         </div>
     </div>
-    <div class="container" );>
+    <div class="container">
         <div class="row">
             <p class="wow fadeInDown" style="font-size:200%; color: #570E04" ; > <b> SJSU Software Engineers </p>
 
 </div>
 <br>
 
-<div class="container">
  <div class="col-md-3">
-  <img src="<?php echo base_url('assets/img');?>/troy.jpg" align="left" class="img-circle" alt="Troy" width="200" height="200">
-      <h3> <br/> <b>Troy</h3>
+  <img src="<?php echo base_url('assets/img');?>/troy.jpg" class="img-circle" alt="Troy" width="200" height="200">
+      <h3>Troy</h3>
 
   </div>
    <div class="col-md-3">
-   <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAVuAAAAJDA3YjY3ZTQ4LTk2NjItNGQ5NS05OWFiLWVmMjg5MDA3MzAyYg.jpg" align="center" class="img-circle" alt="Roya" width="200" height="200">
-       <h3> <b></b>Roya</h3>
+   <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAVuAAAAJDA3YjY3ZTQ4LTk2NjItNGQ5NS05OWFiLWVmMjg5MDA3MzAyYg.jpg" class="img-circle" alt="Roya" width="200" height="200">
+       <h3> Roya</h3>
 
    </div>
     <div class="col-md-3">
-    <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAg1AAAAJGY0Y2U0OTYwLTFlNzUtNDIxYS1hMzkyLTlkZjNkYTQxMmQ5Zg.jpg" align="right" class="img-circle" alt="Eya" width="200" height="200" >
-    <h3> <br/> <b> Eya</h3>
+    <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAg1AAAAJGY0Y2U0OTYwLTFlNzUtNDIxYS1hMzkyLTlkZjNkYTQxMmQ5Zg.jpg" class="img-circle" alt="Eya" width="200" height="200" >
+    <h3>Eya</h3>
     </div>
      <div class="col-md-3">
-     <img src="<?php echo base_url('assets/img');?>/sueng.jpg" align="right" class="img-circle" alt="sueng" width="200" height="200">
-     <br> </br>
-          <br> </br>
-         <h3> <br/> <b> Sueng</h3>
+     <img src="<?php echo base_url('assets/img');?>/sueng.jpg" class="img-circle" alt="sueng" width="200" height="200">
+         <h3>Sueng</h3>
 
      </div>
 </div>

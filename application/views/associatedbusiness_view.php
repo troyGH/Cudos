@@ -60,26 +60,7 @@
 	padding-top: 200px;
 }
 
-.style-one{
-	max-width: 100%;
-	border-top: 10px solid black;
-	padding: 0;
-border: none;
-border-top: medium double #f35a1e;
-color: #f35a1e;
-text-align: center;
-opacity:1;
-}
 
-hr.style-one:after {
-content: "Associated Businesses Width Cudos";
-display: inline-block;
-position: relative;
-top: -0.7em;
-font-size: 2.5em;
-padding: 0 0.25em;
-background: white;
-}
 
 .org-btn{
 	background-color: #f35a1e;
