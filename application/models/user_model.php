@@ -53,5 +53,11 @@ class User_model extends CI_Model {
 		$this->db->update('customer', $data);
 	}
 
+	function delete_user($id){
+		$this->db->delete('customer', array('customer_id' => $id));
+		$this->db->delete('customerreview', array('customer_id' => $id));
+		$this->db->delete('customervote', array('customer_id' => $id));
+	}
+
 
 }?>

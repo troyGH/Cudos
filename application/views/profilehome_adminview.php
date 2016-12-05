@@ -149,7 +149,7 @@ endif;
 								 echo "<p>".$review['description'].'</p>';
 								 echo "<p align=right>Up:".$review['ThumbsUp'].'';
 								 echo " Down:".$review['ThumbsDown'].'';
-								 echo "<p align=right>".$review['timestamp'].'</p></div>';
+								 echo "<p align=right>".$review['datestamp'].'</p></div>';
 								 ?>
 								 <hr class="style-two">
 								 <?php

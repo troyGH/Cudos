@@ -6,7 +6,7 @@ class Admin extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
     $this->load->helper(array('form','url','html', 'date'));
-		$this->load->library(array('session'));
+		$this->load->library(array('session', 'email'));
 		$this->load->database();
 		$this->load->model('adminModel');
 	}
@@ -58,8 +58,38 @@ class Admin extends CI_Controller {
 		if( $this->session->userdata('adminlogin') ){
 			$this->load->view("admin");
 		}else{
+			$config = Array(
+				'protocol' => 'sendmail',
+				'smtp_host' => 'ssl://smtp.gmail.com',
+				'smtp_port' => 465,
+				'smtp_user' => 'sjsu.cudos@gmail.com',
+				'smtp_pass' => 'cudossjsu16',
+				'mailtype'  => 'text',
+				'charset'   => 'iso-8859-1',
+				'newline' 	=>	'\r\n');
+			$this->email->initialize($config);
+
+			$name = $this->input->post("name");
+			$phone = $this->input->post("phone");
+			$email = $this->input->post("email");
+			$business = $this->input->post("business");
+			$msg = $this->input->post("message");
+
+			$this->email->from($email, $name);
+			$this->email->to('sjsu.cudos@gmail.com');
+
+			$this->email->subject('Admin Signup Inquiry from '.$business);
+			$this->email->message('Phone: '.$phone.'\r\n'.$msg);
+			$this->email->message("Hi");
+			$this->email->send();
+
+			if($name && $phone && $email && $business && $msg){
+				$this->session->set_flashdata('admin_email_msg', '<div class="alert alert-success text-center alert-info">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<span class="glyphicon glyphicon-ok"></span> <strong> Email Sent! </strong>A Cudos representative will contact you soon within 24-48 business hours!</div>');
+			}
 			$this->load->view("adminSignup_view");
-		}
+			}
 	}
 
 
