@@ -92,14 +92,14 @@ endif;
 					<li class="active">
 					<h5><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-home"></i> Overview</a>
 					</h5></li>
+												<li>
+							<h5><a data-toggle="tab" href="#menu2"><i class="glyphicon glyphicon-user"></i> Messages</a></h5>
+						</li>
 						<li>
 							<h5><a data-toggle="tab" href="#menu1">
 							<i class="glyphicon glyphicon-ok"></i> Reviews </a></h5>
 						</li>
 
-							<li>
-							<h5><a data-toggle="tab" href="#menu2"><i class="glyphicon glyphicon-user"></i> Account Settings </a></h5>
-						</li>
 					</ul>
 				</div>
 				<!-- END MENU -->
@@ -131,8 +131,8 @@ endif;
 							?>
 							</div>
             </div>
-
-             <div id="menu1" class="tab-pane fade" style="margin-top: -500px">
+            <div id="menu2" class="tab-pane fade" style="margin-top: -500px">Here is the frontend</div>
+             <div id="menu1" class="tab-pane fade" >
              <div class="review_header" align="center">
 							 <h2>Reviews</h2>
 							 </div>
