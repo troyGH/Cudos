@@ -83,6 +83,7 @@ function openEvent(evt, adminTask) {
 
    </div>
 </nav>
+<?php echo $this->session->flashdata('employee_delete_msg');?>
 
 
 
@@ -148,7 +149,7 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
         echo '<td>',$employee->about_me,'</td>';
         echo '<td>',$employee->title,'</td>';
         echo '<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-top:0px; background-color:#262C3A">Edit Employee</button></td>';
-        echo '<td><a id="close">&#10006;</a></td>';
+        echo '<td><a class="deleteEmp" data-toggle="modal" data-target="#deleteModal" data-eid="'.$employee->employee_id.'" id="close">&#10006;</a></td>';
         echo '</tr><tr>';
       }
       echo '</tr>';
@@ -162,6 +163,33 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
 </div>
 </div>
 
+<div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm" role="document" aria-hidden="true">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <p class="modal-title">Are you sure you want to delete this employee? All his or her reviews will also be deleted.</p>
+      </div>
+      <div class="modal-body">
+        <?php $attributes = array("id" => "deleteForm", "method" => "POST");
+                            echo form_open("admin/deleteemployee", $attributes);  ?>
+            <input type="hidden" name="deleteEid" id="deleteEid" />
+        <div class="form-group">
+          <button type="submit" class="btn btn-danger">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+        <?php echo form_close(); ?>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+$(".deleteEmp").click(function(){
+  $("#deleteEid").val($(this).attr("data-eid"));
+});
+</script>
 
   <!--
 <?php

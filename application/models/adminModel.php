@@ -78,5 +78,11 @@ $this->db->where('business_id', $query->business_id);
 		return $query->result();
 	}
 
+	function delete_employee($id){
+			$this->db->delete('employee', array('employee_id' => $id));
+			$this->db->delete('businessemployee', array('employee_id' => $id));
+			$this->db->delete('employeereview', array('employee_id' => $id));
+	}
+
 }
 ?>

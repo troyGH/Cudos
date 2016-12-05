@@ -439,7 +439,6 @@ function redirect() {
                 <hr class="primary">
                 <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
                 <?php echo $this->session->flashdata('contact_success');?>
-
             </div>
             <div class="col-lg-10 col-lg-offset-1 text-center">
                   <?php $attributes = array("id" => "customer-contact-form", "class" => "contact-form row", "method" => "POST");

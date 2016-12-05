@@ -108,7 +108,16 @@ class Admin extends CI_Controller {
 	}
 
 	function deleteemployee(){
-
+		if( $this->session->userdata('adminlogin') == false ){
+			redirect("home");
+		}else{
+			$employee_id = $this->input->post("deleteEid");
+			$this->adminModel->delete_employee($employee_id);
+			$this->session->set_flashdata('employee_delete_msg', '<div class="alert alert-success text-center alert-info">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<span class="glyphicon glyphicon-ok"></span> <strong> Employee Deleted! </strong></div>');
+			redirect("admin");
+		}
 	}
 
 }
