@@ -25,19 +25,19 @@
        </div>
 
         <div id="social">
-    <a href="http://facebook.com/academy" target="_blank">
+    <a href="http://facebook.com/" target="_blank">
     <img width="34" height="34" src="http://res.cloudinary.com/cloudinary-account/image/upload/v1469457641/facebook_khedl5.svg"></a>
 
-    <a href="http://twitter.com/academy" target="_blank">
+    <a href="http://twitter.com/" target="_blank">
     <img width="34" height="34" src="http://res.cloudinary.com/cloudinary-account/image/upload/v1469457641/twitter_fu5ejk.svg"></a>
 
-    <a href="hhttp://pinterest.com/academy/" target="_blank">
+    <a href="hhttp://pinterest.com/" target="_blank">
     <img width="34" height="34" src="http://res.cloudinary.com/cloudinary-account/image/upload/v1469457641/pinterest_kahh1i.svg"></a>
 
-    <a href="http://www.youtube.com/user/academydotcom" target="_blank">
+    <a href="http://www.youtube.com/" target="_blank">
     <img width="34" height="34" src="http://res.cloudinary.com/cloudinary-account/image/upload/v1469457641/youtube_xrntt3.svg"></a>
 
-    <a href="http://instagram.com/academy" target="_blank">
+    <a href="http://instagram.com/" target="_blank">
     <img width="34" height="34" src="http://res.cloudinary.com/cloudinary-account/image/upload/v1469457641/instagram_ugek0w.svg"></a>
 
   </div>

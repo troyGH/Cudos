@@ -29,6 +29,8 @@ class Admin extends CI_Controller {
   function login(){
     if( $this->session->userdata('adminlogin') ){
 			$this->load->view('admin_view');
+		}else if($this->session->userdata('login')){
+			redirect("home");
 		}
 
     $this->load->view('adminLogin_view');
