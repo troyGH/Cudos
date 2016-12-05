@@ -9,6 +9,49 @@
     
   }
 }
+
+
+#home{
+  background-color: #F8F8FF;
+  max-width:600px;
+  border-radius: 10px;
+
+}
+
+.personal_header{
+  background-color: #f35a1e;
+  max-width:600px;
+  box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 4px -4px 2px -2px rgba(0,0,0,0.4);
+  padding: 10px;
+}
+
+.personal_info{
+	padding: 20px;
+}
+
+#menu1{
+  background-color: #F8F8FF;
+  max-width:600px;
+  border-radius: 10px;
+
+}
+
+.review_header{
+  background-color: #f35a1e;
+  max-width:600px;
+  box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 4px -4px 2px -2px rgba(0,0,0,0.4);
+  padding: 10px;
+}
+
+.review_info{
+	padding: 20px;
+}
 </style>
 
 <?php $this->load->view('template/header.php'); ?>
@@ -47,19 +90,16 @@ endif;
 					<ul class="nav">
 					<br><br>
 					<li class="active">
-					<h5><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-home"></i>Overview</a>
+					<h5><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-home"></i> Overview</a>
 					</h5></li>
+						<li>
+							<h5><a data-toggle="tab" href="#menu1">
+							<i class="glyphicon glyphicon-ok"></i> Reviews </a></h5>
+						</li>
 
 							<li>
-							<h5><a data-toggle="tab" href="#menu1"><i class="glyphicon glyphicon-user"></i>
-							Account Settings </a></h5>
+							<h5><a data-toggle="tab" href="#menu2"><i class="glyphicon glyphicon-user"></i> Account Settings </a></h5>
 						</li>
-						<li>
-							<h5><a data-toggle="tab" href="#menu2">
-							<i class="glyphicon glyphicon-ok"></i>
-							Reviews </a></h5>
-						</li>
-
 					</ul>
 				</div>
 				<!-- END MENU -->
@@ -67,48 +107,58 @@ endif;
 		</div>
 		<div class="col-md-9 tab-content" align=center>
 		<div class="tabs" style="text-align: left;display: inline-block">
-            <div id="home" class="tab-pane fade in active" >
+            <div id="home" class="tab-pane wow zoomIn fade in active" style="margin-top: 20px;">
+            				<div class="personal_header" align="center">
 							<h2>Personal Information</h2>
+							</div>
+							<div class="personal_info">
 							<?php
-							if($user_info['customer_id'] == $this->session->userdata('customer_id'))
-							$test = "true";
-							else $test = "false";
-							echo "<p>True or false: ".$test.'</p>';
-							echo "<p>ID: ".$user_info['customer_id'].'</p>';
-							echo "<p>First Name: ".$user_info['first_name'].'</p>';
-							echo "<p>Last Name: ".$user_info['last_name'].'</p>';
-							echo "<p>About Me: ".$user_info['about_me'].'</p>';
-							echo "<p>Member Since: ".$user_info['signup_date'].'</p>';
-							echo "<p>City: ".$user_info['city'].'</p>';
-							echo "<p>State: ".$user_info['state'].'</p>';
-							echo "<p>Country: ".$user_info['country'].'</p>';
+							//if($user_info['customer_id'] == $this->session->userdata('customer_id'))
+							//$test = "true";
+							//else $test = "false";
+							//echo "<p>True or false: ".$test.'</p>';
+							//echo "<p>ID: ".$user_info['customer_id'].'</p>';
+							echo "<h5 align=center><b>".$user_info['first_name'].'';
+							echo " ".$user_info['last_name'].'</h5></b>';
 							?>
+							<hr class="style-two">
+							<?php
+							echo "<p><b>About Me:</b> ".$user_info['about_me'].'</p>';
+							echo "<p><b>Member Since: </b>".$user_info['signup_date'].'</p>';
+							echo "<p><b>City: </b>".$user_info['city'].'</p>';
+							echo "<p><b>State: </b>".$user_info['state'].'</p>';
+							echo "<p><b>Country: </b>".$user_info['country'].'</p>';
+							?>
+							</div>
             </div>
 
-
-            <div id="menu1" class="tab-pane fade" style="margin-top: -570px">
-            <h2>settings</h2>
-            </div>
-             <div id="menu2" class="tab-pane fade" style="margin-top: -70px">
+             <div id="menu1" class="tab-pane fade" style="margin-top: -500px">
+             <div class="review_header" align="center">
 							 <h2>Reviews</h2>
-
+							 </div>
+							 <div class="review_info">
 							 <?php
 							 foreach($reviews as $review){
-								 echo "<div class='well'><p>Employeee: ".$review['first_name'].' '.$review['last_name'].'</p>';
-								 echo "<p>Business Name: ".$review['business_name'].'</p>';
-								 echo "<p>Business Google ID: ".$review['google_id'].'</p>';
-								 echo "<p>Business Address: ".$review['business_address'].'</p>';
-								 echo "<p>Business Phone: ".$review['business_phone'].'</p>';
-								 echo "<p>Is Associated: ".$review['is_associated'].'</p>';
-								 echo "<p>TimeStamp: ".$review['timestamp'].'</p>';
-								 echo "<p>Description: ".$review['description'].'</p>';
+								 echo "<div class='well'><p align=center>".$review['first_name'].' '.$review['last_name'].'</p>';
+								 echo "<p align=center>Employee of ".$review['business_name'].'</p>';
+								 //echo "<p>Business Google ID: ".$review['google_id'].'</p>';
+								 echo "<p align=center>".$review['business_address'].'</p>';
+								 echo "<p align=center>".$review['business_phone'].'</p><br>';
+								 //echo "<p>Is Associated: ".$review['is_associated'].'</p>';
 								 echo "<p>Stars: ".$review['stars'].'</p>';
-								 echo "<p>Thumbs Up: ".$review['ThumbsUp'].'</p>';
-								 echo "<p>Thumbs Down: ".$review['ThumbsDown'].'</p></div>';
+								 echo "<p>".$review['description'].'</p>';
+								 echo "<p align=right>Up:".$review['ThumbsUp'].'';
+								 echo " Down:".$review['ThumbsDown'].'';
+								 echo "<p align=right>".$review['timestamp'].'</p></div>';
+								 ?>
+								 <hr class="style-two">
+								 <?php 
 							 }
 							 ?>
+							 </div>
 
             </div>
+
 
 		</div>
 		</div>
