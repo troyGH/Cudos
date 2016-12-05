@@ -11,47 +11,7 @@
 }
 
 
-#home{
-  background-color: #F8F8FF;
-  max-width:600px;
-  border-radius: 10px;
 
-}
-
-.personal_header{
-  background-color: #f35a1e;
-  max-width:600px;
-  box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 4px -4px 2px -2px rgba(0,0,0,0.4);
-  padding: 10px;
-}
-
-.personal_info{
-	padding: 20px;
-}
-
-#menu1{
-  background-color: #F8F8FF;
-  max-width:600px;
-  border-radius: 10px;
-
-}
-
-.review_header{
-  background-color: #f35a1e;
-  max-width:600px;
-  box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 4px -4px 2px -2px rgba(0,0,0,0.4);
-  padding: 10px;
-}
-
-.review_info{
-	padding: 20px;
-}
 </style>
 
 <?php $this->load->view('template/admin_header.php'); ?>
@@ -79,7 +39,7 @@
 					<?php
 					else:
 					 ?>
-					<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">Message</button>
+					
 					<?php
 endif;
 ?>
@@ -92,9 +52,7 @@ endif;
 					<li class="active">
 					<h5><a data-toggle="tab" href="#home"><i class="glyphicon glyphicon-home"></i> Overview</a>
 					</h5></li>
-												<li>
-							<h5><a data-toggle="tab" href="#menu2"><i class="glyphicon glyphicon-user"></i> Messages</a></h5>
-						</li>
+
 						<li>
 							<h5><a data-toggle="tab" href="#menu1">
 							<i class="glyphicon glyphicon-ok"></i> Reviews </a></h5>

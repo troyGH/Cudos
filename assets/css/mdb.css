@@ -3414,7 +3414,7 @@ button.btn-floating {
 }
 
 .navbar .navbar-nav > li > a {
-  color: #ffa154;
+  color: rgb(38, 44, 58);
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -3436,10 +3436,11 @@ button.btn-floating {
 
 .navbar .navbar-toggle {
   border-color: rgba(255, 255, 255, 0.84);
+      background-color: #ffa154;
 }
 
 .navbar .navbar-toggle:hover, .navbar .navbar-toggle:focus {
-  background-color: transparent;
+      background-color: #ffa154;
 }
 
 .navbar .navbar-toggle .icon-bar {

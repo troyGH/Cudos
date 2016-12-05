@@ -1,5 +1,5 @@
 <?php
-//about_view.php controller
+//features.php controller
 
 class features extends CI_Controller {
 	// constructor used for needed initialization

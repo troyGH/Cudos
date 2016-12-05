@@ -1,12 +1,10 @@
 <style type="text/css">
-html{
-  background-color: rgb(220,220,220);
-}
+
 body.Admin-body{
   background-color: rgb(220,220,220);
 }
 @media screen and (min-width: 980px) {
-  .container {
+  .container.admin {
     padding:100px;
   }
 }
@@ -106,8 +104,8 @@ function isActive($arg) {
 ?>
 
 
-<div class="container">
-<div class="col-md-3"></div>
+<div class="container admin">
+<div class="col-md-2"></div>
 <div class="col-md-9 tabcontentbusiness active wow zoomIn" align=center id="business_info">
 <div class="col-md-12 business-header">
 <h2> <?php echo $this->session->userdata('business_name');?></h2>
@@ -125,8 +123,8 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
 
 
 <div class="tabcontent wow zoomIn" id="employees">
-
-<div class="col-md-9">
+<div class="col-md-1"></div>
+<div class="col-md-10">
 <div class="col-md-12 business-employee">
 <h3 style="color:white">Employees</h3>
 </div>
@@ -163,7 +161,7 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
 
 </div>
 </div>
- <div class="col-md-2"></div>
+
 
   <!--
 <?php
@@ -189,24 +187,34 @@ echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 -->
 </div>
 
-<div class="tabcontent wow zoomIn" id="messages">
-Messages here
-</div>
 
 <div class="tabcontent wow zoomIn" id="business_review">
 
 <div class="col-md-10 pull-right">
-  <h2> Reviews </h2>
+  <div class="review_header" align="center">
+               <h2>Reviews</h2>
+               </div>
+
+               <div class="review_info_admin">
 <?php
 foreach($reviews as $review){
-  echo '<div class="panel panel-primary">';
+  echo '<div class="">';
   echo  '<div class="panel-heading">'.$review->employee_name.', '.$review->title.'</div>';
   echo  '<div class="panel-body">'.$review->stars.'</div>';
   echo  '<div class="panel-body">'.$review->description.'</div>';
   echo  '<div class="panel-body">'.$review->review_date.'</div>';
   echo  '<div class="panel-footer">'."<a href='http://localhost/Cudos/user/profile/".$review->customer_id."'>".$review->customer_name."</a></div></div>";
+  ?>
+                   <script>
+                 $( ".ratystars" ).each(function( index ) {
+                   $(this).raty({ readOnly: true, score: $(this).attr('data-stars') });
+                  });
+                 </script>
+  <hr class="style-two">
+  <?php
 }
 ?>
+</div>
 </div>
 </div>
 
@@ -262,5 +270,9 @@ foreach($reviews as $review){
 
 
 </div>
+
+
+
+
 
  <!-- /container -->
