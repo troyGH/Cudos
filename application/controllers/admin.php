@@ -80,7 +80,6 @@ class Admin extends CI_Controller {
 
 			$this->email->subject('Admin Signup Inquiry from '.$business);
 			$this->email->message('Phone: '.$phone.'\r\n'.$msg);
-			$this->email->message("Hi");
 			$this->email->send();
 
 			if($name && $phone && $email && $business && $msg){
@@ -106,6 +105,10 @@ class Admin extends CI_Controller {
 		$arr = array('first_name' => $first, 'last_name' => $last, 'title' => $title, 'about_me' => $about, 'img_url' => $img_url);
 		$this->adminModel->insertEmployee($arr, $bID);
 		redirect("admin");
+	}
+
+	function deleteemployee(){
+
 	}
 
 }

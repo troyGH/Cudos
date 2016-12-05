@@ -183,7 +183,7 @@ function redirect() {
 <section id="gallery" class="no-padding">
     <div class="container-fluid">
         <div class="row no-gutter">
-        
+
             <div class="col-lg-4 col-sm-6 gallery-photo">
                 <a class="gallery-box" href="<?php echo base_url();?>business/search?business=&location=las+vegas%2C+nevada">
                     <img src="<?php echo base_url('assets/img');?>/las-vegas.jpg" class="img-responsive" alt="Image 1">
@@ -197,7 +197,7 @@ function redirect() {
                     </div>
                 </a>
             </div>
-            
+
             <div class="col-lg-4 col-sm-6 gallery-photo">
                 <a class="gallery-box" href="<?php echo base_url();?>business/search?business=&location=san+francisco%2C+california">
                     <img src="<?php echo base_url('assets/img');?>/maxresdefault.jpg" class="img-responsive" alt="Image 2">
@@ -339,7 +339,7 @@ function redirect() {
 </div> <!-- /container -->
 
 <style type="text/css">
-   
+
 
 .btn-big{
     padding-top:10px;
@@ -438,30 +438,33 @@ function redirect() {
                 <h3 class="margin-top-0 wow fadeIn">Get in Touch</h3>
                 <hr class="primary">
                 <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
+                <?php echo $this->session->flashdata('contact_success');?>
+
             </div>
             <div class="col-lg-10 col-lg-offset-1 text-center">
-                <form class="contact-form row">
+                  <?php $attributes = array("id" => "customer-contact-form", "class" => "contact-form row", "method" => "POST");
+                                      echo form_open("user/contact", $attributes);  ?>
                     <div class="col-md-4">
                         <label></label>
-                        <input type="text" class="form-control" placeholder="Name">
+                        <input type="text" class="form-control" name="name" placeholder="Name" required />
                     </div>
                     <div class="col-md-4">
                         <label></label>
-                        <input type="text" class="form-control" placeholder="Email">
+                        <input type="text" class="form-control" name="email" placeholder="Email" required />
                     </div>
                     <div class="col-md-4">
                         <label></label>
-                        <input type="text" class="form-control" placeholder="Phone">
+                        <input type="text" class="form-control" name="phone" placeholder="Phone" required />
                     </div>
                     <div class="col-md-12">
                         <label></label>
-                        <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
+                        <textarea class="form-control" rows="9"name="message" placeholder="Your message here.." required /></textarea>
                     </div>
                     <div class="col-md-4 col-md-offset-4">
-                        <label></label>
-                        <button type="button" class="btn btn-default btn-block btn-lg wow flipInX">Send <i class="ion-android-arrow-forward"></i></button>
+                        <button type="submit" class="btn btn-default btn-block btn-lg wow flipInX" data-toggle="modal"
+                        data-target="<?php if($this->session->flashdata('contact_success')) {echo "#alertModal";}?>">Send <i class="ion-android-arrow-forward"></i></button>
                     </div>
-                </form>
+                    <?php echo form_close();?>
             </div>
         </div>
     </div>
