@@ -31,16 +31,45 @@ class Profile extends CI_Controller {
 
   function edit(){
 		if($this->session->userdata('login')){
-			$result = $this->user_model->get_public_user_by_id($this->session->userdata('customer_id'));
-			$arr['user_data'] = $result[0];
-			$this->load->view('editprofile_view', $arr);
+			$fname = $this->input->post("fname");
+			$lname = $this->input->post("lname");
+			$email = $this->input->post("email");
+			$city = $this->input->post("city");
+			$state = $this->input->post("state");
+			$country = $this->input->post("country");
+			$about = $this->input->post("about");
+			$img= $this->input->post("img");
+			$password = $this->input->post("password");
+
+			if($fname && $lname && $email && $city && $state && $country && $password && $about){
+				$data = array(
+        'first_name' => $fname,
+        'last_name' => $lname,
+        'email' => $email,
+				'city' => $city,
+				'state' => $state,
+				'country' => $country,
+				'about_me' => $about,
+				'img_url' => $img,
+				'password' => $password
+			);
+				$this->user_model->update_user($this->session->userdata('customer_id'), $data);
+				$result = $this->user_model->get_public_user_by_id($this->session->userdata('customer_id'));
+				$arr['user_data'] = $result[0];
+				$this->session->set_flashdata('edit_msg', '<div class="alert alert-success text-center alert-info">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<span class="glyphicon glyphicon-ok"></span> <strong> Success!</strong> Profile Editted!</div>');
+				$this->load->view('editprofile_view', $arr);
+
+			}else{
+				$result = $this->user_model->get_public_user_by_id($this->session->userdata('customer_id'));
+				$arr['user_data'] = $result[0];
+				$this->load->view('editprofile_view', $arr);
+			}
 	}else{
 		redirect("home");
 		}
 	}
 
-	function change(){
-		
-	}
 }
 ?>

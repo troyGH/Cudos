@@ -7,7 +7,7 @@ class User extends CI_Controller {
 	// constructor used for needed initialization
 	public function __construct() {
 		parent::__construct();
-		$this->load->helper(array('form','url','html'));
+		$this->load->helper(array('form','url','html', 'date'));
 		$this->load->library(array('session'));
 		$this->load->database();
 		$this->load->model('user_model');
@@ -96,8 +96,11 @@ class User extends CI_Controller {
 	}
 }
     if($fname && $lname && $email && $password && $zip && !empty($match->results)){
+			$datestring = '%Y-%m-%d';
+			$time = time();
         //insert by passing an array to insert_user function
-        $result = $this->user_model->insert_user(array('first_name' => $fname,'last_name' => $lname,'email' => $email,'password' => $password, 'city' => $city, 'state' => $state, 'country' => $country, 'img_url' => 'https://www.kirkleescollege.ac.uk/wp-content/uploads/2015/09/default-avatar.png'));
+        $result = $this->user_model->insert_user(array('first_name' => $fname,'last_name' => $lname,'email' => $email,'password' => $password, 'signup_date' => mdate($datestring, $time),
+				'city' => $city, 'state' => $state, 'country' => $country, 'img_url' => 'https://www.kirkleescollege.ac.uk/wp-content/uploads/2015/09/default-avatar.png'));
         if ($result) {
           $this->session->set_flashdata('reg_msg', '<div class="alert alert-success text-center alert-info">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

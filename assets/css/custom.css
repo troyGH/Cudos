@@ -330,3 +330,7 @@ a.btn{
   font-size: 1rem;
   line-height: 1.5;
 }
+
+.modal{
+   overflow: visible !important;
+}
