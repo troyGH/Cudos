@@ -58,7 +58,6 @@ class Employee extends CI_Controller {
 		$time = now('US/Pacific');
 		$ts = mdate($dateString, $time);
 		$this->employee_model->edit_review($eID, $description, $stars, $cID, $ts);
-		$this->session->set_flashdata('review_success', TRUE);
 		$this->session->set_flashdata('review_msg', '<div class="alert alert-success text-center alert-info">
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 							<span class="glyphicon glyphicon-ok"></span> <strong> Success!</strong> Review edited!</div>');
@@ -79,7 +78,6 @@ class Employee extends CI_Controller {
 				$this->employee_model->remove_vote($this->session->userdata('customer_id'), $review_id, $result[0]->vote_id, $vote);
 			}
 		}
-
 	}
 
 }

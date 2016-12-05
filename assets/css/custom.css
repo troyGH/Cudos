@@ -251,7 +251,7 @@ a.btn{
   font-size: 1em;
 }
 #business-banner h2{
-  font-size: 40px;
+  font-size: 30px;
 }
 #business-banner{
   margin: 10px;
@@ -263,6 +263,7 @@ a.btn{
 #employee-card{
   margin: 10px;
   padding: 10px;
+  padding-bottom: 25px;
 }
 #reviews-card .card-block{
   margin-top: 30px;
@@ -271,9 +272,11 @@ a.btn{
   min-height: 500px;
   margin: 10px;
   padding: 10px;
+  padding-bottom: 25px;
+
 }
 #reviews-display{
-  min-height: 313px;
+  min-height: 350px;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-left: -10px;
@@ -281,10 +284,12 @@ a.btn{
 #employee-about{
   text-align: left;
 }
+
 #employee-about h4{
   margin-top: 0;
   margin-bottom: 0;
 }
+
 #employee-about .text-muted{
   color: #9099ae;
 }
@@ -294,4 +299,34 @@ a.btn{
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+#employee-profile{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#reviews-here .card{
+  margin-bottom: 10px;
+  margin-left: -5px;
+  padding: 15px;
+}
+
+#avgstar-txt{
+  margin-bottom: 0;
+}
+
+#avgstar{
+  margin-bottom: 3px;
+}
+
+.tooltip.top .tooltip-inner {
+    background-color:red;
+}
+#employee-select-form {
+  text-align: left;
+}
+#employee-select-form p{
+  font-size: 1rem;
+  line-height: 1.5;
 }

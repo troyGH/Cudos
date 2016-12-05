@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
 });
 window.setTimeout(function() {
     $(".alert").fadeTo(500, 0).slideUp(500, function(){

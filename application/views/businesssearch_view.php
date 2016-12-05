@@ -84,11 +84,11 @@
             var result = $.parseJSON(data);
             var associated = "";
             if(result['is_associated'] == 1){
-              associated = '<span class="glyphicon glyphicon-ok"></span>';
+              associated = '<span class="fa fa-check-circle-o"></span>';
             }else{
               result['is_associated'] = 0;
             }
-            windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ place.name  + associated + '</div>' +
+            windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ associated + " "  + place.name + '</div>' +
                             '<div class="iw-content">' +
                             '<div class="iw-subTitle">Phone</div>' +
                             '<p>' + place.formatted_phone_number +'</p>' +
@@ -153,12 +153,12 @@
                 var result = $.parseJSON(data);
                 var associated = "";
                 if(result['is_associated'] == 1){
-                  associated = '<span class="glyphicon glyphicon-ok"></span>';
+                  associated = '<span class="fa fa-check-circle-o"></span>';
                 }else{
                   result['is_associated'] = 0;
                 }
 
-                windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ place.name  + associated + '</div>' +
+                windowContent = '<div id="iw-container">' + '<div class="iw-title">'+ associated +" " + place.name + '</div>' +
                                 '<div class="iw-content">' +
                                 '<div class="iw-subTitle">Phone</div>' +
                                 '<p>' + place.formatted_phone_number +'</p>' +

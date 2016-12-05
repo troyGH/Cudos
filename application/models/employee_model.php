@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Employee_model extends CI_Model {
 	// constructor for the user_model
+
 	function __construct() {
 		parent::__construct();
 	}
@@ -18,6 +19,52 @@ WHERE t1.google_id = '$gID' AND t1.business_id = t2.business_id AND t2.employee_
 			FROM business t1, businessemployee t2, employee t3, employeereview t4, review t5, customerreview t6, customer t7
 WHERE t1.google_id = '$gID' AND t1.business_id = t2.business_id AND t2.employee_id = t3.employee_id
 AND t3.employee_id = t4.employee_id AND t4.review_id = t5.review_id AND t6.review_id = t5.review_id AND t6.customer_id = t7.customer_id;");
+
+		return $query->result();
+	}
+
+	function filter_employees_reviews($gID, $filter, $sort){
+		$selected = "";
+		$oldest = " ORDER BY t5.timestamp ASC;";
+		$newest = " ORDER BY t5.timestamp DESC;";
+		$least = " ORDER BY t5.ThumbsUp+t5.ThumbsDown ASC;";
+		$most = " ORDER BY t5.ThumbsUp+t5.ThumbsDown DESC;";
+		$highest = " ORDER BY t5.stars DESC;";
+		$lowest = " ORDER BY t5.stars ASC;";
+		switch ($sort) {
+	    case "oldest":
+					$selected = $oldest;
+					break;
+	    case "newest":
+					$selected = $newest;
+	        break;
+	    case "least":
+					$selected = $least;
+					break;
+			case "most":
+					$selected = $most;
+					break;
+			case "highest":
+					$selected = $highest;
+					break;
+			case "lowest":
+					$selected = $lowest;
+					break;
+	    default:
+					$selected = $most;
+		}
+
+		if($filter==0){
+			$filter = "";
+		}else{
+			$filter = "AND t5.stars =".$filter;
+		}
+
+		$query = $this->db->query(
+		"SELECT t3.employee_id, t7.customer_id, CONCAT_WS(' ', t7.first_name, CONCAT(LEFT(t7.last_name,1),'.')) AS customer_name, t7.city, t7.state, t5.*
+			FROM business t1, businessemployee t2, employee t3, employeereview t4, review t5, customerreview t6, customer t7
+WHERE t1.google_id = '$gID' AND t1.business_id = t2.business_id AND t2.employee_id = t3.employee_id
+AND t3.employee_id = t4.employee_id AND t4.review_id = t5.review_id AND t6.review_id = t5.review_id AND t6.customer_id = t7.customer_id ".$filter.$selected);
 
 		return $query->result();
 	}
