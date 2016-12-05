@@ -73,7 +73,7 @@ function redirect() {
         <!-- /.container -->
     </div>
 
-    <div class="content-section-b" style="padding-top: 150px; padding-bottom: 150px; background-color: #f8f8f8;">
+    <div class="content-section-b" id="how-to" style="padding-top: 150px; padding-bottom: 150px; background-color: #f8f8f8;">
 
         <div class="container">
             <div class="row">
@@ -267,7 +267,7 @@ function redirect() {
     </div>
 </section>
 
-   <div class="container" align="center" style="padding-top: 100px">
+   <div class="container" align="center" style="padding-top: 100px" id="3feature">
 
    <div class="main-header wow fadeIn">
    <h2 class="text-center text-primary">Features</h2><br>
