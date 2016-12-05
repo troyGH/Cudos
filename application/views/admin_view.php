@@ -91,6 +91,13 @@ body.Admin-body{
 #close:hover{
   color:#262C3A;
 }
+
+.tabcontent{
+  margin-left: 100px;
+}
+.tabcontentbusiness{
+  margin-left: 100px;
+}
 </style>
 
 
@@ -119,8 +126,32 @@ function openEvent(evt, adminTask) {
 <?php $this->load->view('template/admin_header.php'); ?>
 
 
-<nav id="topNav" class="navbar navbar-default navbar-fixed-top" style="width:200px; height:100%; background-color: #262C3A;">
+
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top hidden-sm hidden-md hidden-lg hidden-xlg" style="width:90px; height:100%; background-color: #262C3A;">
+
+
    <div class="container-fluid">
+   <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+
+            <ul class="nav">
+            <li class="tablinks" align=center><span class="admin-item"><b style="color: transparent;">ADMIN</b></span></li>
+            <hr>
+             <!-- <li class="tablinks active"><a href="javascript:void(0)" onclick="openEvent(event, 'business_info')"><span class="glyphicon glyphicon-home"> <?php echo $this->session->userdata('business_name');
+ ?></span></a></li>-->
+ <li><a class="tablinks active" href="javascript:void(0)" onclick="openEvent(event, 'business_info')"><span class="glyphicon glyphicon-home"></span></a></li>
+
+              <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'employees')"><span class="glyphicon glyphicon-user"></span></a></li>
+              <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'business_review')"><span class="glyphicon glyphicon-briefcase"></span></a></li>
+              <li><a href="<?php echo base_url(); ?>index.php/admin/logout""><span class="glyphicon glyphicon-lock"></span></a></li>
+            </ul>
+        </div>
+        </div>
+
+</nav>
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top hidden-xs" style="width:200px; height:100%; background-color: #262C3A;">
+
+   <div class="container-fluid">
+
 
    <div class="sidebar-offcanvas" id="sidebar" role="navigation">
 
@@ -130,7 +161,7 @@ function openEvent(evt, adminTask) {
              <!-- <li class="tablinks active"><a href="javascript:void(0)" onclick="openEvent(event, 'business_info')"><span class="glyphicon glyphicon-home"> <?php echo $this->session->userdata('business_name');
  ?></span></a></li>-->
  <li><a class="tablinks active" href="javascript:void(0)" onclick="openEvent(event, 'business_info')"><span class="glyphicon glyphicon-home"></span><span class="admin-item"> Dashboard</span></a></li>
- <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'messages')"><span class="glyphicon glyphicon-envelope"></span><span class="admin-item"> Messages</span></a></li>
+
               <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'employees')"><span class="glyphicon glyphicon-user"></span><span class="admin-item"> Employees</span></a></li>
               <li><a href="javascript:void(0)" class="tablinks" onclick="openEvent(event, 'business_review')"><span class="glyphicon glyphicon-briefcase"></span><span class="admin-item"> Reviews</span></a></li>
               <li><a href="<?php echo base_url(); ?>index.php/admin/logout""><span class="glyphicon glyphicon-lock"></span><span class="admin-item"> Sign Out</span></a></li>
@@ -250,7 +281,7 @@ Messages here
 
 <div class="tabcontent wow zoomIn" id="business_review">
 
-<div class="col-md-11 pull-right">
+<div class="col-md-10 pull-right">
   <h2> Reviews </h2>
 <?php
 foreach($reviews as $review){
