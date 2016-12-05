@@ -3414,13 +3414,13 @@ button.btn-floating {
 }
 
 .navbar .navbar-nav > li > a {
-  color: rgba(255, 255, 255, 0.84);
+  color: #ffa154;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
-  color: rgba(255, 255, 255, 0.84);
+  color: #ffa154;
   background-color: transparent;
 }
 
@@ -4686,6 +4686,13 @@ Carousel
 }
 
 .carousel .carousel-indicators li {
+  height: 15px;
+  width: 15px;
+  background-color: rgba(243,90,30, 0.5);
+  border: none;
+}
+
+.carousel-indicators.homepage li {
   height: 15px;
   width: 15px;
   margin-bottom: -60px;

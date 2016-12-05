@@ -232,20 +232,16 @@ function redirect() {
   <ol class="carousel-indicators homepage">
     <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example" data-slide-to="1"></li>
-    <li data-target="#carousel-example" data-slide-to="2"></li>
   </ol>
 
   <div class="carousel-inner">
     <div class="item active">
-      <img class="slide" src="<?php echo base_url(); ?>/assets/img/kitchen.png"/>
+      <img class="slide" src="<?php echo base_url(); ?>/assets/img/customer.png"/>
 
     </div>
-    <div class="item">
-      <img class="slide" src="<?php echo base_url(); ?>/assets/img/server.png" />
 
-    </div>
     <div class="item">
-      <img class="slide" src="<?php echo base_url(); ?>/assets/img/open.png" />
+      <img class="slide" src="<?php echo base_url(); ?>/assets/img/employees.png" />
 
     </div>
   </div>
@@ -493,13 +489,7 @@ function redirect() {
 </div> <!-- /container -->
 
 <style type="text/css">
-    .morph-button{
-            width:600px;
-    box-sizing:border-box;
-
-
-
-    }
+   
 
 .btn-big{
     padding-top:10px;
@@ -525,9 +515,8 @@ function redirect() {
             <div class="col-md-6 col-md-offset-3 text-center">
                 <div class="mockup-content">
                         <div class="morph-button org-btn wow pulse morph-button-inflow morph-button-inflow-1">
-                            <button class="btn btn-embossed btn-info btn-big" type="button " value="Show Div" onclick="showDiv()" style="width:100%"><span>Subscribe to our Newsletter</span></button>
+                            <button class="btn btn-embossed btn-info btn-big" type="button " value="Show Div" onclick="showDiv()" style="width:100%">Subscribe to our Newsletter</button>
                             <div class="morph-content">
-                                <div>
                                     <div class="content-style-form content-style-form-4 " id="subscribe-form" style="display:none; background-color: #262C3A;padding: 10px">
                                         <br><br><h4 class="morph-clone" style="color:white">Be Notified of Special Events</h4>
                                         <form align=center>
@@ -535,12 +524,11 @@ function redirect() {
                                             <p><button class="btn btn-embossed btn-primary btn-big" style="width:80%">Subscribe me</button></p>
                                         </form>
                                     </div>
-                                </div>
                             </div>
                         </div>
                 </div>
             </div>
-            </div>>
+            </div>
         </div>
     </div>
 

@@ -102,21 +102,21 @@
     <div class="item active">
       <a href="#"><img class="slide" src="<?php echo base_url(); ?>/assets/img/kitchen.png"/></a>
       <div class="carousel-caption">
-        <h3>Evaluate Employees</h3>
+        <h4>Evaluate Employees</h4>
         <p>Value the experience of your customers with your employees!</p>
       </div>
     </div>
     <div class="item">
       <a href="#"><img class="slide" src="<?php echo base_url(); ?>/assets/img/server.png" /></a>
       <div class="carousel-caption">
-        <h3>Improve Service</h3>
+        <h4>Improve Service</h4>
         <p>Improve your customer service based on what your customers have to say!</p>
       </div>
     </div>
     <div class="item">
       <a href="#"><img class="slide" src="<?php echo base_url(); ?>/assets/img/open.png" /></a>
       <div class="carousel-caption">
-        <h3>Want to be an associated business with Cudos?</h3>
+        <h4>Want to be an associated business with Cudos?</h4>
         <p><a class="btn-lg org-btn" href="<?php echo base_url(); ?>index.php/home#contact">Contact Us Today</a></p>
       </div>
     </div>
