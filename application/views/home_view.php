@@ -48,7 +48,7 @@ function redirect() {
     <!-- Use it -->
     <div id ="useit" class="content-section-a" align=left>
 
-        <div class="container">
+        <div class="container" id="padded">
 
             <div class="row">
 
