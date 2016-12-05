@@ -77,5 +77,6 @@ $this->db->where('business_id', $query->business_id);
 		AND t5.review_id = t6.review_id AND t6.customer_id = t7.customer_id;");
 		return $query->result();
 	}
+
 }
 ?>

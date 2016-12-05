@@ -8,7 +8,7 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
          </button>
-           <a id="bHome" class="navbar-brand page-scroll" href="<?php echo base_url(); ?>index.php/home"><p class="brand-name">Cudos <i class="fa fa-address-card-o" aria-hidden="true"></i></p></a>
+           <a id="bHome" class="navbar-brand page-scroll" href="<?php echo base_url(); ?>"><p class="brand-name">Cudos <i class="fa fa-address-card-o" aria-hidden="true"></i></p></a>
        </div>
        <div class="navbar-collapse collapse" id="bs-navbar">
            <ul class="nav navbar-nav">
@@ -16,14 +16,17 @@
            </ul>
            <ul class="nav navbar-nav navbar-right">
              <li>
-               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#about">About</a>
+               <a class="page-scroll" href="<?php if(!isActive("associatedbusiness")) echo base_url();?>associatedbusiness">Associated Businesses</a>
              </li>
              <li>
-               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url("index.php/home");?>#contact">Contact</a>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url();?>#about">About</a>
              </li>
-             <li <?php if(isActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>index.php/user/login">Log in</a></li>
+             <li>
+               <a class="page-scroll" href="<?php if(!isActive("home")) echo base_url();?>#contact">Contact</a>
+             </li>
+             <li <?php if(isActive("user/login")) echo "class='active' "; ?> id="login"><a href="<?php echo base_url(); ?>user/login">Log in</a></li>
 
-             <li <?php if(isActive("admin/login")) echo "class='active' "; ?> id="login_admin"><a href="<?php echo base_url(); ?>index.php/admin/login">Business Login</a></li>
+             <li <?php if(isActive("admin/login")) echo "class='active' "; ?> id="login_admin"><a href="<?php echo base_url(); ?>admin/login">Business Login</a></li>
            </ul>
        </div>
    </div>

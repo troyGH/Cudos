@@ -19,7 +19,7 @@
 }
 
 .personal_header{
-  background-color: #ffa154;
+  background-color: #f35a1e;
   max-width:600px;
   box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
   border-top-left-radius: 10px;
@@ -40,7 +40,7 @@
 }
 
 .review_header{
-  background-color: #ffa154;
+  background-color: #f35a1e;
   max-width:600px;
   box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
   border-top-left-radius: 10px;
@@ -54,7 +54,7 @@
 }
 </style>
 
-<?php $this->load->view('template/header.php'); ?>
+<?php $this->load->view('template/admin_header.php'); ?>
 <div class="container custom-body">
 
 
@@ -145,17 +145,12 @@ endif;
 								 echo "<p align=center>".$review['business_address'].'</p>';
 								 echo "<p align=center>".$review['business_phone'].'</p><br>';
 								 //echo "<p>Is Associated: ".$review['is_associated'].'</p>';
-								 echo "<p><div class='ratystars ".$review['review_id']."' data-stars=".$review['stars']."></div>".'</p>';
+								 echo "<p>Stars: ".$review['stars'].'</p>';
 								 echo "<p>".$review['description'].'</p>';
-								 echo "<i class='fa fa-thumbs-up' align=right></i> ".$review['ThumbsUp'];
-								 echo "  <i class='fa fa-thumbs-down' align=right></i> ".$review['ThumbsDown'];
-								 echo "<p class='text-muted' align=right>".$review['datestamp'].'</p></div>';
+								 echo "<p align=right>Up:".$review['ThumbsUp'].'';
+								 echo " Down:".$review['ThumbsDown'].'';
+								 echo "<p align=right>".$review['timestamp'].'</p></div>';
 								 ?>
-								 <script>
-								 $( ".ratystars" ).each(function( index ) {
-									 $(this).raty({ readOnly: true, score: $(this).attr('data-stars') });
-									});
-								 </script>
 								 <hr class="style-two">
 								 <?php
 							 }
@@ -204,8 +199,3 @@ endif;
     </div>
   </div>
 </div> <!-- /container -->
-
-
-
-<?php $this->load->view('template/footer.php'); ?>
-<?php

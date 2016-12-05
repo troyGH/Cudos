@@ -22,8 +22,11 @@ class User extends CI_Controller {
 		$arr['user_info'] = $user[0];
 		$reviews =	$this->user_model->get_user_reviews_by_id($cID);
 		$arr['reviews'] =  $reviews;
-
-		$this->load->view('profilehome_view', $arr);
+		if( $this->session->userdata('adminlogin')){
+			$this->load->view('profilehome_adminview', $arr);
+		}else{
+			$this->load->view('profilehome_view', $arr);
+		}
 	}
 
 
