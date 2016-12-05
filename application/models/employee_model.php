@@ -93,7 +93,7 @@ AND employeereview.employee_id = $eID");
 	}
 
 	function create_anon_employee($bID){
-		$this->db->query("INSERT INTO employee (first_name, img_url) VALUES ('Anonymous', 'http://localhost/Cudos/assets/img/employee_default.jpg');");
+		$this->db->query("INSERT INTO employee (first_name, title, about_me, img_url) VALUES ('Anonymous', 'Job Title', 'This business does not have employee reviews. Feel free to review anonymously.', 'http://localhost/Cudos/assets/img/employee_default.jpg');");
 		$eID = $this->db->insert_id();
 		$this->db->query("INSERT INTO businessemployee (business_id, employee_id) VALUES ($bID, $eID);");
 		return $eID;

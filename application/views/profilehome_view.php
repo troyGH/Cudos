@@ -6,7 +6,7 @@
 @media screen and (min-width: 980px) {
   .container.custom-body {
     padding:200px;
-    
+
   }
 }
 
@@ -76,7 +76,7 @@
 
 						?>
 					<button onclick="window.location.href='<?php echo base_url(); ?>profile/edit'" class="btn btn-warning btn-lg"><b>Edit Profile</b></button>
-					<?php 
+					<?php
 					else:
 					 ?>
 					<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">Message</button>
@@ -152,7 +152,7 @@ endif;
 								 echo "<p align=right>".$review['timestamp'].'</p></div>';
 								 ?>
 								 <hr class="style-two">
-								 <?php 
+								 <?php
 							 }
 							 ?>
 							 </div>
@@ -182,7 +182,7 @@ endif;
         <div class="modal-body">
 
                    <div class="form-group">
-                        
+
                         <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
                     </div>
 

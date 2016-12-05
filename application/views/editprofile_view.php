@@ -4,10 +4,13 @@
 
 <!-- Body -->
 	<div class="container custom-body">
+
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4 well">
-				<?php $attributes = array("name" => "editprofileform");
+				<?php $attributes = array("name" => "editprofileform", "method" => "POST");
 				echo form_open("profile/edit", $attributes);?>
+
+				<?php echo $this->session->flashdata('edit_msg');  ?>
 				<legend><i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i> Edit Profile</legend>
 
 				<div class="form-group">
@@ -31,8 +34,16 @@
 					<input class="form-control" name="state" placeholder="State" type="text" value="<?php echo set_value('state', $user_data['state']); ?>" required/>
 				</div>
 				<div class="form-group">
-					<label for="email">Email</label>
+					<label for="country">Country</label>
 					<input class="form-control" name="country" placeholder="Country" type="text" value="<?php echo set_value('country', $user_data['country']); ?>" required/>
+				</div>
+				<div class="form-group">
+					<label for="about">About Me</label>
+					<input class="form-control" name="about" placeholder="About me" type="text" value="<?php echo set_value('about', $user_data['about_me']); ?>" required/>
+				</div>
+				<div class="form-group">
+					<label for="about">Image URL</label>
+					<input class="form-control" name="img" placeholder="Image URL" type="text" value="<?php echo set_value('img', $user_data['img_url']); ?>" required/>
 				</div>
 				<div class="form-group">
 					<label for="subject">Password</label>
@@ -44,26 +55,30 @@
 				</div>
 				<div class="form-group">
 					<button name="update" type="submit" value="update" class="btn btn-primary">Update</button>
-					<button name="cancel" type="reset" class="btn btn-default" onclick="location.href='http://teamcampfire.me/home'">Reset</button>
+					<button name="cancel" type="reset" class="btn btn-default">Reset</button>
 					<?php echo form_close(); ?>
 				</div>
-				<a href="http://localhost/Cudos/profile/delete" class="pull-right" data-toggle='modal'  data-target='#deleteModal'> <i class="fa fa-trash fa-4x" aria-hidden="true"></i>
+				<a href="#" class="pull-right" data-toggle='modal' data-target='#deleteModal'> <i class="fa fa-trash fa-4x" aria-hidden="true"></i></a>
 			</div>
 		</div>
 		<!-- Modal -->
-		<div class="modal fade" id="deleteModal" role="dialog">
-			<div class="modal-dialog modal-sm">
+
+		<div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm" role="document" aria-hidden="true">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<p class="modal-title">Are you sure you want to delete your account?</p>
+						<p class="modal-title">Are you sure you want to delete your account? All your reviews will also be deleted.</p>
 					</div>
 					<div class="modal-body">
+						<?php $attributes = array("id" => "deleteForm");
+																echo form_open("profile/delete", $attributes);  ?>
 						<div class="form-group">
-							<button name="cancel" type="reset" class="btn btn-default">Yes</button>
-							<button name="cancel" type="reset" class="btn btn-default">No</button>
+							<button name="cancel" type="submit" class="btn btn-danger">Yes</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 						</div>
+						<?php echo form_close(); ?>
 					</div>
 				</div>
 
