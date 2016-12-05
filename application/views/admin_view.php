@@ -54,7 +54,7 @@ body.Admin-body{
 }
 
 .glyphicon{
-  color: #f35a1e;
+  color: #ffa154;
 }
 
 #business_info{
@@ -67,7 +67,7 @@ body.Admin-body{
 }
 
 .business-header{
-  background-color: #f35a1e;
+  background-color: #ffa154;
   max-width:600px;
   box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
   border-top-left-radius: 10px;
@@ -76,7 +76,7 @@ body.Admin-body{
 }
 
 .business-employee{
-  background-color: #f35a1e;
+  background-color: #ffa154;
   color:white;
 
   box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5);
@@ -85,7 +85,7 @@ body.Admin-body{
   box-shadow: 4px -4px 2px -2px rgba(0,0,0,0.4);
 }
 #close{
-  color:#f35a1e;
+  color:#ffa154;
 }
 
 #close:hover{
@@ -203,10 +203,9 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
         echo '<td>',$employee->first_name,'</td>';
         echo '<td>',$employee->last_name,'</td>';
         echo '<td>',$employee->about_me,'</td>';
-        echo '<td>',$employee->title,'</td>'; ?>
-        <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-top:0px; background-color:#262C3A">Edit Employee</button></td>
-        <td><a id="close">&#10006;</a></td>
-        <?php
+        echo '<td>',$employee->title,'</td>';
+        echo '<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-top:0px; background-color:#262C3A">Edit Employee</button></td>';
+        echo '<td><a id="close">&#10006;</a></td>';
         echo '</tr><tr>';
       }
       echo '</tr>';
@@ -260,7 +259,7 @@ foreach($reviews as $review){
   echo  '<div class="panel-body">'.$review->stars.'</div>';
   echo  '<div class="panel-body">'.$review->description.'</div>';
   echo  '<div class="panel-body">'.$review->review_date.'</div>';
-  echo  '<div class="panel-footer">'."<a href='http://localhost/Cudos/user/profile/'".$review->customer_id."'>".$review->customer_name."</a></div></div>";
+  echo  '<div class="panel-footer">'."<a href='http://localhost/Cudos/user/profile/".$review->customer_id."'>".$review->customer_name."</a></div></div>";
 }
 ?>
 </div>

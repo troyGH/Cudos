@@ -260,7 +260,7 @@
       </div> <!--End Reviews Display --->
     </div>
   </div>
-    </div>
+  </div>
   </div> <!--End container --->
 
   <!-- Modal -->
