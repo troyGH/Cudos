@@ -271,4 +271,8 @@ foreach($reviews as $review){
 
 </div>
 
+
+
+
+
  <!-- /container -->
