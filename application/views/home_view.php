@@ -1,153 +1,3 @@
-<style type="text/css">
-    .down-arrow{position: absolute;bottom: 8%;}
-
-.down-arrow{position: absolute;top: 20%;}
-.button_down img {
-width: 50px;
-
-}
-.content-section-a {
-
-    padding-top: 150px;
-    padding-bottom: 150px;
-    text-align: left;
-}
-
-.lead3 {
-margin-bottom: 0px;
-margin-top: 0px;
-font-size: 16px;
-color: #8D8D8D;
-line-height: 1.46428571;
-font-weight: 300;
-}
-
-
-.features {
-  margin: 50px 0;
-}
-
-.feature {
-  width: 100%;
-  height: 320px;
-  margin: 80px 0;
-  text-align: center;
-  border: 2px solid #ddd;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.feature-static {
-  width: 100%;
-  height: 320px;
-  margin: 20px 0;
-  text-align: center;
-  border: 2px solid #ddd;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-
-.feature .icon-holder {
-  color: #f35a1e;
-  position: relative;
-  top: 70px;
-  display: inline-block;
-  margin-bottom: 40px;
-  padding: 10px;
-  background: white;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.4s ease;
-}
-
-.feature .heading {
-  position: relative;
-  top: 90px;
-  -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.feature-static .heading {
-  position: relative;
-  top: 90px;
-  color: #f35a1e;
-}
-
-.feature:hover {
-  border-color: #039be5;
-}
-
-.feature-static:hover {
-  border-color: #039be5;
-  top: -30px;
-}
-
-.feature:hover .icon-holder {
-  top: -30px;
-}
-
-.feature:hover .heading {
-  top: -30px;
-}
-
-.feature .description {
-  font-size: 1.1em;
-  width: 80%;
-  margin: 0 auto;
-  opacity: 0;
-  -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
-
-.feature-static .description {
-  font-size: 1.1em;
-  width: 80%;
-  margin: 0 auto;
-  padding-top: 100px;
-  color: #262C3A;
-
-}
-
-.feature:hover .description {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-
-
-.carousel-indicators {
-  bottom:-50px;
-}
-
-.carousel-indicators li {
-  border-color:#999;
-  background-color:#ccc;
-}
-
-.carousel-inner {
-   margin-bottom:50px;
-}
-
-@media (min-width: 768px){
-.form-inline .form-control {
-    display: inline-block;
-
-    vertical-align: middle;
-    background-color: white;
-    padding-left: 5px;
-
-}
-}
-
-</style>
-
-
 <?php $this->load->view('template/header.php'); ?>
 
 
@@ -173,13 +23,13 @@ font-weight: 300;
         </div>
         <br><br><br>
 
-                <div class="col-xs-12 text-center down-arrow">
+                <div class="col-xs-12 text-center down-arrow hidden-xs">
             <div class="button_down">
                 <a class="imgcircle page-scroll" data-wow-duration="1.5s"  href="#useit"> <img class="img_scroll" src="<?php echo base_url('assets/img');?>/circle.png" alt=""> </a>
             </div>
         </div>
     </div>
-    <video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="https://s3-us-west-2.amazonaws.com/coverr/poster/Traffic-blurred2.jpg" id="video-background">
+    <video autoplay="" loop="" class="fillWidth fadeIn wow collapse in hidden-xs" data-wow-delay="0.5s" poster="https://s3-us-west-2.amazonaws.com/coverr/poster/Traffic-blurred2.jpg" id="video-background">
     <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coffee-Shot.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
 </video>
 </header>
@@ -515,13 +365,13 @@ function redirect() {
             <div class="col-md-6 col-md-offset-3 text-center">
                 <div class="mockup-content">
                         <div class="morph-button org-btn wow pulse morph-button-inflow morph-button-inflow-1">
-                            <button class="btn btn-embossed btn-info btn-big" type="button " value="Show Div" onclick="showDiv()" style="width:100%">Subscribe to our Newsletter</button>
+                            <button class="btn btn-embossed btn-info btn-big" type="button " value="Show Div" onclick="showDiv()" style="width:100%;white-space: pre-wrap;">Subscribe to our Newsletter</button>
                             <div class="morph-content">
                                     <div class="content-style-form content-style-form-4 " id="subscribe-form" style="display:none; background-color: #262C3A;padding: 10px">
                                         <br><br><h4 class="morph-clone" style="color:white">Be Notified of Special Events</h4>
                                         <form align=center>
                                             <div align="center"><p style="color: white; width: 80%;align-content: center;"><input type="text" placeholder="Your Email" /></p></div>
-                                            <p><button class="btn btn-embossed btn-primary btn-big" style="width:80%">Subscribe me</button></p>
+                                            <p><button class="btn btn-embossed btn-primary btn-big" style="width:80%;white-space: pre-wrap;">Subscribe me</button></p>
                                         </form>
                                     </div>
                             </div>
