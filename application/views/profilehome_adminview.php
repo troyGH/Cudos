@@ -103,12 +103,17 @@ endif;
 								 echo "<p align=center>".$review['business_address'].'</p>';
 								 echo "<p align=center>".$review['business_phone'].'</p><br>';
 								 //echo "<p>Is Associated: ".$review['is_associated'].'</p>';
-								 echo "<p>Stars: ".$review['stars'].'</p>';
+								 echo "<p class='ratystars' ".$review['review_id']."' data-stars=".$review['stars'].'></p>';
 								 echo "<p>".$review['description'].'</p>';
-								 echo "<p align=right>Up:".$review['ThumbsUp'].'';
-								 echo " Down:".$review['ThumbsDown'].'';
+								 echo "<i class='fa fa-thumbs-up' align=right></i> ".$review['ThumbsUp'];
+								 echo "  <i class='fa fa-thumbs-down' align=right></i> ".$review['ThumbsDown'];
 								 echo "<p align=right>".$review['datestamp'].'</p></div>';
 								 ?>
+								 								 <script>
+								 $( ".ratystars" ).each(function( index ) {
+									 $(this).raty({ readOnly: true, score: $(this).attr('data-stars') });
+									});
+								 </script>
 								 <hr class="style-two">
 								 <?php
 							 }
