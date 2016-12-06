@@ -69,33 +69,33 @@
 <img src="<?php echo base_url(); ?>/assets/img/target.png" class="img-rounded img-responsive"  alt="Avatar">
 </div>
 <div class="col-md-4">
-<img src="<?php echo base_url(); ?>/assets/img/safeway.png" class="img-circle img-responsive" alt="Avatar">
+<img src="<?php echo base_url(); ?>/assets/img/mcdonalds.png" class="img-circle img-responsive" alt="Avatar">
 </div>
 </div>
 
 
 <div class="row logos wow fadeInLeft">
 <div class="col-md-4">
-<img src="<?php echo base_url(); ?>/assets/img/safeway.png" class="img-circle img-responsive" alt="Avatar">
+<img src="<?php echo base_url(); ?>/assets/img/chipotle.png" class="img-circle img-responsive" alt="Avatar">
 </div>
 <div class="col-md-4">
-<img src="<?php echo base_url(); ?>/assets/img/supercuts.png" class="img-circle img-responsive"  alt="Avatar">
+<img src="<?php echo base_url(); ?>/assets/img/petsmart.png" class="img-circle img-responsive"  alt="Avatar">
 </div>
 <div class="col-md-4">
-<img src="<?php echo base_url(); ?>/assets/img/target.png" class="img-circle img-responsive" alt="Avatar">
+<img src="<?php echo base_url(); ?>/assets/img/starbucks.png" class="img-circle img-responsive" alt="Avatar">
 </div>
 </div>
 
 
 <div class="row logos wow fadeInRight">
 <div class="col-md-4">
-<img src="<?php echo base_url(); ?>/assets/img/target.png" class="img-circle img-responsive" alt="Avatar">
+<img src="<?php echo base_url(); ?>/assets/img/walmart.png" class="img-circle img-responsive" alt="Avatar">
 </div>
 <div class="col-md-4">
-<img src="<?php echo base_url(); ?>/assets/img/safeway.png" class="img-circle img-responsive"  alt="Avatar">
+<img src="<?php echo base_url(); ?>/assets/img/peets.png" class="img-circle img-responsive"  alt="Avatar">
 </div>
 <div class="col-md-4">
-<img src="<?php echo base_url(); ?>/assets/img/supercuts.png" class="img-circle img-responsive" alt="Avatar">
+<img src="<?php echo base_url(); ?>/assets/img/bj.png" class="img-circle img-responsive" alt="Avatar">
 </div>
 </div>
 
