@@ -228,9 +228,11 @@ echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 foreach($reviews as $review){
   echo '<div class="">';
   echo  '<div class="panel-heading">'.$review->employee_name.', '.$review->title.'</div>';
-  echo  '<div class="panel-body">'.$review->stars.'</div>';
+  echo "<div class='panel-body'><p><div class='ratystars ".$review->review_id."' data-stars=".$review->stars."></div>".'</p></div>';
   echo  '<div class="panel-body">'.$review->description.'</div>';
   echo  '<div class="panel-body">'.$review->review_date.'</div>';
+  echo "<div class='panel-body'><i class='fa fa-thumbs-up' align=right></i> ".$review->ThumbsUp;
+  echo " <i class='fa fa-thumbs-down' align=right></i> ".$review->ThumbsDown."</div>";
   echo  '<div class="panel-footer">'."<a href='http://localhost/Cudos/user/profile/".$review->customer_id."'>".$review->customer_name."</a></div></div>";
   ?>
                    <script>

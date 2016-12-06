@@ -30,5 +30,6 @@
   <script type="text/javascript" src="<?php echo base_url("assets/js/login_register.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/mdb.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/mdb.min.js"); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery.raty-fa.js"); ?>"></script>
 </head>
 <body class="<?php $ci =& get_instance(); echo ucfirst($ci->uri->segment(1)); ?>-body" data-spy="scroll" data-target=".navbar" data-offset="70">
