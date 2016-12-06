@@ -12,7 +12,7 @@
   <div class="topLayer">
     <div class="leftpart">
       <div class="content">
-        <h2>Sign Up</h2>
+        <h2 style="margin-bottom:0;margin-top: 0">Sign Up</h2>
 				<?php $attributes = array("id" => "register-form", "class" => "text-left");
 		                        echo form_open("user/signup", $attributes);  ?>
 					<div class="form-group">

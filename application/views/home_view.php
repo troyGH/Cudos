@@ -53,7 +53,7 @@ function redirect() {
             <div class="row">
 
                 <div class="col-sm-6 pull-right wow fadeInRightBig">
-                    <iframe width="520px" height="400px" src="https://youtube.com/embed/ryEsuevuZGs">
+                    <iframe width="520px" height="400px" src="https://youtube.com/embed/KZhngRg3Spo">
 </iframe>
                 </div>
 
