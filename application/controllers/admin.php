@@ -122,5 +122,32 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	function editemployee(){
+		if( $this->session->userdata('adminlogin') == false ){
+			redirect("home");
+		}else{
+			$first = $this->input->post("edit-employeeFName");
+			$last = $this->input->post("edit-employeeLName");
+			$title = $this->input->post("edit-employeeTitle");
+			$about = $this->input->post("edit-employeeAbout");
+			$img_url = $this->input->post("edit-imgURL");
+			$eID = $this->input->post('edit-id');
+
+			if($first && $last && $title && $about && $img_url && $eID){
+				$data = array(
+        'first_name' => $first,
+        'last_name' => $last,
+				'title' => $title,
+				'about_me' => $about,
+				'img_url' => $img_url
+			);
+				$this->adminModel->update_employee($eID, $data);
+				$this->session->set_flashdata('employee_delete_msg', '<div class="alert alert-success text-center alert-info">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<span class="glyphicon glyphicon-ok"></span> <strong> Employee Editted! </strong></div>');
+			redirect("admin");
+		}
+	}
+}
 }
 ?>

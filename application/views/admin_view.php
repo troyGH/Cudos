@@ -136,33 +136,83 @@ echo "<p><a href='http://localhost/Cudos/business/display?bID=".$this->session->
         <th>Lastname</th>
         <th>About Employee</th>
         <th>Title</th>
-
+        <th>Image</th>
       </tr>
     </thead>
     <tbody>
 
       <?php
- echo '<tr>';
       foreach($employees as $employee) {
-        echo '<td>',$employee->first_name,'</td>';
-        echo '<td>',$employee->last_name,'</td>';
-        echo '<td>',$employee->about_me,'</td>';
-        echo '<td>',$employee->title,'</td>';
-        echo '<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-top:0px; background-color:#262C3A">Edit Employee</button></td>';
+        echo '<tr id="employee-'.$employee->employee_id.'">';
+        echo '<td id="efname" data-value="'.$employee->first_name.'">',$employee->first_name,'</td>';
+        echo '<td id="elname" data-value="'.$employee->last_name.'">',$employee->last_name,'</td>';
+        echo '<td id="eabout" data-value="'.$employee->about_me.'">',$employee->about_me,'</td>';
+        echo '<td id="etitle" data-value="'.$employee->title.'">',$employee->title,'</td>';
+        echo '<td><img class="img-responsive" data-value="'.$employee->img_url.'" src="',$employee->img_url,'"></td>';
+        echo '<td><button type="button" class="btn btn-warning edit-button" data-toggle="modal" data-target="#editModal" data-eid='.$employee->employee_id.' data-whatever="@mdo" style="margin-top:0px; background-color:#262C3A">Edit Employee</button></td>';
         echo '<td><a class="deleteEmp" data-toggle="modal" data-target="#deleteModal" data-eid="'.$employee->employee_id.'" id="close">&#10006;</a></td>';
-        echo '</tr><tr>';
+        echo '</tr>';
       }
-      echo '</tr>';
       ?>
     </tbody>
   </table>
 <br>
+<script>
+$(".edit-button").click(function(){
+  var id = $(this).attr("data-eid");
+  $("#edit-id-input").val(id);
+  $("#edit-employeeFName").val($("#employee-"+id+" #efname").attr("data-value"));
+  $("#edit-employeeLName").val($("#employee-"+id+" #elname").attr("data-value"));
+  $("#edit-employeeAbout").val($("#employee-"+id+" #eabout").attr("data-value"));
+  $("#edit-employeeTitle").val($("#employee-"+id+" #etitle").attr("data-value"));
+  $("#edit-imgURL").val($("#employee-"+id+" img").attr("data-value"));
+})
+</script>
      <div class="bd-example">
   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add Employee</button>
-
 </div>
 </div>
-
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+          <?php $attributes = array("id" => "theForm", "method" => "post");
+                              echo form_open("admin/editemployee", $attributes);  ?>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="editModalLabel">Edit Employee</h4>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="first-name" class="form-control-label"></label>
+            <input type="text" class="form-control" id="edit-employeeFName" name="edit-employeeFName" placeholder="First name" required/>
+          </div>
+          <div class="form-group">
+            <label for="last-name" class="form-control-label"></label>
+            <input type="text" class="form-control" id="edit-employeeLName" name="edit-employeeLName" placeholder="Last name" required/>
+          </div>
+          <div class="form-group">
+            <label for="about" class="form-control-label"></label>
+            <input type="text" class="form-control" id="edit-employeeAbout" name="edit-employeeAbout" placeholder="About Employee" required/>
+          </div>
+          <div class="form-group">
+            <label for="title" class="form-control-label"></label>
+            <input type="text" class="form-control"  id="edit-employeeTitle" name="edit-employeeTitle" placeholder="Title" required/>
+          </div>
+          <div class="form-group">
+            <label for="title" class="form-control-label"></label>
+            <input type="text" class="form-control" id="edit-imgURL" name="edit-imgURL" placeholder="Image URL">
+          </div>
+          <input type="hidden" name="edit-id" id="edit-id-input">
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-warning">Edit</button>
+      </div>
+      <?php echo form_close();?>
+    </div>
+  </div>
+</div>
 <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm" role="document" aria-hidden="true">
     <!-- Modal content-->

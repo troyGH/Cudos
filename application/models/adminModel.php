@@ -84,5 +84,10 @@ $this->db->where('business_id', $query->business_id);
 			$this->db->delete('employeereview', array('employee_id' => $id));
 	}
 
+	function update_employee($id,$data){
+		$this->db->where('employee_id', $id);
+		$this->db->update('employee', $data);
+	}
+
 }
 ?>

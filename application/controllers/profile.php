@@ -70,7 +70,7 @@ class Profile extends CI_Controller {
 		redirect("home");
 		}
 	}
-	
+
 	function delete(){
 		if($this->session->userdata('login')){
 			$this->user_model->delete_user($this->session->userdata('customer_id'));
