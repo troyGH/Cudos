@@ -7,7 +7,7 @@
      <li><a href="<?php if(!isActive("home")) echo base_url();?>#how-to">How to Sign Up Cudos</a></li>
      <li><a href="<?php if(!isActive("home")) echo base_url();?>#useit">How to use Cudos</a></li>
      <li><a href="<?php echo base_url(); ?>admin/signup">How to associate with Cudos</a></li>
-     <li><img class="help-img-icon" width="18" height="14" src="http://res.cloudinary.com/cloudinary-account/image/upload/v1469462241/msg_jn0whe.svg"</img><a href="<?php if(!isActive("home")) echo base_url();?>#contact">Contact Us</a></li>
+     <li><img class="help-img-icon" width="18" height="14" src="http://res.cloudinary.com/cloudinary-account/image/upload/v1469462241/msg_jn0whe.svg"</img><a href="mailto:sjsu.cudos@gmail.com?Subject=Cudos%20Careers" target="_top">Contact Us</a></li>
    </ul>
      </div>
 

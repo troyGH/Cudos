@@ -414,7 +414,7 @@ function redirect() {
     </div>
      <div class="col-md-3">
      <img src="<?php echo base_url('assets/img');?>/sueng.jpg" class="img-circle" alt="sueng" width="200" height="200">
-         <h3>Sueng</h3>
+         <h3>Seung</h3>
 
      </div>
 </div>
